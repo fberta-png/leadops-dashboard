@@ -77,9 +77,45 @@
     .kpis-grid { grid-template-columns: repeat(2, 1fr); }
     .container { padding: 16px; }
   }
+  /* Auth overlay */
+  #auth-overlay {
+    position: fixed; inset: 0; background: #0f1117;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999;
+  }
+  .auth-box {
+    background: #161b22; border: 1px solid #30363d; border-radius: 16px;
+    padding: 40px 48px; width: 360px; text-align: center;
+  }
+  .auth-logo { font-size: 32px; margin-bottom: 12px; }
+  .auth-title { font-size: 20px; font-weight: 700; color: #f0f6fc; margin-bottom: 4px; }
+  .auth-sub { font-size: 13px; color: #8b949e; margin-bottom: 28px; }
+  .auth-input {
+    width: 100%; padding: 11px 16px; background: #0d1117; border: 1px solid #30363d;
+    border-radius: 8px; color: #e1e4e8; font-size: 15px; outline: none;
+    text-align: center; letter-spacing: 2px; margin-bottom: 16px;
+  }
+  .auth-input:focus { border-color: #58a6ff; }
+  .auth-btn {
+    width: 100%; padding: 11px; background: #1f6feb; border: none; border-radius: 8px;
+    color: #fff; font-size: 15px; font-weight: 600; cursor: pointer;
+  }
+  .auth-btn:hover { background: #388bfd; }
+  .auth-error { font-size: 13px; color: #f85149; margin-top: 12px; display: none; }
 </style>
 </head>
 <body>
+
+<div id="auth-overlay">
+  <div class="auth-box">
+    <div class="auth-logo">⚡</div>
+    <div class="auth-title">LeadOps Dashboard</div>
+    <div class="auth-sub">Sesame · Rev Ops</div>
+    <input class="auth-input" id="auth-pwd" type="password" placeholder="Contraseña" onkeydown="if(event.key==='Enter')checkAuth()" autofocus>
+    <button class="auth-btn" onclick="checkAuth()">Entrar</button>
+    <div class="auth-error" id="auth-error">Contraseña incorrecta</div>
+  </div>
+</div>
 
 <div class="header">
   <div class="logo">
@@ -238,8 +274,36 @@ async function loadData() {
   }
 }
 
-loadData();
-setInterval(loadData, 60000); // refresca cada minuto
+// ── Auth ──────────────────────────────────────────────────────
+const PWD_HASH = '90b23b41735ec48675552f7396cb0804ed126d36b11da504088487baa6fb1c43';
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+
+async function checkAuth() {
+  const pwd = document.getElementById('auth-pwd').value;
+  const hash = await sha256(pwd);
+  if (hash === PWD_HASH) {
+    sessionStorage.setItem('leadops_auth', '1');
+    document.getElementById('auth-overlay').style.display = 'none';
+    loadData();
+  } else {
+    document.getElementById('auth-error').style.display = 'block';
+    document.getElementById('auth-pwd').value = '';
+    document.getElementById('auth-pwd').focus();
+  }
+}
+
+// Auto-check si ya estaba autenticado en esta sesión
+if (sessionStorage.getItem('leadops_auth') === '1') {
+  document.getElementById('auth-overlay').style.display = 'none';
+  loadData();
+  setInterval(loadData, 60000);
+} else {
+  document.getElementById('auth-pwd').focus();
+}
 </script>
 </body>
 </html>
