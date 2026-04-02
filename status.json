@@ -1,0 +1,12 @@
+{
+  "last_updated": "2026-04-02T10:00:00",
+  "agent1": {
+    "total_enriched": 553,
+    "total_lotes": 8,
+    "last_run": "2026-04-02T03:15:00"
+  },
+  "agent2": {
+    "total_processed": 53,
+    "last_run": "2026-04-02T04:10:00"
+  }
+}
