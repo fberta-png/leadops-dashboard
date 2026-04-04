@@ -1,27 +1,22 @@
 {
-  "last_updated": "2026-04-03T12:44:08",
-  "agent1": {
-    "name": "Data Enrichment",
-    "status": "active",
-    "total_processed": 653,
-    "total_enriched": 605,
-    "total_skipped": 48,
-    "total_lotes": 9,
-    "success_rate": 92.6,
-    "universe_total": 96353,
-    "progress_pct": 0.68,
-    "last_lote": "lote-09-2026-04-03",
-    "schedule": "L-V 3:00am"
+  "agent": "agent-buyer-2",
+  "agent_name": "Lead Ops Agent 2 - Buyer Enrichment",
+  "last_run": "2026-04-04 08:13:48",
+  "last_run_status": "success",
+  "stats": {
+    "total_processed_this_run": 50,
+    "companies_found": 19,
+    "companies_not_found": 31,
+    "hit_rate_pct": 38.0,
+    "companies_with_2_bps": 9,
+    "companies_with_1_bp": 10,
+    "total_bps_enriched": 28
   },
-  "agent2": {
-    "name": "Buyer Enrichment",
-    "status": "active",
-    "total_processed": 0,
-    "found_2bp": 0,
-    "found_1bp": 0,
-    "not_found": 0,
-    "universe_total": 2999,
-    "progress_pct": 0.0,
-    "schedule": "L-V 4:00am"
-  }
+  "icp_priority": [
+    "HR",
+    "Finance/C&B",
+    "Operations",
+    "IT"
+  ],
+  "notes": "50 companies processed. 19 found with at least 1 verified BP contact. 31 returned no ICP match in Apollo."
 }
