@@ -1,115 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LeadOps Dashboard · Sesame</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lead Ops Command Center · Sesame</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1117; color: #e1e4e8; min-height: 100vh; }
-
-  .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
-  .logo { display: flex; align-items: center; gap: 12px; }
-  .logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, #FF6B35, #F7C59F); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
-  .logo h1 { font-size: 18px; font-weight: 600; color: #f0f6fc; }
-  .logo span { font-size: 13px; color: #8b949e; margin-left: 4px; }
-  .last-updated { font-size: 12px; color: #8b949e; }
-  .dot { width: 8px; height: 8px; border-radius: 50%; background: #3fb950; display: inline-block; margin-right: 6px; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
-
-  .container { max-width: 1100px; margin: 0 auto; padding: 32px; }
-
-  .section-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #8b949e; margin-bottom: 16px; }
-
-  /* Agent cards */
-  .agents-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px; }
-  .agent-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 24px; }
-  .agent-card:hover { border-color: #58a6ff; transition: border-color 0.2s; }
-  .agent-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
-  .agent-name { font-size: 15px; font-weight: 600; color: #f0f6fc; }
-  .agent-id { font-size: 11px; color: #8b949e; margin-top: 2px; }
-  .badge { font-size: 11px; padding: 3px 8px; border-radius: 20px; font-weight: 500; }
-  .badge.active { background: #1a3a1a; color: #3fb950; border: 1px solid #238636; }
-  .badge.idle { background: #1c2128; color: #8b949e; border: 1px solid #30363d; }
-
-  .progress-section { margin-bottom: 16px; }
-  .progress-label { display: flex; justify-content: space-between; font-size: 12px; color: #8b949e; margin-bottom: 6px; }
-  .progress-label span:last-child { color: #58a6ff; font-weight: 600; }
-  .progress-bar { height: 6px; background: #21262d; border-radius: 3px; overflow: hidden; }
-  .progress-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, #1f6feb, #58a6ff); transition: width 1s ease; }
-  .progress-fill.green { background: linear-gradient(90deg, #238636, #3fb950); }
-
-  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
-  .stat { background: #0d1117; border-radius: 8px; padding: 12px; text-align: center; }
-  .stat-value { font-size: 20px; font-weight: 700; color: #f0f6fc; }
-  .stat-label { font-size: 11px; color: #8b949e; margin-top: 2px; }
-  .stat-value.green { color: #3fb950; }
-  .stat-value.orange { color: #d29922; }
-  .stat-value.blue { color: #58a6ff; }
-
-  .agent-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; padding-top: 16px; border-top: 1px solid #21262d; font-size: 12px; color: #8b949e; }
-
-  /* Universe KPIs */
-  .kpis-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
-  .kpi-card { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 20px; }
-  .kpi-value { font-size: 28px; font-weight: 700; color: #f0f6fc; }
-  .kpi-label { font-size: 12px; color: #8b949e; margin-top: 4px; }
-  .kpi-delta { font-size: 11px; color: #3fb950; margin-top: 6px; }
-
-  /* Timeline */
-  .timeline { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 24px; }
-  .timeline-item { display: flex; align-items: center; gap: 16px; padding: 10px 0; border-bottom: 1px solid #21262d; }
-  .timeline-item:last-child { border-bottom: none; }
-  .timeline-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .timeline-dot.success { background: #3fb950; }
-  .timeline-dot.warning { background: #d29922; }
-  .timeline-time { font-size: 12px; color: #8b949e; min-width: 140px; }
-  .timeline-text { font-size: 13px; color: #e1e4e8; }
-  .timeline-badge { margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 12px; }
-  .timeline-badge.a1 { background: #1f3158; color: #58a6ff; }
-  .timeline-badge.a2 { background: #2d1f58; color: #a371f7; }
-
-  .loading { text-align: center; padding: 60px; color: #8b949e; }
-  .error { text-align: center; padding: 60px; color: #f85149; }
-
-  @media (max-width: 768px) {
-    .agents-grid { grid-template-columns: 1fr; }
-    .kpis-grid { grid-template-columns: repeat(2, 1fr); }
-    .container { padding: 16px; }
+  :root {
+    --bg:#0d1117; --panel:#161b27; --panel2:#1c2333; --border:#21293a; --border2:#2d3a50;
+    --text:#e2e8f0; --muted:#556070; --muted2:#7a8fa8;
+    --blue:#4f8ef7; --purple:#9b6dff; --orange:#f97316; --yellow:#eab308;
+    --green:#22c55e; --red:#ef4444; --cyan:#06b6d4;
   }
-  /* Auth overlay */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; min-height:100vh; }
+
+  /* ── AUTH ── */
   #auth-overlay {
-    position: fixed; inset: 0; background: #0f1117;
-    display: flex; align-items: center; justify-content: center;
-    z-index: 9999;
+    position:fixed; inset:0; background:#0d1117;
+    display:flex; align-items:center; justify-content:center; z-index:9999;
   }
   .auth-box {
-    background: #161b22; border: 1px solid #30363d; border-radius: 16px;
-    padding: 40px 48px; width: 360px; text-align: center;
+    background:#161b27; border:1px solid #2d3a50; border-radius:16px;
+    padding:40px 48px; width:360px; text-align:center;
   }
-  .auth-logo { font-size: 32px; margin-bottom: 12px; }
-  .auth-title { font-size: 20px; font-weight: 700; color: #f0f6fc; margin-bottom: 4px; }
-  .auth-sub { font-size: 13px; color: #8b949e; margin-bottom: 28px; }
+  .auth-logo { font-size:32px; margin-bottom:12px; }
+  .auth-title { font-size:20px; font-weight:700; color:#e2e8f0; margin-bottom:4px; }
+  .auth-sub { font-size:13px; color:#7a8fa8; margin-bottom:28px; }
   .auth-input {
-    width: 100%; padding: 11px 16px; background: #0d1117; border: 1px solid #30363d;
-    border-radius: 8px; color: #e1e4e8; font-size: 15px; outline: none;
-    text-align: center; letter-spacing: 2px; margin-bottom: 16px;
+    width:100%; padding:11px 16px; background:#0d1117; border:1px solid #2d3a50;
+    border-radius:8px; color:#e2e8f0; font-size:15px; outline:none;
+    text-align:center; letter-spacing:2px; margin-bottom:16px;
   }
-  .auth-input:focus { border-color: #58a6ff; }
+  .auth-input:focus { border-color:#4f8ef7; }
   .auth-btn {
-    width: 100%; padding: 11px; background: #1f6feb; border: none; border-radius: 8px;
-    color: #fff; font-size: 15px; font-weight: 600; cursor: pointer;
+    width:100%; padding:11px; background:#1f6feb; border:none; border-radius:8px;
+    color:#fff; font-size:15px; font-weight:600; cursor:pointer;
   }
-  .auth-btn:hover { background: #388bfd; }
-  .auth-error { font-size: 13px; color: #f85149; margin-top: 12px; display: none; }
+  .auth-btn:hover { background:#388bfd; }
+  .auth-error { font-size:13px; color:#ef4444; margin-top:12px; display:none; }
+
+  /* ── NAV ── */
+  .nav { background:#111827; border-bottom:1px solid var(--border); padding:0 28px; display:flex; align-items:center; justify-content:space-between; height:52px; }
+  .nav-brand { display:flex; align-items:center; gap:10px; }
+  .nav-icon { width:32px; height:32px; border-radius:8px; background:linear-gradient(135deg,#4f8ef7,#9b6dff); display:flex; align-items:center; justify-content:center; font-size:16px; }
+  .nav-name { font-size:15px; font-weight:700; }
+  .nav-sub  { font-size:10px; color:var(--muted2); letter-spacing:1.5px; text-transform:uppercase; }
+  .nav-tabs { display:flex; gap:4px; }
+  .nav-tab { padding:6px 18px; border-radius:8px; font-size:13px; font-weight:500; cursor:pointer; border:none; background:transparent; color:var(--muted2); transition:all 0.15s; }
+  .nav-tab.active { background:#1e3a5f; color:#fff; }
+  .nav-tab:hover:not(.active) { background:var(--panel2); color:var(--text); }
+  .nav-status { display:flex; align-items:center; gap:7px; font-size:12px; color:var(--green); }
+  .dot { width:7px; height:7px; background:var(--green); border-radius:50%; animation:blink 2s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  /* ── TAB PANELS ── */
+  .tab-panel { display:none; }
+  .tab-panel.active { display:block; }
+
+  /* ── MAIN ── */
+  .main { padding:24px 28px; }
+  .section-label { font-size:10px; font-weight:700; letter-spacing:2px; color:var(--muted); text-transform:uppercase; margin-bottom:12px; }
+
+  /* ── AGENT BAR ── */
+  .agent-bar { background:var(--panel); border:1px solid var(--border2); border-left:3px solid var(--blue); border-radius:10px; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; margin-bottom:28px; }
+  .agent-bar-left { display:flex; align-items:center; gap:14px; }
+  .agent-avatar { width:40px; height:40px; border-radius:10px; background:rgba(79,142,247,0.15); display:flex; align-items:center; justify-content:center; font-size:18px; }
+  .agent-name { font-size:14px; font-weight:700; }
+  .agent-info { font-size:11px; color:var(--muted2); margin-top:2px; }
+  .agent-bar-right { display:flex; align-items:center; gap:20px; }
+  .lote-badge { background:rgba(34,197,94,0.12); border:1px solid rgba(34,197,94,0.3); border-radius:7px; padding:6px 14px; font-size:12px; font-weight:700; color:var(--green); }
+
+  /* ── UNIVERSE GRID ── */
+  .universe-grid { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; margin-bottom:28px; }
+  .uni-card { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:20px; }
+  .uni-card.main-card { border-color:var(--border2); }
+  .uni-label { font-size:10px; font-weight:700; letter-spacing:1.5px; color:var(--muted); text-transform:uppercase; margin-bottom:12px; }
+  .uni-value { font-size:36px; font-weight:800; letter-spacing:-1.5px; line-height:1; margin-bottom:8px; }
+  .uni-value.col-purple{color:var(--purple)} .uni-value.col-orange{color:var(--orange)}
+  .uni-value.col-yellow{color:var(--yellow)} .uni-value.col-cyan{color:var(--cyan)}
+  .uni-sub { font-size:11px; color:var(--muted2); margin-bottom:10px; }
+  .uni-deltas { display:flex; gap:14px; }
+  .delta { font-size:11px; font-weight:600; }
+  .delta.up{color:var(--green)} .delta.down{color:var(--red)}
+
+  /* ── PROGRESS ── */
+  .progress-section { margin-bottom:28px; }
+  .prog-card { background:var(--panel); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  .prog-row { padding:16px 20px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:16px; }
+  .prog-row:last-child { border-bottom:none; }
+  .prog-icon { font-size:16px; flex-shrink:0; }
+  .prog-label-wrap { flex:0 0 200px; }
+  .prog-label { font-size:13px; font-weight:600; }
+  .prog-total { font-size:11px; color:var(--muted2); margin-top:1px; }
+  .prog-bar-wrap { flex:1; height:6px; background:var(--border2); border-radius:3px; overflow:hidden; }
+  .prog-fill { height:100%; border-radius:3px; background:linear-gradient(90deg,var(--blue),#7cb9ff); transition:width 1s ease; }
+  .prog-fill.green { background:linear-gradient(90deg,#238636,#3fb950); }
+  .prog-fill.purple { background:linear-gradient(90deg,#6e40c9,#9b6dff); }
+  .prog-stats { flex:0 0 220px; display:flex; gap:20px; align-items:center; justify-content:flex-end; }
+  .prog-stat .val { font-size:14px; font-weight:700; }
+  .prog-stat .lbl { font-size:10px; color:var(--muted2); text-transform:uppercase; letter-spacing:0.5px; }
+  .val-green{color:var(--green)} .val-red{color:var(--red)} .val-muted{color:var(--muted2)} .val-yellow{color:var(--yellow)} .val-purple{color:var(--purple)}
+  .prog-pct { flex:0 0 55px; text-align:right; font-size:13px; font-weight:700; color:var(--muted2); }
+
+  /* ── BOTTOM ── */
+  .bottom-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .lote-card, .schedule-card { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:20px; }
+  .lote-row { display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid var(--border); }
+  .lote-row:last-child { border-bottom:none; }
+  .lote-id { font-family:monospace; font-size:12px; color:var(--blue); flex:1; }
+  .lote-date { font-size:11px; color:var(--muted2); flex:0 0 90px; }
+  .lote-n { font-size:13px; font-weight:700; flex:0 0 40px; text-align:right; }
+  .lote-pills { display:flex; gap:6px; }
+  .pill { font-size:10px; font-weight:600; padding:2px 8px; border-radius:10px; }
+  .pill-ind{background:rgba(79,142,247,0.15);color:var(--blue)}
+  .pill-emp{background:rgba(234,179,8,0.15);color:var(--yellow)}
+  .pill-dom{background:rgba(6,182,212,0.15);color:var(--cyan)}
+  .pill-ok{background:rgba(34,197,94,0.15);color:var(--green)}
+  .empty-row { font-size:11px; color:var(--muted); font-style:italic; padding:16px 0; text-align:center; }
+  .sched-row { display:flex; align-items:center; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--border); font-size:13px; }
+  .sched-row:last-child { border-bottom:none; }
+  .sched-label { color:var(--muted2); font-size:12px; }
+  .sched-val { font-weight:600; }
+  .sched-val.green{color:var(--green)} .sched-val.yellow{color:var(--yellow)} .sched-val.muted{color:var(--muted2)}
+
+  /* ── OFICINA TAB ── */
+  .oficina-wrap {
+    display:flex; flex-direction:column; align-items:center;
+    justify-content:center; padding:24px 28px;
+    min-height:calc(100vh - 52px);
+    background:var(--bg);
+  }
+  #poke-wrap {
+    position:relative; border:4px solid #6a5030; border-radius:8px;
+    box-shadow:0 0 80px rgba(200,150,60,0.2),0 0 20px rgba(0,0,0,0.8);
+    overflow:hidden; background:#2a1e10;
+  }
+  #poke-canvas { display:block; image-rendering:pixelated; image-rendering:crisp-edges; }
+  .bub {
+    position:absolute; pointer-events:none; z-index:20;
+    background:#fffef5; color:#2a1e10; border:2px solid #6a5030;
+    border-radius:3px; padding:3px 8px;
+    font-size:9px; font-family:'Courier New',monospace; font-weight:700;
+    white-space:nowrap; max-width:180px; overflow:hidden; text-overflow:ellipsis;
+    box-shadow:2px 2px 0 rgba(40,20,0,0.4); transition:opacity 0.3s;
+  }
+  .bub::after { content:''; position:absolute; bottom:-7px; left:10px; border-left:6px solid transparent; border-right:6px solid transparent; border-top:6px solid #6a5030; }
+  .bub::before { content:''; position:absolute; bottom:-4px; left:12px; z-index:1; border-left:4px solid transparent; border-right:4px solid transparent; border-top:4px solid #fffef5; }
+  #poke-hud {
+    position:absolute; top:8px; left:8px; z-index:30;
+    background:rgba(20,12,3,0.93); border:2px solid #7a6040; border-radius:5px;
+    padding:8px 12px; font-size:10px; line-height:1.9; color:#d4c4a8;
+    font-family:'Courier New',monospace; backdrop-filter:blur(4px); min-width:170px;
+  }
+  .hud-t { color:#fbbf24; font-weight:bold; font-size:11px; letter-spacing:1px; display:block; margin-bottom:4px; }
+  .hud-g{color:#34d399} .hud-b{color:#60a5fa} .hud-r{color:#f87171} .hud-y{color:#fbbf24}
+  #poke-title-bar {
+    position:absolute; top:0; left:0; right:0; z-index:25; height:24px;
+    background:rgba(20,10,3,0.88); border-bottom:2px solid #5a3a18;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-family:'Courier New',monospace; font-weight:bold;
+    color:#fbbf24; letter-spacing:2px;
+  }
+  #poke-room-labels {
+    position:absolute; bottom:0; left:0; right:0; z-index:25;
+    display:flex; height:22px;
+    background:rgba(20,10,3,0.88); border-top:2px solid #5a3a18;
+  }
+  .rl { flex:1; display:flex; align-items:center; justify-content:center; font-size:10px; font-family:'Courier New',monospace; font-weight:bold; color:#c8a870; letter-spacing:1px; border-right:1px solid #4a3018; }
+  .rl:last-child { border-right:none; }
+
+  .footer { font-size:10px; color:var(--muted); text-align:center; padding:20px; border-top:1px solid var(--border); margin-top:8px; }
 </style>
 </head>
 <body>
 
+<!-- AUTH OVERLAY -->
 <div id="auth-overlay">
   <div class="auth-box">
     <div class="auth-logo">⚡</div>
-    <div class="auth-title">LeadOps Dashboard</div>
+    <div class="auth-title">Lead Ops Command Center</div>
     <div class="auth-sub">Sesame · Rev Ops</div>
     <input class="auth-input" id="auth-pwd" type="password" placeholder="Contraseña" onkeydown="if(event.key==='Enter')checkAuth()" autofocus>
     <button class="auth-btn" onclick="checkAuth()">Entrar</button>
@@ -117,164 +186,401 @@
   </div>
 </div>
 
-<div class="header">
-  <div class="logo">
-    <div class="logo-icon">⚡</div>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand">
+    <div class="nav-icon">⚡</div>
     <div>
-      <h1>LeadOps Dashboard <span>· Sesame</span></h1>
+      <div class="nav-name">Lead Ops Command Center</div>
+      <div class="nav-sub">Sesame · AI Agents</div>
     </div>
   </div>
-  <div class="last-updated">
-    <span class="dot"></span>
-    <span id="last-updated">Cargando...</span>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="switchTab('enrichment',this)">✦ Data Enrichment</button>
+    <button class="nav-tab" onclick="switchTab('buyer',this)">✦ Buyer Enrichment</button>
+    <button class="nav-tab" onclick="switchTab('agentes',this)">○ Agentes</button>
+    <button class="nav-tab" onclick="switchTab('oficina',this)">🏢 Oficina</button>
+  </div>
+  <div class="nav-status">
+    <div class="dot"></div>
+    <span id="nav-status-text">2 agentes activos</span>
+  </div>
+</nav>
+
+<!-- ═══════════════ TAB: DATA ENRICHMENT ═══════════════ -->
+<div id="tab-enrichment" class="tab-panel active">
+<div class="main">
+
+  <div class="section-label">Estado del Agente</div>
+  <div class="agent-bar">
+    <div class="agent-bar-left">
+      <div class="agent-avatar">🔬</div>
+      <div>
+        <div class="agent-name">Data Enrichment Agent</div>
+        <div class="agent-info" id="a1-info">Cargando...</div>
+      </div>
+    </div>
+    <div class="agent-bar-right">
+      <div class="lote-badge" id="a1-lote-badge">⏳ Cargando</div>
+    </div>
+  </div>
+
+  <div class="section-label">Universo · Spain (ES) · Not Customer</div>
+  <div class="universe-grid">
+    <div class="uni-card main-card">
+      <div class="uni-label">Universo Global</div>
+      <div class="uni-value col-purple" id="a1-universe">—</div>
+      <div class="uni-sub">Total Spain · Not Customer</div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Procesadas</div>
+      <div class="uni-value col-orange" id="a1-processed">—</div>
+      <div class="uni-sub">Empresas enriquecidas total</div>
+      <div class="uni-deltas">
+        <span class="delta up" id="a1-enriched-delta">—</span>
+        <span class="delta down" id="a1-skipped-delta">—</span>
+      </div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Tasa de Éxito</div>
+      <div class="uni-value col-yellow" id="a1-success-rate">—</div>
+      <div class="uni-sub">Enriquecidas vs. procesadas</div>
+      <div class="uni-deltas">
+        <span class="delta up" id="a1-lotes-delta">—</span>
+      </div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Progreso Universo</div>
+      <div class="uni-value col-cyan" id="a1-progress-pct">—</div>
+      <div class="uni-sub">Del total de empresas</div>
+      <div class="uni-deltas">
+        <span class="delta up">L-V 3:00am</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Progreso General</div>
+  <div class="progress-section">
+    <div class="prog-card">
+      <div class="prog-row">
+        <div class="prog-icon">✅</div>
+        <div class="prog-label-wrap"><div class="prog-label">Empresas Enriquecidas</div><div class="prog-total" id="a1-enriched-subtitle">—</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill green" id="a1-bar-enriched" style="width:0%"></div></div>
+        <div class="prog-stats">
+          <div class="prog-stat"><div class="val val-green" id="a1-stat-enriched">—</div><div class="lbl">OK</div></div>
+          <div class="prog-stat"><div class="val val-red" id="a1-stat-skipped">—</div><div class="lbl">Skip</div></div>
+        </div>
+        <div class="prog-pct" id="a1-bar-enriched-pct">—</div>
+      </div>
+      <div class="prog-row">
+        <div class="prog-icon">📦</div>
+        <div class="prog-label-wrap"><div class="prog-label">Lotes Completados</div><div class="prog-total" id="a1-lotes-subtitle">—</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill" id="a1-bar-lotes" style="width:0%"></div></div>
+        <div class="prog-stats">
+          <div class="prog-stat"><div class="val val-green" id="a1-stat-lotes">—</div><div class="lbl">lotes</div></div>
+          <div class="prog-stat"><div class="val val-muted">100</div><div class="lbl">emp/run</div></div>
+        </div>
+        <div class="prog-pct" id="a1-bar-lotes-pct">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-grid">
+    <div class="lote-card">
+      <div class="section-label" style="margin-bottom:14px;">Último Lote</div>
+      <div id="a1-lote-history">
+        <div class="empty-row">Cargando historial...</div>
+      </div>
+    </div>
+    <div class="schedule-card">
+      <div class="section-label" style="margin-bottom:14px;">Configuración del Agente</div>
+      <div class="sched-row"><span class="sched-label">Archivo maestro</span><span class="sched-val" style="font-size:11px;color:var(--blue)">Lead Ops - Agent 1 - Data Enrichment.xlsx</span></div>
+      <div class="sched-row"><span class="sched-label">Empresas por run</span><span class="sched-val">100</span></div>
+      <div class="sched-row"><span class="sched-label">Frecuencia</span><span class="sched-val green">L-V · 3:00am</span></div>
+      <div class="sched-row"><span class="sched-label">Último lote</span><span class="sched-val green" id="a1-last-lote-sched">—</span></div>
+      <div class="sched-row"><span class="sched-label">Actualizado</span><span class="sched-val green" id="a1-last-updated-sched">—</span></div>
+    </div>
+  </div>
+
+</div>
+<div class="footer" id="a1-footer">Lead Ops · Sesame · Cargando datos...</div>
+</div>
+
+<!-- ═══════════════ TAB: BUYER ENRICHMENT ═══════════════ -->
+<div id="tab-buyer" class="tab-panel">
+<div class="main">
+
+  <div class="section-label">Estado del Agente</div>
+  <div class="agent-bar" style="border-left-color:var(--purple)">
+    <div class="agent-bar-left">
+      <div class="agent-avatar" style="background:rgba(155,109,255,0.15)">👤</div>
+      <div>
+        <div class="agent-name">Buyer Enrichment Agent</div>
+        <div class="agent-info" id="a2-info">Cargando...</div>
+      </div>
+    </div>
+    <div class="agent-bar-right">
+      <div class="lote-badge" id="a2-status-badge" style="border-color:rgba(155,109,255,0.3);color:var(--purple);background:rgba(155,109,255,0.08)">⏳ Cargando</div>
+    </div>
+  </div>
+
+  <div class="section-label">Universo · Buyer Personas ICP</div>
+  <div class="universe-grid">
+    <div class="uni-card main-card">
+      <div class="uni-label">Universo A2</div>
+      <div class="uni-value col-purple" id="a2-universe">—</div>
+      <div class="uni-sub">Empresas Si / Si-Match</div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Procesadas</div>
+      <div class="uni-value col-orange" id="a2-processed">—</div>
+      <div class="uni-sub">Con BP buscado</div>
+      <div class="uni-deltas">
+        <span class="delta up" id="a2-found2-delta">—</span>
+        <span class="delta up" id="a2-found1-delta">—</span>
+      </div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">BPs Encontrados</div>
+      <div class="uni-value col-yellow" id="a2-bps-total">—</div>
+      <div class="uni-sub">Contactos ICP nuevos</div>
+      <div class="uni-deltas">
+        <span class="delta down" id="a2-notfound-delta">—</span>
+      </div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Progreso Universo</div>
+      <div class="uni-value col-cyan" id="a2-progress-pct">—</div>
+      <div class="uni-sub">Del total de empresas</div>
+      <div class="uni-deltas">
+        <span class="delta up">L-V 4:00am</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Progreso por tipo de BP</div>
+  <div class="progress-section">
+    <div class="prog-card">
+      <div class="prog-row">
+        <div class="prog-icon">👥</div>
+        <div class="prog-label-wrap"><div class="prog-label">2 BPs encontrados</div><div class="prog-total">HR + Finance/Ops/IT</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill green" id="a2-bar-2bp" style="width:0%"></div></div>
+        <div class="prog-stats">
+          <div class="prog-stat"><div class="val val-green" id="a2-stat-2bp">—</div><div class="lbl">empresas</div></div>
+          <div class="prog-stat"><div class="val val-green" id="a2-stat-2bp-contacts">—</div><div class="lbl">contactos</div></div>
+        </div>
+        <div class="prog-pct" id="a2-bar-2bp-pct">—</div>
+      </div>
+      <div class="prog-row">
+        <div class="prog-icon">👤</div>
+        <div class="prog-label-wrap"><div class="prog-label">1 BP encontrado</div><div class="prog-total">Solo un área ICP</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill purple" id="a2-bar-1bp" style="width:0%"></div></div>
+        <div class="prog-stats">
+          <div class="prog-stat"><div class="val val-purple" id="a2-stat-1bp">—</div><div class="lbl">empresas</div></div>
+          <div class="prog-stat"><div class="val val-purple" id="a2-stat-1bp-contacts">—</div><div class="lbl">contactos</div></div>
+        </div>
+        <div class="prog-pct" id="a2-bar-1bp-pct">—</div>
+      </div>
+      <div class="prog-row">
+        <div class="prog-icon">❌</div>
+        <div class="prog-label-wrap"><div class="prog-label">Sin BP</div><div class="prog-total">No encontrado en Apollo</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,#6e1010,#ef4444);width:0%" id="a2-bar-nf"></div></div>
+        <div class="prog-stats">
+          <div class="prog-stat"><div class="val val-red" id="a2-stat-nf">—</div><div class="lbl">empresas</div></div>
+        </div>
+        <div class="prog-pct" id="a2-bar-nf-pct">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-grid">
+    <div class="lote-card">
+      <div class="section-label" style="margin-bottom:14px;">Prioridad ICP (orden búsqueda)</div>
+      <div class="lote-row"><div class="lote-id">1º HR</div><div class="lote-pills"><span class="pill pill-ok">Director / CHRO / CPO</span></div></div>
+      <div class="lote-row"><div class="lote-id">2º Finance / C&B</div><div class="lote-pills"><span class="pill pill-ind">CFO / Payroll / C&B Mgr</span></div></div>
+      <div class="lote-row"><div class="lote-id">3º Operations</div><div class="lote-pills"><span class="pill pill-emp">COO / Ops Director</span></div></div>
+      <div class="lote-row"><div class="lote-id">4º IT</div><div class="lote-pills"><span class="pill pill-dom">CTO / IT Director</span></div></div>
+    </div>
+    <div class="schedule-card">
+      <div class="section-label" style="margin-bottom:14px;">Configuración del Agente</div>
+      <div class="sched-row"><span class="sched-label">Archivo maestro</span><span class="sched-val" style="font-size:11px;color:var(--purple)">Lead Ops - Agent 2 - Buyer Enrichment.xlsx</span></div>
+      <div class="sched-row"><span class="sched-label">Empresas por run</span><span class="sched-val">50</span></div>
+      <div class="sched-row"><span class="sched-label">Frecuencia</span><span class="sched-val green">L-V · 4:00am</span></div>
+      <div class="sched-row"><span class="sched-label">Max BPs por empresa</span><span class="sched-val">2</span></div>
+      <div class="sched-row"><span class="sched-label">Fuente contactos</span><span class="sched-val green">Apollo.io ✓</span></div>
+      <div class="sched-row"><span class="sched-label">Actualizado</span><span class="sched-val green" id="a2-last-updated-sched">—</span></div>
+    </div>
+  </div>
+
+</div>
+<div class="footer" id="a2-footer">Lead Ops · Sesame · Cargando datos...</div>
+</div>
+
+<!-- ═══════════════ TAB: AGENTES ═══════════════ -->
+<div id="tab-agentes" class="tab-panel">
+<div class="main">
+  <div class="section-label" style="margin-bottom:20px;">Estado de los Agentes</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+    <div style="background:var(--panel);border:1px solid rgba(34,197,94,0.3);border-radius:12px;padding:20px;">
+      <div style="font-size:28px;margin-bottom:10px;">🔬</div>
+      <div style="font-weight:700;margin-bottom:4px;">Agent 1 · Enrichment</div>
+      <div style="font-size:11px;color:var(--muted2);margin-bottom:12px;">Industry · Empleados · Dominio · 100 empresas/run</div>
+      <div style="font-size:11px;color:var(--green);font-weight:600;">● Activo · L-V 3am</div>
+    </div>
+    <div style="background:var(--panel);border:1px solid rgba(155,109,255,0.3);border-radius:12px;padding:20px;">
+      <div style="font-size:28px;margin-bottom:10px;">👤</div>
+      <div style="font-weight:700;margin-bottom:4px;">Agent 2 · Buyer Enrichment</div>
+      <div style="font-size:11px;color:var(--muted2);margin-bottom:12px;">Busca BPs ICP en Apollo · HR→Finance→Ops→IT · Max 2 BPs</div>
+      <div style="font-size:11px;color:var(--purple);font-weight:600;">● Activo · L-V 4am</div>
+    </div>
+    <div style="background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px;opacity:0.6;">
+      <div style="font-size:28px;margin-bottom:10px;">📈</div>
+      <div style="font-weight:700;margin-bottom:4px;">Agent 3 · Forecast</div>
+      <div style="font-size:11px;color:var(--muted2);margin-bottom:12px;">Forecast semanal de pipeline desde HubSpot</div>
+      <div style="font-size:11px;color:var(--muted2);font-weight:600;">○ Por configurar</div>
+    </div>
+    <div style="background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px;opacity:0.6;">
+      <div style="font-size:28px;margin-bottom:10px;">💀</div>
+      <div style="font-weight:700;margin-bottom:4px;">Agent 4 · Lost Deals</div>
+      <div style="font-size:11px;color:var(--muted2);margin-bottom:12px;">Análisis de deals perdidos y recomendaciones</div>
+      <div style="font-size:11px;color:var(--muted2);font-weight:600;">○ Por configurar</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════ TAB: OFICINA ═══════════════ -->
+<div id="tab-oficina" class="tab-panel">
+  <div class="oficina-wrap">
+    <div id="poke-wrap">
+      <canvas id="poke-canvas"></canvas>
+      <div id="poke-title-bar">⚡ LEADOPS OFFICE – SESAME AI ⚡</div>
+      <div id="poke-hud">
+        <span class="hud-t">AGENTS STATUS</span>
+        <div id="h0"></div><div id="h1"></div><div id="h2"></div><div id="h3"></div>
+      </div>
+      <div id="poke-room-labels">
+        <div class="rl">🖥 OFICINA</div>
+        <div class="rl">📋 SALA MEETING</div>
+        <div class="rl">☕ BREAK ROOM</div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="container">
-
-  <div class="section-title" style="margin-bottom:20px">Universo CRM</div>
-  <div class="kpis-grid" id="kpis">
-    <div class="kpi-card"><div class="kpi-value" id="kpi-total">—</div><div class="kpi-label">Empresas totales</div></div>
-    <div class="kpi-card"><div class="kpi-value" id="kpi-enriched" style="color:#3fb950">—</div><div class="kpi-label">Enriquecidas (A1)</div><div class="kpi-delta" id="kpi-rate">—</div></div>
-    <div class="kpi-card"><div class="kpi-value" id="kpi-bps" style="color:#a371f7">—</div><div class="kpi-label">BPs encontrados (A2)</div><div class="kpi-delta" id="kpi-bp-rate">—</div></div>
-    <div class="kpi-card"><div class="kpi-value" id="kpi-lotes" style="color:#58a6ff">—</div><div class="kpi-label">Lotes completados</div><div class="kpi-delta">Agent 1 · L-V 3am</div></div>
-  </div>
-
-  <div class="section-title">Agentes</div>
-  <div class="agents-grid" id="agents-grid">
-
-    <div class="agent-card">
-      <div class="agent-header">
-        <div>
-          <div class="agent-name">🔬 Agent 1 — Data Enrichment</div>
-          <div class="agent-id">Industry · Empleados · Dominio</div>
-        </div>
-        <span class="badge active" id="a1-badge">● Activo</span>
-      </div>
-      <div class="progress-section">
-        <div class="progress-label">
-          <span>Progreso universo</span>
-          <span id="a1-pct">—%</span>
-        </div>
-        <div class="progress-bar"><div class="progress-fill" id="a1-bar" style="width:0%"></div></div>
-      </div>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-value green" id="a1-enriched">—</div><div class="stat-label">Enriquecidas</div></div>
-        <div class="stat"><div class="stat-value orange" id="a1-skipped">—</div><div class="stat-label">Skipped</div></div>
-        <div class="stat"><div class="stat-value blue" id="a1-rate">—</div><div class="stat-label">Tasa éxito</div></div>
-      </div>
-      <div class="agent-footer">
-        <span id="a1-last">Último lote: —</span>
-        <span id="a1-schedule">—</span>
-      </div>
-    </div>
-
-    <div class="agent-card">
-      <div class="agent-header">
-        <div>
-          <div class="agent-name">👤 Agent 2 — Buyer Enrichment</div>
-          <div class="agent-id">HR · Finance · Operations · IT</div>
-        </div>
-        <span class="badge active" id="a2-badge">● Activo</span>
-      </div>
-      <div class="progress-section">
-        <div class="progress-label">
-          <span>Progreso universo</span>
-          <span id="a2-pct">—%</span>
-        </div>
-        <div class="progress-bar"><div class="progress-fill green" id="a2-bar" style="width:0%"></div></div>
-      </div>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-value green" id="a2-2bp">—</div><div class="stat-label">2 BPs found</div></div>
-        <div class="stat"><div class="stat-value blue" id="a2-1bp">—</div><div class="stat-label">1 BP found</div></div>
-        <div class="stat"><div class="stat-value orange" id="a2-notfound">—</div><div class="stat-label">Not found</div></div>
-      </div>
-      <div class="agent-footer">
-        <span id="a2-processed">Procesadas: —</span>
-        <span id="a2-schedule">—</span>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="section-title">Actividad reciente</div>
-  <div class="timeline" id="timeline">
-    <div class="loading">Cargando actividad...</div>
-  </div>
-
-</div>
-
+<!-- ═══════════════ TAB SWITCHER ═══════════════ -->
 <script>
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+  if (name === 'oficina' && !window._pokeInit) { initPokemon(); window._pokeInit = true; }
+}
+</script>
+
+<!-- ═══════════════ LIVE DATA ═══════════════ -->
+<script>
+function fmt(n) { return (n||0).toLocaleString('es-ES'); }
+function pct(n)  { return (n||0).toFixed(1) + '%'; }
+
 async function loadData() {
   try {
     const r = await fetch('status.json?t=' + Date.now());
-    if (!r.ok) throw new Error('No se pudo cargar status.json');
+    if (!r.ok) throw new Error('status.json no disponible');
     const d = await r.json();
-
-    // Header
+    const a1 = d.agent1, a2 = d.agent2;
     const dt = new Date(d.last_updated);
-    document.getElementById('last-updated').textContent =
-      'Actualizado: ' + dt.toLocaleDateString('es-ES') + ' ' + dt.toLocaleTimeString('es-ES', {hour:'2-digit',minute:'2-digit'});
+    const dtStr = dt.toLocaleDateString('es-ES') + ' ' + dt.toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
 
-    const a1 = d.agent1;
-    const a2 = d.agent2;
+    // ── Agent 1 ──────────────────────────────────────────
+    document.getElementById('a1-info').textContent =
+      `${a1.last_lote || '—'} completado · ${fmt(a1.total_enriched)} enriched · ${fmt(a1.total_skipped)} skipped · Próximo lote: L-V 3am`;
+    document.getElementById('a1-lote-badge').textContent = `✓ LOTE #${a1.total_lotes} OK`;
+    document.getElementById('a1-universe').textContent = fmt(a1.universe_total);
+    document.getElementById('a1-processed').textContent = fmt(a1.total_processed);
+    document.getElementById('a1-enriched-delta').textContent = `↑ ${fmt(a1.total_enriched)} enriquecidas`;
+    document.getElementById('a1-skipped-delta').textContent = `× ${fmt(a1.total_skipped)} skipped`;
+    document.getElementById('a1-success-rate').textContent = pct(a1.success_rate);
+    document.getElementById('a1-lotes-delta').textContent = `${a1.total_lotes} lotes completados`;
+    document.getElementById('a1-progress-pct').textContent = pct(a1.progress_pct);
 
-    // KPIs
-    document.getElementById('kpi-total').textContent = a1.universe_total.toLocaleString('es-ES');
-    document.getElementById('kpi-enriched').textContent = a1.total_processed.toLocaleString('es-ES');
-    document.getElementById('kpi-rate').textContent = a1.success_rate + '% tasa éxito';
-    document.getElementById('kpi-bps').textContent = ((a2.found_2bp * 2) + a2.found_1bp).toLocaleString('es-ES');
-    document.getElementById('kpi-bp-rate').textContent = a2.total_processed + ' empresas procesadas';
-    document.getElementById('kpi-lotes').textContent = a1.total_lotes;
+    const enrichedPct = a1.universe_total > 0 ? (a1.total_enriched / a1.universe_total * 100) : 0;
+    document.getElementById('a1-enriched-subtitle').textContent = `${fmt(a1.total_enriched)} de ${fmt(a1.universe_total)}`;
+    document.getElementById('a1-bar-enriched').style.width = Math.min(enrichedPct * 3, 100) + '%';
+    document.getElementById('a1-stat-enriched').textContent = fmt(a1.total_enriched);
+    document.getElementById('a1-stat-skipped').textContent = fmt(a1.total_skipped);
+    document.getElementById('a1-bar-enriched-pct').textContent = pct(enrichedPct);
 
-    // Agent 1
-    document.getElementById('a1-pct').textContent = a1.progress_pct + '%';
-    document.getElementById('a1-bar').style.width = Math.min(a1.progress_pct * 5, 100) + '%';
-    document.getElementById('a1-enriched').textContent = a1.total_enriched.toLocaleString('es-ES');
-    document.getElementById('a1-skipped').textContent = a1.total_skipped.toLocaleString('es-ES');
-    document.getElementById('a1-rate').textContent = a1.success_rate + '%';
-    document.getElementById('a1-last').textContent = 'Último: ' + (a1.last_lote || '—');
-    document.getElementById('a1-schedule').textContent = a1.schedule;
+    document.getElementById('a1-lotes-subtitle').textContent = `${a1.total_lotes} lotes · 100 empresas/run`;
+    document.getElementById('a1-bar-lotes').style.width = Math.min(a1.total_lotes * 2, 100) + '%';
+    document.getElementById('a1-stat-lotes').textContent = a1.total_lotes;
+    document.getElementById('a1-bar-lotes-pct').textContent = a1.total_lotes + ' lotes';
 
-    // Agent 2
-    document.getElementById('a2-pct').textContent = a2.progress_pct + '%';
-    document.getElementById('a2-bar').style.width = Math.min(a2.progress_pct * 5, 100) + '%';
-    document.getElementById('a2-2bp').textContent = a2.found_2bp;
-    document.getElementById('a2-1bp').textContent = a2.found_1bp;
-    document.getElementById('a2-notfound').textContent = a2.not_found;
-    document.getElementById('a2-processed').textContent = 'Procesadas: ' + a2.total_processed;
-    document.getElementById('a2-schedule').textContent = a2.schedule;
+    document.getElementById('a1-last-lote-sched').textContent = a1.last_lote || '—';
+    document.getElementById('a1-last-updated-sched').textContent = dtStr;
+    document.getElementById('a1-footer').textContent =
+      `Lead Ops · Sesame · Actualizado ${dtStr} · ${fmt(a1.universe_total)} empresas totales · ${a1.total_lotes} lotes completados`;
 
-    // Timeline
-    const tl = document.getElementById('timeline');
-    tl.innerHTML = `
-      <div class="timeline-item">
-        <div class="timeline-dot success"></div>
-        <div class="timeline-time">${new Date(d.last_updated).toLocaleDateString('es-ES')} ${new Date(d.last_updated).toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'})}</div>
-        <div class="timeline-text">Dashboard sincronizado · ${a1.total_processed} empresas enriquecidas</div>
-        <span class="timeline-badge a1">Agent 1</span>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot success"></div>
-        <div class="timeline-time">${a1.last_lote || '—'}</div>
-        <div class="timeline-text">Último lote completado · ${a1.total_enriched} enriched / ${a1.total_skipped} skipped</div>
-        <span class="timeline-badge a1">Agent 1</span>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot ${a2.total_processed > 0 ? 'success' : 'warning'}"></div>
-        <div class="timeline-time">Agent 2</div>
-        <div class="timeline-text">${a2.total_processed} empresas procesadas · ${(a2.found_2bp*2)+a2.found_1bp} BPs encontrados</div>
-        <span class="timeline-badge a2">Agent 2</span>
-      </div>
-    `;
+    // Lote history
+    const loteEl = document.getElementById('a1-lote-history');
+    if (a1.last_lote) {
+      loteEl.innerHTML = `
+        <div class="lote-row">
+          <div class="lote-id">${a1.last_lote}</div>
+          <div class="lote-date">${dtStr.split(' ')[0]}</div>
+          <div class="lote-n">100</div>
+          <div class="lote-pills">
+            <span class="pill pill-ind">ind ✓</span>
+            <span class="pill pill-emp">emp ✓</span>
+            <span class="pill pill-dom">dom ✓</span>
+            <span class="pill pill-ok">${pct(a1.success_rate)} OK</span>
+          </div>
+        </div>
+        <div class="empty-row">Histórico completo en el Excel · ${a1.total_lotes} lotes · ${fmt(a1.total_processed)} empresas procesadas</div>`;
+    }
+
+    // ── Agent 2 ──────────────────────────────────────────
+    const bpsTotal = (a2.found_2bp * 2) + a2.found_1bp;
+    document.getElementById('a2-info').textContent =
+      `${fmt(a2.total_processed)} empresas procesadas · ${fmt(bpsTotal)} BPs encontrados · Próximo batch: L-V 4am`;
+    document.getElementById('a2-status-badge').textContent =
+      a2.total_processed > 0 ? `✓ ${fmt(a2.total_processed)} procesadas` : '● Activo · Corriendo';
+    document.getElementById('a2-universe').textContent = fmt(a2.universe_total);
+    document.getElementById('a2-processed').textContent = fmt(a2.total_processed);
+    document.getElementById('a2-found2-delta').textContent = `↑ ${fmt(a2.found_2bp)} con 2 BPs`;
+    document.getElementById('a2-found1-delta').textContent = `↑ ${fmt(a2.found_1bp)} con 1 BP`;
+    document.getElementById('a2-bps-total').textContent = fmt(bpsTotal);
+    document.getElementById('a2-notfound-delta').textContent = `× ${fmt(a2.not_found)} sin BP`;
+    document.getElementById('a2-progress-pct').textContent = pct(a2.progress_pct);
+
+    const total2 = Math.max(1, a2.total_processed);
+    document.getElementById('a2-stat-2bp').textContent = fmt(a2.found_2bp);
+    document.getElementById('a2-stat-2bp-contacts').textContent = fmt(a2.found_2bp * 2);
+    document.getElementById('a2-bar-2bp').style.width = Math.min(a2.found_2bp / total2 * 100, 100) + '%';
+    document.getElementById('a2-bar-2bp-pct').textContent = pct(a2.found_2bp / total2 * 100);
+
+    document.getElementById('a2-stat-1bp').textContent = fmt(a2.found_1bp);
+    document.getElementById('a2-stat-1bp-contacts').textContent = fmt(a2.found_1bp);
+    document.getElementById('a2-bar-1bp').style.width = Math.min(a2.found_1bp / total2 * 100, 100) + '%';
+    document.getElementById('a2-bar-1bp-pct').textContent = pct(a2.found_1bp / total2 * 100);
+
+    document.getElementById('a2-stat-nf').textContent = fmt(a2.not_found);
+    document.getElementById('a2-bar-nf').style.width = Math.min(a2.not_found / total2 * 100, 100) + '%';
+    document.getElementById('a2-bar-nf-pct').textContent = pct(a2.not_found / total2 * 100);
+
+    document.getElementById('a2-last-updated-sched').textContent = dtStr;
+    document.getElementById('a2-footer').textContent =
+      `Lead Ops · Sesame · Actualizado ${dtStr} · ${fmt(a2.universe_total)} empresas en universo A2 · ${fmt(bpsTotal)} BPs encontrados`;
 
   } catch(e) {
-    document.getElementById('last-updated').textContent = 'Error al cargar datos';
-    console.error(e);
+    console.error('Error cargando status.json:', e);
   }
 }
+</script>
 
-// ── Auth ──────────────────────────────────────────────────────
+<!-- ═══════════════ AUTH ═══════════════ -->
+<script>
 const PWD_HASH = '90b23b41735ec48675552f7396cb0804ed126d36b11da504088487baa6fb1c43';
 
 async function sha256(str) {
@@ -289,6 +595,7 @@ async function checkAuth() {
     sessionStorage.setItem('leadops_auth', '1');
     document.getElementById('auth-overlay').style.display = 'none';
     loadData();
+    setInterval(loadData, 60000);
   } else {
     document.getElementById('auth-error').style.display = 'block';
     document.getElementById('auth-pwd').value = '';
@@ -296,14 +603,229 @@ async function checkAuth() {
   }
 }
 
-// Auto-check si ya estaba autenticado en esta sesión
 if (sessionStorage.getItem('leadops_auth') === '1') {
   document.getElementById('auth-overlay').style.display = 'none';
   loadData();
   setInterval(loadData, 60000);
-} else {
-  document.getElementById('auth-pwd').focus();
 }
 </script>
+
+<!-- ═══════════════ POKEMON OFFICE ═══════════════ -->
+<script>
+function initPokemon() {
+const TS=18,COLS=52,ROWS=30,SCALE=2;
+const W=COLS*TS,H=ROWS*TS;
+const canvas=document.getElementById('poke-canvas');
+const wrap=document.getElementById('poke-wrap');
+canvas.width=W; canvas.height=H;
+canvas.style.width=W*SCALE+'px'; canvas.style.height=H*SCALE+'px';
+wrap.style.width=W*SCALE+'px'; wrap.style.height=H*SCALE+'px';
+const ctx=canvas.getContext('2d');
+
+const C={
+  WOOD:'#a07850',WOOD2:'#8a6840',WOOD3:'#b88a58',
+  CARPET:'#7a6858',CARPET2:'#6a5848',
+  TILE:'#d4c8b0',TILE2:'#c4b8a0',
+  WALL:'#c8b898',WALL2:'#b8a888',WALL_TOP:'#e8d8c0',WALL_DRK:'#9a8870',
+  DESK:'#7a5030',DESK2:'#6a4020',DESK3:'#8a6040',
+  SCREEN:'#1a2a3a',SCREEN2:'#0d1a28',SCREEN_ON:'#60c0ff',
+  CHAIR:'#2a50a0',CHAIR2:'#1a3a80',CHAIR_S:'#304870',
+  PLANT_POT:'#8a5030',PLANT:'#2a8040',PLANT2:'#1a6030',
+  SHELF:'#6a4828',BOOK_R:'#c04040',BOOK_B:'#4060a0',BOOK_G:'#408050',BOOK_Y:'#c0a030',
+  CONF_DESK:'#5a3820',CONF_DESK2:'#4a2810',
+  WB:'#f0f0e8',WB_FRAME:'#8a7060',PROJ:'#c8c0b0',PROJ_B:'#a0a0a8',
+  COUNTER:'#a08060',COUNTER2:'#c0a080',
+  COUCH:'#8a3020',COUCH2:'#702018',COUCH_C:'#4a1808',
+  FRIDGE:'#c0c8c0',FRIDGE2:'#a0a8a0',
+  COFFEE_M:'#3a3028',COFFEE2:'#5a5048',
+  VEND:'#1a2a4a',VEND2:'#2a3a5a',VEND_G:'#60ff80',
+  TABLE_R:'#8a6040',MICROWAVE:'#4a4840',
+  DIVIDER:'#6a5040',HALLWAY_F:'#b89870',
+  DOOR:'#8a6030',DOOR_IN:'#c8a870',
+  BASEBOARD:'#5a3a20',WINDOW:'#a0c8e8',WINDOW_F:'#6090b0',CURTAIN:'#c05040',
+};
+
+const AGENTS=[
+  {id:0,name:'Enrichment',icon:'🔬',color:'#34d399',hudId:'h0',hudClass:'hud-g',
+   x:6.5,y:4,dir:'down',state:'sit',deskX:5,deskY:3,deskDir:'down',
+   msgs:['Enriqueciendo leads…','LinkedIn ✓','HubSpot sync…','Found email!','Score: 87','Updating CRM…','100 done!'],
+   particles:[],lastParticle:0},
+  {id:1,name:'Buyer BP',icon:'👤',color:'#fbbf24',hudId:'h1',hudClass:'hud-y',
+   x:13.5,y:4,dir:'down',state:'sit',deskX:12,deskY:3,deskDir:'down',
+   msgs:['Scanning Apollo…','HR Director ✓','ICP match!','2 BPs found!','Importing…','Spain verified','Finance CFO ✓'],
+   particles:[],lastParticle:0},
+  {id:2,name:'Forecast',icon:'📊',color:'#60a5fa',hudId:'h2',hudClass:'hud-b',
+   x:6.5,y:14,dir:'up',state:'type',deskX:5,deskY:14,deskDir:'up',
+   msgs:['Forecast Q2…','Pipeline: €240k','Win rate: 34%','Trend ↑ +12%','Model training…','Accuracy: 91%','Report ready!'],
+   particles:[],lastParticle:0},
+  {id:3,name:'Lost Deals',icon:'🔍',color:'#f87171',hudId:'h3',hudClass:'hud-r',
+   x:13.5,y:14,dir:'up',state:'type',deskX:12,deskY:14,deskDir:'up',
+   msgs:['Analyzing lost…','12 deals/month','Reason: Price 40%','Churned: 3','Re-engage list…','Win-back email!','Alert sent!'],
+   particles:[],lastParticle:0},
+];
+
+AGENTS.forEach(ag=>{
+  const el=document.createElement('div');
+  el.className='bub'; el.style.opacity='0';
+  wrap.appendChild(el);
+  ag.bubEl=el; ag.msgTimer=80+ag.id*60; ag.msgIdx=0;
+});
+
+function getBreakRoute(ag){
+  const hx=21.5,bx=40+(Math.random()*8|0),by2=5+(Math.random()*18|0);
+  return [{x:hx,y:ag.deskY},{x:hx,y:15},{x:bx,y:by2},{x:hx,y:15},{x:hx,y:ag.deskY},{x:ag.deskX+1.5,y:ag.deskY}];
+}
+function getMeetingRoute(ag){
+  const hx=21.5,mx=26+(Math.random()*6|0),my=5+(Math.random()*8|0);
+  return [{x:hx,y:ag.deskY},{x:hx,y:7},{x:mx,y:my},{x:hx,y:7},{x:hx,y:ag.deskY},{x:ag.deskX+1.5,y:ag.deskY}];
+}
+AGENTS.forEach((ag,i)=>{ag.walking=false;ag.route=[];ag.routeIdx=0;ag.walkTimer=300+i*150;ag.speed=0.035+Math.random()*0.01;});
+
+const SERVER={x:2,y:5};
+function spawnParticle(ag){ag.particles.push({x:ag.x*TS,y:ag.y*TS,tx:SERVER.x*TS,ty:SERVER.y*TS,t:0,life:80+Math.random()*40,color:ag.color,size:2});}
+function updateParticles(ag){
+  ag.particles=ag.particles.filter(p=>p.t<p.life);
+  ag.particles.forEach(p=>{p.t++;const r=p.t/p.life;p.cx=p.x+(p.tx-p.x)*r;p.cy=p.y+(p.ty-p.y)*r;p.alpha=Math.sin(r*Math.PI);});
+  const now=Date.now();
+  if((ag.state==='sit'||ag.state==='type')&&now-ag.lastParticle>1800){spawnParticle(ag);ag.lastParticle=now;}
+}
+
+let animTick=0;
+function drawAgent(ag){
+  const cpx=ag.x*TS,cpy=ag.y*TS,f=Math.floor(animTick/8)%2,s=ag.state,d=ag.dir;
+  ctx.fillStyle='rgba(0,0,0,0.22)';ctx.beginPath();ctx.ellipse(cpx,cpy+10,7,3,0,0,Math.PI*2);ctx.fill();
+  ctx.save();ctx.translate(cpx-8,cpy-18);
+  const skin='#f5c5a0',hair=['#3a2010','#1a1a2a','#c08020','#a03018'][ag.id];
+  ctx.fillStyle=skin;ctx.fillRect(4,1,9,9);
+  ctx.fillStyle=hair;ctx.fillRect(4,0,9,4);ctx.fillRect(3,1,2,6);ctx.fillRect(12,1,2,6);
+  if(d==='down'){ctx.fillStyle='#fff';ctx.fillRect(5,5,3,3);ctx.fillRect(9,5,3,3);ctx.fillStyle='#1a1020';ctx.fillRect(6,6,2,2);ctx.fillRect(10,6,2,2);ctx.fillStyle='#fff';ctx.fillRect(7,6,1,1);ctx.fillRect(11,6,1,1);ctx.fillStyle='#b06050';ctx.fillRect(6,9,5,1);}
+  else if(d==='up'){ctx.fillStyle=hair;ctx.fillRect(4,0,9,8);}
+  else if(d==='left'){ctx.fillStyle='#1a1020';ctx.fillRect(4,5,2,2);ctx.fillStyle=hair;ctx.fillRect(3,0,5,6);}
+  else{ctx.fillStyle='#1a1020';ctx.fillRect(11,5,2,2);ctx.fillStyle=hair;ctx.fillRect(9,0,5,6);}
+  if(ag.id===0){ctx.fillStyle=ag.color;ctx.fillRect(3,-2,11,3);ctx.fillRect(2,0,13,1);}
+  else if(ag.id===1){ctx.fillStyle=ag.color;ctx.fillRect(4,1,9,2);}
+  else if(ag.id===2&&d==='down'){ctx.fillStyle='#3a3030';ctx.fillRect(4,5,4,3);ctx.fillRect(9,5,4,3);ctx.fillRect(8,6,2,1);ctx.fillStyle='rgba(100,180,255,0.35)';ctx.fillRect(5,5,3,3);ctx.fillRect(10,5,3,3);}
+  const by=10;
+  ctx.fillStyle='#f0f0f0';ctx.fillRect(3,by,11,9);
+  ctx.fillStyle=ag.color;ctx.fillRect(3,by,3,9);ctx.fillRect(11,by,3,9);
+  ctx.fillStyle='#e8e8e8';ctx.fillRect(5,by,7,3);
+  ctx.fillStyle=ag.color;
+  if(s==='type'){ctx.fillRect(0,by+1,3,5);ctx.fillRect(14,by+1,3,5);ctx.fillStyle=skin;ctx.fillRect(0,by+6,3,3);ctx.fillRect(14,by+6,3,3);}
+  else if(s==='sit'){ctx.fillRect(0,by+2,3,6);ctx.fillRect(14,by+2,3,6);ctx.fillStyle=skin;ctx.fillRect(0,by+8,3,2);ctx.fillRect(14,by+8,3,2);}
+  else{const sw=f===0?2:-2;ctx.fillRect(0,by+sw+2,3,6);ctx.fillRect(14,by-sw+2,3,6);ctx.fillStyle=skin;ctx.fillRect(0,by+sw+8,3,2);ctx.fillRect(14,by-sw+8,3,2);}
+  ctx.fillStyle='#2a3850';const ly=by+9;
+  if(s==='walk'){const lk=f===0?2:-2;ctx.fillRect(4,ly,3,7+lk);ctx.fillRect(9,ly,3,7-lk);}
+  else{ctx.fillRect(4,ly,3,7);ctx.fillRect(9,ly,3,7);}
+  ctx.fillStyle='#151008';ctx.fillRect(3,ly+7,4,2);ctx.fillRect(9,ly+7,4,2);
+  ctx.restore();
+}
+
+function drawDesk(col,row,facing){
+  const dx=col*TS,dy=row*TS,dw=3*TS,dh=2*TS;
+  ctx.fillStyle=C.DESK;ctx.fillRect(dx,dy,dw,dh);
+  ctx.fillStyle=C.DESK3;ctx.fillRect(dx+2,dy+2,dw-4,dh-4);
+  ctx.fillStyle=C.DESK2;ctx.fillRect(dx,dy+dh-3,dw,3);
+  const mw=2*TS+2,mh=TS+2,mx=dx+TS/2-1,my=facing==='down'?dy+1:dy+dh-mh-1;
+  ctx.fillStyle='#1a2030';ctx.fillRect(mx,my,mw,mh);
+  const sw=mw-6,sh=mh-6,sx=mx+3,sy=my+3;
+  ctx.fillStyle='#0a1420';ctx.fillRect(sx,sy,sw,sh);
+  const barColors=['#c04040','#c09020','#40a040','#2060c0','#8040b0'];
+  ctx.fillStyle='#2a3a4a';ctx.fillRect(sx,sy,sw,5);
+  barColors.forEach((bc,i)=>{ctx.fillStyle=bc;ctx.fillRect(sx+2+i*((sw-4)/5),sy+1,(sw-8)/5,3);});
+  const lineW=[sw-6,sw-14,sw-8,sw-18,sw-10],lineC=['#34d399','#60a5fa','#fbbf24','#34d399','#f87171'];
+  lineW.forEach((lw,i)=>{ctx.fillStyle=lineC[i];ctx.globalAlpha=0.75;ctx.fillRect(sx+2,sy+7+i*((sh-8)/5),lw,1);});
+  ctx.globalAlpha=1;
+  if(Math.floor(animTick/20)%2===0){ctx.fillStyle='rgba(255,255,255,0.85)';ctx.fillRect(sx+2,sy+sh-3,3,2);}
+  const ky=facing==='down'?dy+dh-8:dy+3;
+  ctx.fillStyle='#c0b8a8';ctx.fillRect(dx+5,ky,dw-10,6);
+  ctx.fillStyle='#a8a098';ctx.fillRect(dx+6,ky+1,dw-12,4);
+  ctx.fillStyle='#f4f0e0';ctx.fillRect(dx+2,dy+3,7,8);
+  ctx.fillStyle='#c8c0b0';ctx.fillRect(dx+3,dy+5,5,1);ctx.fillRect(dx+3,dy+7,5,1);ctx.fillRect(dx+3,dy+9,3,1);
+  ctx.fillStyle='#202830';ctx.fillRect(mx+mw/2-3,my+mh,6,4);ctx.fillRect(mx+mw/2-6,my+mh+3,12,2);
+  const chY=facing==='down'?(row+2)*TS:(row-1)*TS,chX=dx+TS-4;
+  ctx.fillStyle=C.CHAIR2;ctx.fillRect(chX,chY,TS+4,TS/2);
+  ctx.fillStyle=C.CHAIR;ctx.fillRect(chX+2,chY+1,TS,TS/2-2);
+  ctx.fillStyle=C.CHAIR;ctx.fillRect(chX,chY+TS/2,TS+4,TS/2);
+  ctx.fillStyle=C.CHAIR2;ctx.fillRect(chX+2,chY+TS/2+1,TS,TS/2-2);
+  ctx.fillStyle='#1a2040';ctx.fillRect(chX+2,chY+TS,3,4);ctx.fillRect(chX+TS-1,chY+TS,3,4);
+}
+
+function rect(x,y,w,h,color){ctx.fillStyle=color;ctx.fillRect(x*TS,y*TS,w*TS,h*TS);}
+function px(x,y,w,h,color){ctx.fillStyle=color;ctx.fillRect(x,y,w,h);}
+function drawPlant(col,row){px(col*TS+4,row*TS+7,TS-8,TS-7,C.PLANT_POT);ctx.fillStyle=C.PLANT;ctx.beginPath();ctx.arc(col*TS+TS/2,row*TS+4,6,0,Math.PI*2);ctx.fill();ctx.fillStyle=C.PLANT2;ctx.beginPath();ctx.arc(col*TS+TS/2-4,row*TS+6,4,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(col*TS+TS/2+4,row*TS+6,4,0,Math.PI*2);ctx.fill();}
+function drawShelf(col,row,h){px(col*TS,row*TS,2*TS,h*TS,C.SHELF);[C.BOOK_R,C.BOOK_B,C.BOOK_G,C.BOOK_Y,C.BOOK_R,C.BOOK_B,C.BOOK_G].forEach((c,i)=>{px(col*TS+2+i*5,row*TS+3,4,(h*TS)-8,c);});for(let i=1;i<h;i++)px(col*TS,(row+i)*TS-2,2*TS,3,C.DESK2);}
+function drawDoor(col,row){px(col*TS-2,row*TS,4,2*TS,C.DOOR);px(col*TS-1,row*TS+2,2,2*TS-4,C.DOOR_IN);ctx.fillStyle='#d4a030';ctx.beginPath();ctx.arc(col*TS,(row+1)*TS,3,0,Math.PI*2);ctx.fill();}
+function drawConferenceTable(col,row){ctx.fillStyle=C.CONF_DESK;ctx.beginPath();ctx.ellipse((col+3.5)*TS,(row+2)*TS,4*TS,2*TS,0,0,Math.PI*2);ctx.fill();ctx.fillStyle=C.CONF_DESK2;ctx.beginPath();ctx.ellipse((col+3.5)*TS,(row+2)*TS,3.5*TS,1.6*TS,0,0,Math.PI*2);ctx.fill();}
+function drawWhiteboard(col,row){px(col*TS,row*TS,4*TS,3*TS,C.WB_FRAME);px(col*TS+3,row*TS+3,4*TS-6,3*TS-6,C.WB);ctx.strokeStyle='#6090c0';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(col*TS+8,row*TS+14);ctx.lineTo(col*TS+20,row*TS+10);ctx.lineTo(col*TS+38,row*TS+18);ctx.stroke();ctx.strokeStyle='#c04040';ctx.beginPath();ctx.moveTo(col*TS+10,row*TS+26);ctx.lineTo(col*TS+52,row*TS+26);ctx.stroke();px(col*TS,row*TS+3*TS-4,4*TS,4,C.WB_FRAME);}
+function drawProjectorScreen(col,row){px(col*TS,row*TS,3*TS,TS/2,C.PROJ_B);px(col*TS+4,row*TS+TS/2,3*TS-8,3*TS,C.PROJ);px(col*TS+6,row*TS+TS/2+4,3*TS-12,8,'#4080c0');}
+function drawCounter(col,row,width){px(col*TS,row*TS,width*TS,2*TS,C.COUNTER);px(col*TS,row*TS,width*TS,4,C.COUNTER2);px(col*TS,(row+2)*TS-4,width*TS,4,C.DESK2);}
+function drawCoffeeMachine(col,row){px(col*TS+2,row*TS,TS+2,TS+4,C.COFFEE_M);px(col*TS+3,row*TS+2,TS-4,TS-6,C.COFFEE2);ctx.fillStyle='#ff6030';ctx.beginPath();ctx.arc(col*TS+TS/2+2,row*TS+TS-2,3,0,Math.PI*2);ctx.fill();}
+function drawFridge(col,row){px(col*TS,row*TS,2*TS,5*TS,C.FRIDGE);px(col*TS+2,row*TS+2,2*TS-4,5*TS-4,C.FRIDGE2);px(col*TS+2,row*TS+2*TS,2*TS-4,2,'#a0a8a0');}
+function drawVending(col,row){px(col*TS,row*TS,2*TS,6*TS,C.VEND);px(col*TS+2,row*TS+2,2*TS-4,4*TS,'#0a1828');['#ff4060','#ffa030','#60ff80','#4080ff','#ff80c0','#ffff40','#40e0ff','#ff8040'].forEach((c,i)=>{ctx.fillStyle=c;ctx.fillRect(col*TS+4+(i%2)*14,row*TS+4+Math.floor(i/2)*16,10,12);});}
+function drawWaterCooler(col,row){px(col*TS+4,(row+1)*TS,TS-2,3*TS,'#d0d8e0');px(col*TS+5,row*TS+2,TS-4,TS,'#6090d0');}
+function drawCouch(col,row,width){px(col*TS,row*TS,width*TS,TS,C.COUCH2);px(col*TS,(row+1)*TS,width*TS,TS,C.COUCH);px(col*TS,row*TS,TS/2,2*TS,C.COUCH_C);px((col+width)*TS-TS/2,row*TS,TS/2,2*TS,C.COUCH_C);}
+function drawRoundTable(col,row){ctx.fillStyle=C.TABLE_R;ctx.beginPath();ctx.arc((col+1)*TS,(row+1)*TS,TS,0,Math.PI*2);ctx.fill();ctx.fillStyle=C.DESK3;ctx.beginPath();ctx.arc((col+1)*TS,(row+1)*TS,TS-4,0,Math.PI*2);ctx.fill();}
+
+function drawMap(){
+  ctx.fillStyle=C.WALL2;ctx.fillRect(0,0,W,H);
+  for(let r=1;r<ROWS-1;r++)for(let c=0;c<20;c++)rect(c,r,1,1,(r+c)%2===0?C.WOOD:C.WOOD2);
+  rect(0,0,20,1,C.WALL_TOP);rect(0,0,20,0.18,C.BASEBOARD);
+  px(0,3*TS,6,6*TS,C.WALL);px(1,4*TS,4,7*TS,C.WINDOW_F);px(2,4*TS+4,2,6*TS-8,C.WINDOW);px(1,4*TS,1,7*TS,C.CURTAIN);px(4,4*TS,1,7*TS,C.CURTAIN);
+  px(1,14*TS,4,5*TS,C.WINDOW_F);px(2,14*TS+4,2,4*TS,C.WINDOW);px(1,14*TS,1,5*TS,C.CURTAIN);px(4,14*TS,1,5*TS,C.CURTAIN);
+  px(1*TS,2*TS,3*TS,4*TS,C.DESK2);px(1*TS+2,2*TS+2,3*TS-4,4*TS-4,'#1a2030');
+  for(let i=0;i<6;i++){ctx.fillStyle=i%2===0?'#00ff80':'#ff4040';ctx.fillRect(1*TS+4,2*TS+4+i*9,4,4);}
+  ctx.fillStyle='#80c0ff';ctx.font='bold 6px Courier New';ctx.fillText('HubSpot',1*TS+1,2*TS-2);
+  drawDesk(5,3,'down'); drawDesk(12,3,'down');
+  drawDesk(5,14,'up');  drawDesk(12,14,'up');
+  drawPlant(17,2);drawPlant(17,ROWS-4);drawShelf(0,19,3);
+  for(let r=1;r<ROWS-1;r++)for(let c=20;c<24;c++)rect(c,r,1,1,C.HALLWAY_F);
+  rect(20,0,4,1,C.WALL_TOP);px(20*TS,0,3,H,C.DIVIDER);px(24*TS-3,0,3,H,C.DIVIDER);
+  drawDoor(20,8);drawDoor(20,19);drawDoor(24,7);drawDoor(24,19);drawPlant(21,14);
+  for(let r=1;r<ROWS-1;r++)for(let c=24;c<36;c++)rect(c,r,1,1,(r+c)%2===0?C.CARPET:C.CARPET2);
+  rect(24,0,12,1,C.WALL_TOP);drawConferenceTable(26,9);drawWhiteboard(24,3);drawProjectorScreen(32,3);drawPlant(34,2);drawPlant(24,ROWS-4);
+  for(let r=1;r<ROWS-1;r++)for(let c=36;c<COLS;c++)rect(c,r,1,1,(r+c)%2===0?C.TILE:C.TILE2);
+  rect(36,0,COLS-36,1,C.WALL_TOP);px(36*TS,0,3,H,C.DIVIDER);
+  drawCounter(37,2,10);drawCoffeeMachine(37,4);drawCoffeeMachine(39,4);
+  drawFridge(46,2);drawVending(48,2);drawWaterCooler(48,10);
+  drawCouch(37,20,6);drawRoundTable(38,13);drawRoundTable(44,13);drawRoundTable(41,22);
+  drawPlant(48,ROWS-4);drawPlant(36,ROWS-4);
+}
+
+function drawParticles(){
+  AGENTS.forEach(ag=>{ag.particles.forEach(p=>{ctx.globalAlpha=p.alpha*0.85;ctx.fillStyle=p.color;ctx.beginPath();ctx.arc(p.cx,p.cy,p.size,0,Math.PI*2);ctx.fill();ctx.globalAlpha=p.alpha*0.25;ctx.beginPath();ctx.arc(p.cx-(p.tx-p.x)*0.05,p.cy-(p.ty-p.y)*0.05,p.size*1.5,0,Math.PI*2);ctx.fill();});});
+  ctx.globalAlpha=1;
+}
+
+const SL={sit:'working',type:'typing',walk:'walking',idle:'idle'};
+function updateHUD(){AGENTS.forEach(ag=>{document.getElementById(ag.hudId).innerHTML=`<span class="${ag.hudClass}">${ag.icon} ${ag.name}</span> <span style="color:#888">${SL[ag.state]||ag.state}</span>`;});}
+function updateBubbles(){
+  AGENTS.forEach(ag=>{
+    ag.msgTimer--;
+    if(ag.msgTimer<=0){
+      ag.msgTimer=200+Math.random()*300|0;
+      const msg=ag.msgs[ag.msgIdx%ag.msgs.length];ag.msgIdx++;
+      const bx=ag.x*TS*SCALE-40,by2=(ag.y-1.5)*TS*SCALE-20;
+      ag.bubEl.textContent=msg;ag.bubEl.style.left=bx+'px';ag.bubEl.style.top=by2+'px';
+      ag.bubEl.style.opacity='1';setTimeout(()=>{ag.bubEl.style.opacity='0';},2800);
+    }
+  });
+}
+function startWalk(ag){ag.walking=true;ag.state='walk';ag.route=Math.random()<0.6?getBreakRoute(ag):getMeetingRoute(ag);ag.routeIdx=0;}
+function tickWalk(ag){
+  if(!ag.walking){if(--ag.walkTimer<=0){ag.walkTimer=350+Math.random()*500|0;startWalk(ag);}return;}
+  const wp=ag.route[ag.routeIdx],dx=wp.x-ag.x,dy=wp.y-ag.y,dist=Math.sqrt(dx*dx+dy*dy);
+  if(dist<ag.speed+0.01){ag.x=wp.x;ag.y=wp.y;ag.routeIdx++;if(ag.routeIdx>=ag.route.length){ag.walking=false;ag.walkTimer=300+Math.random()*400|0;ag.dir=ag.deskDir;ag.state=ag.deskDir==='down'?'sit':'type';ag.x=ag.deskX+1.5;ag.y=ag.deskY;}}
+  else{ag.x+=dx/dist*ag.speed;ag.y+=dy/dist*ag.speed;ag.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up');ag.state='walk';}
+}
+function loop(){
+  ctx.clearRect(0,0,W,H);drawMap();drawParticles();
+  const sorted=[...AGENTS].sort((a,b)=>a.y-b.y);
+  sorted.forEach(ag=>{updateParticles(ag);tickWalk(ag);drawAgent(ag);});
+  updateBubbles();updateHUD();animTick++;requestAnimationFrame(loop);
+}
+loop();
+} // end initPokemon
+</script>
+
 </body>
 </html>
