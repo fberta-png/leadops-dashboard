@@ -233,54 +233,66 @@
       <div class="uni-sub">Total Spain · Not Customer</div>
     </div>
     <div class="uni-card">
-      <div class="uni-label">Procesadas</div>
-      <div class="uni-value col-orange" id="a1-processed">—</div>
-      <div class="uni-sub">Empresas enriquecidas total</div>
+      <div class="uni-label">Sin [NEW] Industry</div>
+      <div class="uni-value col-orange" id="a1-sin-industry">—</div>
+      <div class="uni-sub">Campo más crítico · ICP</div>
       <div class="uni-deltas">
-        <span class="delta up" id="a1-enriched-delta">—</span>
-        <span class="delta down" id="a1-skipped-delta">—</span>
+        <span class="delta up" id="a1-industry-conf">—</span>
+        <span class="delta down" id="a1-industry-desc">× 0 descartadas</span>
       </div>
     </div>
     <div class="uni-card">
-      <div class="uni-label">Tasa de Éxito</div>
-      <div class="uni-value col-yellow" id="a1-success-rate">—</div>
-      <div class="uni-sub">Enriquecidas vs. procesadas</div>
+      <div class="uni-label">Sin Nº Empleados</div>
+      <div class="uni-value col-yellow" id="a1-sin-emp">—</div>
+      <div class="uni-sub">Clave para clasificar Tier</div>
       <div class="uni-deltas">
-        <span class="delta up" id="a1-lotes-delta">—</span>
+        <span class="delta up" id="a1-emp-conf">—</span>
+        <span class="delta down" id="a1-emp-desc">× 0 descartadas</span>
       </div>
     </div>
     <div class="uni-card">
-      <div class="uni-label">Progreso Universo</div>
-      <div class="uni-value col-cyan" id="a1-progress-pct">—</div>
-      <div class="uni-sub">Del total de empresas</div>
+      <div class="uni-label">Sin Website / Domain</div>
+      <div class="uni-value col-cyan" id="a1-sin-domain">—</div>
+      <div class="uni-sub">Cualificación básica</div>
       <div class="uni-deltas">
-        <span class="delta up">L-V 3:00am</span>
+        <span class="delta up" id="a1-domain-conf">—</span>
+        <span class="delta down" id="a1-domain-desc">× 0 descartadas</span>
       </div>
     </div>
   </div>
 
-  <div class="section-label">Progreso General</div>
+  <div class="section-label">Progreso General · Por Campo</div>
   <div class="progress-section">
     <div class="prog-card">
       <div class="prog-row">
-        <div class="prog-icon">✅</div>
-        <div class="prog-label-wrap"><div class="prog-label">Empresas Enriquecidas</div><div class="prog-total" id="a1-enriched-subtitle">—</div></div>
-        <div class="prog-bar-wrap"><div class="prog-fill green" id="a1-bar-enriched" style="width:0%"></div></div>
+        <div class="prog-icon">🏭</div>
+        <div class="prog-label-wrap"><div class="prog-label">[NEW] Industry</div><div class="prog-total" id="a1-industry-sub">—</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill green" id="a1-bar-industry" style="width:0%"></div></div>
         <div class="prog-stats">
-          <div class="prog-stat"><div class="val val-green" id="a1-stat-enriched">—</div><div class="lbl">OK</div></div>
-          <div class="prog-stat"><div class="val val-red" id="a1-stat-skipped">—</div><div class="lbl">Skip</div></div>
+          <div class="prog-stat"><div class="val val-green" id="a1-stat-industry-conf">—</div><div class="lbl">conf.</div></div>
+          <div class="prog-stat"><div class="val val-red">0</div><div class="lbl">desc.</div></div>
         </div>
-        <div class="prog-pct" id="a1-bar-enriched-pct">—</div>
+        <div class="prog-pct" id="a1-bar-industry-pct">—</div>
       </div>
       <div class="prog-row">
-        <div class="prog-icon">📦</div>
-        <div class="prog-label-wrap"><div class="prog-label">Lotes Completados</div><div class="prog-total" id="a1-lotes-subtitle">—</div></div>
-        <div class="prog-bar-wrap"><div class="prog-fill" id="a1-bar-lotes" style="width:0%"></div></div>
+        <div class="prog-icon">👥</div>
+        <div class="prog-label-wrap"><div class="prog-label">Nº Empleados</div><div class="prog-total" id="a1-emp-sub">—</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill" id="a1-bar-emp" style="width:0%"></div></div>
         <div class="prog-stats">
-          <div class="prog-stat"><div class="val val-green" id="a1-stat-lotes">—</div><div class="lbl">lotes</div></div>
-          <div class="prog-stat"><div class="val val-muted">100</div><div class="lbl">emp/run</div></div>
+          <div class="prog-stat"><div class="val val-green" id="a1-stat-emp-conf">—</div><div class="lbl">conf.</div></div>
+          <div class="prog-stat"><div class="val val-red">0</div><div class="lbl">desc.</div></div>
         </div>
-        <div class="prog-pct" id="a1-bar-lotes-pct">—</div>
+        <div class="prog-pct" id="a1-bar-emp-pct">—</div>
+      </div>
+      <div class="prog-row">
+        <div class="prog-icon">🌐</div>
+        <div class="prog-label-wrap"><div class="prog-label">Website / Domain</div><div class="prog-total" id="a1-domain-sub">—</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,var(--cyan),#67e8f9)" id="a1-bar-domain" style="width:0%"></div></div>
+        <div class="prog-stats">
+          <div class="prog-stat"><div class="val val-green" id="a1-stat-domain-conf">—</div><div class="lbl">conf.</div></div>
+          <div class="prog-stat"><div class="val val-red">0</div><div class="lbl">desc.</div></div>
+        </div>
+        <div class="prog-pct" id="a1-bar-domain-pct">—</div>
       </div>
     </div>
   </div>
@@ -494,28 +506,44 @@ async function loadData() {
     const dtStr = dt.toLocaleDateString('es-ES') + ' ' + dt.toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
 
     // ── Agent 1 ──────────────────────────────────────────
+    // Baseline universe numbers (known from HubSpot export)
+    const U_INDUSTRY = 25839, U_EMP = 53883, U_DOMAIN = 45673;
+    const enriched = a1.total_enriched;
+
     document.getElementById('a1-info').textContent =
-      `${a1.last_lote || '—'} completado · ${fmt(a1.total_enriched)} enriched · ${fmt(a1.total_skipped)} skipped · Próximo lote: L-V 3am`;
+      `${a1.last_lote || '—'} completado · ${fmt(enriched)} enriched · ${fmt(a1.total_skipped)} skipped · Próximo lote: L-V 3am`;
     document.getElementById('a1-lote-badge').textContent = `✓ LOTE #${a1.total_lotes} OK`;
     document.getElementById('a1-universe').textContent = fmt(a1.universe_total);
-    document.getElementById('a1-processed').textContent = fmt(a1.total_processed);
-    document.getElementById('a1-enriched-delta').textContent = `↑ ${fmt(a1.total_enriched)} enriquecidas`;
-    document.getElementById('a1-skipped-delta').textContent = `× ${fmt(a1.total_skipped)} skipped`;
-    document.getElementById('a1-success-rate').textContent = pct(a1.success_rate);
-    document.getElementById('a1-lotes-delta').textContent = `${a1.total_lotes} lotes completados`;
-    document.getElementById('a1-progress-pct').textContent = pct(a1.progress_pct);
 
-    const enrichedPct = a1.universe_total > 0 ? (a1.total_enriched / a1.universe_total * 100) : 0;
-    document.getElementById('a1-enriched-subtitle').textContent = `${fmt(a1.total_enriched)} de ${fmt(a1.universe_total)}`;
-    document.getElementById('a1-bar-enriched').style.width = Math.min(enrichedPct * 3, 100) + '%';
-    document.getElementById('a1-stat-enriched').textContent = fmt(a1.total_enriched);
-    document.getElementById('a1-stat-skipped').textContent = fmt(a1.total_skipped);
-    document.getElementById('a1-bar-enriched-pct').textContent = pct(enrichedPct);
+    // Per-field cards: "sin cubrir" = baseline - enriched (min 0)
+    const sinInd = Math.max(0, U_INDUSTRY - enriched);
+    const sinEmp = Math.max(0, U_EMP - enriched);
+    const sinDom = Math.max(0, U_DOMAIN - enriched);
+    document.getElementById('a1-sin-industry').textContent = fmt(sinInd);
+    document.getElementById('a1-sin-emp').textContent = fmt(sinEmp);
+    document.getElementById('a1-sin-domain').textContent = fmt(sinDom);
+    document.getElementById('a1-industry-conf').textContent = `↑ ${fmt(Math.min(enriched, U_INDUSTRY))} confirmadas`;
+    document.getElementById('a1-emp-conf').textContent = `↑ ${fmt(Math.min(enriched, U_EMP))} confirmadas`;
+    document.getElementById('a1-domain-conf').textContent = `↑ ${fmt(Math.min(enriched, U_DOMAIN))} confirmadas`;
 
-    document.getElementById('a1-lotes-subtitle').textContent = `${a1.total_lotes} lotes · 100 empresas/run`;
-    document.getElementById('a1-bar-lotes').style.width = Math.min(a1.total_lotes * 2, 100) + '%';
-    document.getElementById('a1-stat-lotes').textContent = a1.total_lotes;
-    document.getElementById('a1-bar-lotes-pct').textContent = a1.total_lotes + ' lotes';
+    // Progress bars per field
+    const indPct  = Math.min(enriched / U_INDUSTRY * 100, 100);
+    const empPct  = Math.min(enriched / U_EMP * 100, 100);
+    const domPct  = Math.min(enriched / U_DOMAIN * 100, 100);
+    document.getElementById('a1-industry-sub').textContent = `(${fmt(sinInd)} sin cubrir)`;
+    document.getElementById('a1-bar-industry').style.width = indPct.toFixed(2) + '%';
+    document.getElementById('a1-stat-industry-conf').textContent = fmt(Math.min(enriched, U_INDUSTRY));
+    document.getElementById('a1-bar-industry-pct').textContent = indPct.toFixed(2) + '%';
+
+    document.getElementById('a1-emp-sub').textContent = `(${fmt(sinEmp)} sin cubrir)`;
+    document.getElementById('a1-bar-emp').style.width = empPct.toFixed(2) + '%';
+    document.getElementById('a1-stat-emp-conf').textContent = fmt(Math.min(enriched, U_EMP));
+    document.getElementById('a1-bar-emp-pct').textContent = empPct.toFixed(2) + '%';
+
+    document.getElementById('a1-domain-sub').textContent = `(${fmt(sinDom)} sin cubrir)`;
+    document.getElementById('a1-bar-domain').style.width = domPct.toFixed(2) + '%';
+    document.getElementById('a1-stat-domain-conf').textContent = fmt(Math.min(enriched, U_DOMAIN));
+    document.getElementById('a1-bar-domain-pct').textContent = domPct.toFixed(2) + '%';
 
     document.getElementById('a1-last-lote-sched').textContent = a1.last_lote || '—';
     document.getElementById('a1-last-updated-sched').textContent = dtStr;
