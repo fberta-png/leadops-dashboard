@@ -170,6 +170,69 @@
   .rl:last-child { border-right:none; }
 
   .footer { font-size:10px; color:var(--muted); text-align:center; padding:20px; border-top:1px solid var(--border); margin-top:8px; }
+
+  /* ── AGENT CHAT PANEL ── */
+  #chat-panel {
+    position:fixed; top:52px; right:0; bottom:0; width:360px;
+    background:#111827; border-left:1px solid var(--border2);
+    display:flex; flex-direction:column; z-index:500;
+    transform:translateX(100%); transition:transform 0.25s ease;
+    box-shadow:-8px 0 32px rgba(0,0,0,0.5);
+  }
+  #chat-panel.open { transform:translateX(0); }
+  .chat-header {
+    padding:16px 20px; border-bottom:1px solid var(--border);
+    display:flex; align-items:center; justify-content:space-between;
+    background:#161b27;
+  }
+  .chat-agent-info { display:flex; align-items:center; gap:12px; }
+  .chat-avatar { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; }
+  .chat-agent-name { font-size:14px; font-weight:700; color:#f0f6fc; }
+  .chat-agent-sub  { font-size:11px; color:var(--muted2); margin-top:1px; }
+  .chat-close { background:none; border:none; color:var(--muted2); cursor:pointer; font-size:20px; line-height:1; padding:4px; }
+  .chat-close:hover { color:#f0f6fc; }
+  .chat-messages {
+    flex:1; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:10px;
+  }
+  .chat-messages::-webkit-scrollbar { width:4px; }
+  .chat-messages::-webkit-scrollbar-thumb { background:var(--border2); border-radius:2px; }
+  .msg { max-width:88%; padding:10px 14px; border-radius:12px; font-size:13px; line-height:1.6; white-space:pre-wrap; }
+  .msg.agent { background:var(--panel2); color:#e2e8f0; align-self:flex-start; border-bottom-left-radius:4px; }
+  .msg.user  { background:#1f3a6e; color:#c8dcff; align-self:flex-end; border-bottom-right-radius:4px; }
+  .chat-hint { font-size:11px; color:var(--muted); text-align:center; padding:4px 0 8px; }
+  .chat-input-wrap {
+    padding:12px 16px; border-top:1px solid var(--border); display:flex; gap:8px; background:#161b27;
+  }
+  .chat-input {
+    flex:1; background:var(--panel2); border:1px solid var(--border2); border-radius:8px;
+    padding:9px 14px; color:#e2e8f0; font-size:13px; outline:none;
+  }
+  .chat-input:focus { border-color:var(--blue); }
+  .chat-send {
+    background:var(--blue); border:none; border-radius:8px; padding:9px 14px;
+    color:#fff; font-size:13px; cursor:pointer; font-weight:600;
+  }
+  .chat-send:hover { background:#388bfd; }
+  .chat-tip {
+    font-size:10px; color:var(--muted2); padding:0 16px 10px;
+    display:flex; flex-wrap:wrap; gap:6px;
+  }
+  .chip {
+    background:var(--panel2); border:1px solid var(--border2); border-radius:12px;
+    padding:3px 10px; font-size:11px; color:var(--muted2); cursor:pointer;
+    transition:all 0.15s;
+  }
+  .chip:hover { border-color:var(--blue); color:var(--blue); }
+
+  /* click hint on canvas */
+  #click-hint {
+    position:absolute; bottom:30px; left:50%; transform:translateX(-50%);
+    background:rgba(20,10,3,0.85); border:1px solid #5a3a18;
+    color:#c8a870; font-size:10px; font-family:'Courier New',monospace;
+    padding:4px 12px; border-radius:4px; pointer-events:none;
+    animation:fadeHint 3s ease forwards;
+  }
+  @keyframes fadeHint { 0%{opacity:0} 10%{opacity:1} 70%{opacity:1} 100%{opacity:0} }
 </style>
 </head>
 <body>
@@ -206,6 +269,26 @@
     <span id="nav-status-text">2 agentes activos</span>
   </div>
 </nav>
+
+<!-- ═══════════════ AGENT CHAT PANEL ═══════════════ -->
+<div id="chat-panel">
+  <div class="chat-header">
+    <div class="chat-agent-info">
+      <div class="chat-avatar" id="chat-avatar">🔬</div>
+      <div>
+        <div class="chat-agent-name" id="chat-name">Agent</div>
+        <div class="chat-agent-sub" id="chat-sub">—</div>
+      </div>
+    </div>
+    <button class="chat-close" onclick="closeChat()">✕</button>
+  </div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-tip" id="chat-chips"></div>
+  <div class="chat-input-wrap">
+    <input class="chat-input" id="chat-input" placeholder="Pregunta algo..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button class="chat-send" onclick="sendChat()">→</button>
+  </div>
+</div>
 
 <!-- ═══════════════ TAB: DATA ENRICHMENT ═══════════════ -->
 <div id="tab-enrichment" class="tab-panel active">
@@ -607,6 +690,125 @@ async function loadData() {
 }
 </script>
 
+<!-- ═══════════════ CHAT ENGINE ═══════════════ -->
+<script>
+let INSIGHTS = null;
+let currentAgentId = 0;
+
+// Load insights.json alongside status.json
+async function loadInsights() {
+  try {
+    const r = await fetch('insights.json?t=' + Date.now());
+    if (r.ok) INSIGHTS = await r.json();
+  } catch(e) { console.log('insights.json no disponible aún'); }
+}
+
+const AGENT_META = [
+  { id:0, name:'Data Enrichment Agent', sub:'Industry · Empleados · Domain', avatar:'🔬',
+    color:'#34d399', insightKey:'agent1',
+    chips:['¿Cuántas procesaste?','Top industrias','Distribución empleados','Último lote','Progreso universo','Empresas skipped'] },
+  { id:1, name:'Buyer Enrichment Agent', sub:'HR · Finance · Ops · IT', avatar:'👤',
+    color:'#fbbf24', insightKey:'agent2',
+    chips:['¿Qué BPs buscas?','Roles ICP','Cómo usas Apollo','Deduplicación','¿Cuántos encontraste?'] },
+  { id:2, name:'Forecast Agent', sub:'Por configurar', avatar:'📊', color:'#60a5fa', insightKey:null,
+    chips:[] },
+  { id:3, name:'Lost Deals Agent', sub:'Por configurar', avatar:'🔍', color:'#f87171', insightKey:null,
+    chips:[] },
+];
+
+const KEYWORDS = {
+  'cuant':'procesadas', 'proceso':'procesadas', 'procesa':'procesadas', 'total':'procesadas',
+  'industri':'industrias', 'sector':'industrias', 'industry':'industrias',
+  'emplead':'empleados', 'trabajad':'empleados', 'plantill':'empleados', 'employee':'empleados',
+  'progres':'progreso', 'universo':'progreso', 'quedan':'progreso', 'ritmo':'progreso',
+  'lote':'lotes', 'batch':'lotes', 'run':'lotes', 'histor':'lotes',
+  'ultim':'ultimo', 'último':'ultimo', 'recient':'ultimo',
+  'skip':'skipped', 'omiti':'skipped', 'descar':'skipped',
+  'bp':'bps', 'buyer':'bps', 'persona':'bps', 'contacto':'bps',
+  'rol':'roles', 'cargo':'roles', 'titulo':'roles', 'título':'roles',
+  'apollo':'apollo', 'busca':'apollo',
+  'duplic':'duplicados', 'mismo':'duplicados',
+  'hola':'hola', 'buenas':'hola', 'hey':'hola', 'hi':'hola',
+  'ayuda':'ayuda', 'help':'ayuda', 'puedes':'ayuda', 'qué sabes':'ayuda',
+};
+
+function matchAnswer(text, agentKey) {
+  if (!INSIGHTS || !INSIGHTS[agentKey]) return null;
+  const answers = INSIGHTS[agentKey].answers;
+  const lower = text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  for (const [kw, answerKey] of Object.entries(KEYWORDS)) {
+    if (lower.includes(kw) && answers[answerKey]) return answers[answerKey];
+  }
+  return null;
+}
+
+function addMsg(text, type) {
+  const box = document.getElementById('chat-messages');
+  const el = document.createElement('div');
+  el.className = 'msg ' + type;
+  el.textContent = text;
+  box.appendChild(el);
+  box.scrollTop = box.scrollHeight;
+}
+
+function openAgentChat(agId) {
+  const meta = AGENT_META[agId];
+  currentAgentId = agId;
+  document.getElementById('chat-avatar').textContent = meta.avatar;
+  document.getElementById('chat-avatar').style.background = meta.color + '22';
+  document.getElementById('chat-name').textContent = meta.name;
+  document.getElementById('chat-sub').textContent = meta.sub;
+  document.getElementById('chat-messages').innerHTML = '';
+
+  // Chips de preguntas rápidas
+  const chipsEl = document.getElementById('chat-chips');
+  chipsEl.innerHTML = meta.chips.map(c =>
+    `<span class="chip" onclick="askChip(this,'${c}')">${c}</span>`
+  ).join('');
+
+  // Greeting
+  const greeting = INSIGHTS && INSIGHTS[meta.insightKey]
+    ? INSIGHTS[meta.insightKey].answers['hola']
+    : meta.insightKey
+      ? `¡Hola! Soy el ${meta.name}. Los insights detallados estarán disponibles tras la próxima run nocturna.`
+      : `Soy el ${meta.name}. Todavía no estoy activo — ¡pronto estaré disponible!`;
+  addMsg(greeting, 'agent');
+
+  document.getElementById('chat-panel').classList.add('open');
+  document.getElementById('chat-input').focus();
+}
+
+function closeChat() {
+  document.getElementById('chat-panel').classList.remove('open');
+}
+
+function askChip(el, text) {
+  document.getElementById('chat-input').value = text;
+  sendChat();
+}
+
+function sendChat() {
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  addMsg(text, 'user');
+
+  const meta = AGENT_META[currentAgentId];
+  setTimeout(() => {
+    const answer = meta.insightKey
+      ? matchAnswer(text, meta.insightKey)
+      : null;
+    addMsg(
+      answer || (meta.insightKey
+        ? "No tengo datos concretos sobre eso. Prueba a preguntarme sobre:\nindustrias, empleados, lotes, progreso, skipped, BPs..."
+        : "Todavía no estoy activo. ¡Vuelve cuando esté configurado! 😴"),
+      'agent'
+    );
+  }, 350);
+}
+</script>
+
 <!-- ═══════════════ AUTH ═══════════════ -->
 <script>
 const PWD_HASH = '90b23b41735ec48675552f7396cb0804ed126d36b11da504088487baa6fb1c43';
@@ -623,6 +825,7 @@ async function checkAuth() {
     sessionStorage.setItem('leadops_auth', '1');
     document.getElementById('auth-overlay').style.display = 'none';
     loadData();
+    loadInsights();
     setInterval(loadData, 60000);
   } else {
     document.getElementById('auth-error').style.display = 'block';
@@ -634,6 +837,7 @@ async function checkAuth() {
 if (sessionStorage.getItem('leadops_auth') === '1') {
   document.getElementById('auth-overlay').style.display = 'none';
   loadData();
+  loadInsights();
   setInterval(loadData, 60000);
 }
 </script>
@@ -698,6 +902,32 @@ AGENTS.forEach(ag=>{
   wrap.appendChild(el);
   ag.bubEl=el; ag.msgTimer=80+ag.id*60; ag.msgIdx=0;
 });
+
+// Click detection on agents
+canvas.style.cursor='default';
+canvas.addEventListener('mousemove', function(e){
+  let found=false;
+  for(const ag of AGENTS){
+    const dx=(e.offsetX/SCALE)-ag.x*TS, dy=(e.offsetY/SCALE)-ag.y*TS;
+    if(Math.sqrt(dx*dx+dy*dy)<22){found=true;break;}
+  }
+  canvas.style.cursor=found?'pointer':'default';
+});
+canvas.addEventListener('click', function(e){
+  let closest=null, minD=1.5;
+  for(const ag of AGENTS){
+    const dx=(e.offsetX/SCALE/TS)-ag.x, dy=(e.offsetY/SCALE/TS)-ag.y;
+    const d=Math.sqrt(dx*dx+dy*dy);
+    if(d<minD){minD=d;closest=ag;}
+  }
+  if(closest) openAgentChat(closest.id);
+});
+
+// Hint label
+const hint=document.createElement('div');
+hint.id='click-hint';hint.textContent='👆 Haz clic en un agente para chatear';
+wrap.appendChild(hint);
+setTimeout(()=>{if(hint.parentNode)hint.parentNode.removeChild(hint);},4000);
 
 function getBreakRoute(ag){
   const hx=21.5,bx=40+(Math.random()*8|0),by2=5+(Math.random()*18|0);

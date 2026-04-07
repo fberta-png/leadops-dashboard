@@ -1,0 +1,77 @@
+{
+  "last_updated": "2026-04-07T14:51:55",
+  "agent1": {
+    "summary": "853 empresas · 11 lotes · 91.9% éxito",
+    "top_industries": [
+      {
+        "name": "Technology",
+        "count": 103,
+        "pct": "13.1%"
+      },
+      {
+        "name": "Manufacturing",
+        "count": 102,
+        "pct": "13.0%"
+      },
+      {
+        "name": "Professional Services",
+        "count": 73,
+        "pct": "9.3%"
+      },
+      {
+        "name": "Hospitality",
+        "count": 55,
+        "pct": "7.0%"
+      },
+      {
+        "name": "Retail",
+        "count": 51,
+        "pct": "6.5%"
+      },
+      {
+        "name": "Media & Entertainment",
+        "count": 50,
+        "pct": "6.4%"
+      },
+      {
+        "name": "Construction",
+        "count": 48,
+        "pct": "6.1%"
+      }
+    ],
+    "employees_distribution": {
+      "11-50": 131,
+      "1-10": 115,
+      "51-200": 50,
+      "201-500": 30,
+      "10": 29,
+      "5000+": 24,
+      "1001-5000": 22,
+      "501-1000": 14,
+      "5": 14,
+      "20": 12
+    },
+    "answers": {
+      "hola": "¡Hola! Soy el Data Enrichment Agent 🔬\nHe procesado 853 empresas en 11 lotes con un 91.9% de éxito.\n¿En qué puedo ayudarte?",
+      "procesadas": "He procesado 853 empresas en total (11 lotes).\n✅ Enriquecidas: 784\n⏭ Skipped: 69\n📊 Tasa éxito: 91.9%",
+      "industrias": "Top industrias encontradas:\n  1. Technology: 103 empresas (13.1%)\n  2. Manufacturing: 102 empresas (13.0%)\n  3. Professional Services: 73 empresas (9.3%)\n  4. Hospitality: 55 empresas (7.0%)\n  5. Retail: 51 empresas (6.5%)\n  6. Media & Entertainment: 50 empresas (6.4%)\n  7. Construction: 48 empresas (6.1%)",
+      "empleados": "Distribución por nº empleados:\n  • 11-50: 131 empresas\n  • 1-10: 115 empresas\n  • 51-200: 50 empresas\n  • 201-500: 30 empresas\n  • 10: 29 empresas\n  • 5000+: 24 empresas\n  • 1001-5000: 22 empresas\n  • 501-1000: 14 empresas\n  • 5: 14 empresas\n  • 20: 12 empresas",
+      "progreso": "Llevo 853 de 94.311 empresas (0.9% del universo).\nA 100 empresas/día L-V, terminaré en ~187 semanas laborables.",
+      "lotes": "He completado 11 lotes. Últimos:\n  • lote-07-2026-03-31: 100 procesadas (96 OK, 4 skip)\n  • lote-08-2026-04-01: 100 procesadas (96 OK, 4 skip)\n  • lote-09-2026-04-03: 100 procesadas (96 OK, 4 skip)\n  • lote-10-2026-04-06: 100 procesadas (89 OK, 11 skip)\n  • lote-11-2026-04-07: 100 procesadas (90 OK, 10 skip)",
+      "ultimo": "Último lote: lote-11-2026-04-07\n100 empresas · 90 OK · 10 skip",
+      "skipped": "He skipped 69 empresas (8.1%).\nMotivos habituales: sin web pública, empresa muy pequeña, información no encontrable.",
+      "ayuda": "Puedo responder sobre:\n• industrias encontradas\n• distribución de empleados\n• empresas procesadas y skipped\n• progreso del universo\n• historial de lotes\n\nEscribe tu pregunta 👇"
+    }
+  },
+  "agent2": {
+    "summary": "Buyer Enrichment activo · L-V 4am",
+    "answers": {
+      "hola": "¡Hola! Soy el Buyer Enrichment Agent 👤\nBusco contactos ICP en Apollo para cada empresa:\nHR → Finance → Operations → IT\n¿En qué puedo ayudarte?",
+      "bps": "Busco hasta 2 BPs por empresa en este orden:\n1º HR Director / CHRO / CPO\n2º CFO / Finance / C&B Manager\n3º COO / Operations Director\n4º CTO / IT Director\n\nSolo contactos con email verified.",
+      "roles": "Prioridad ICP:\n🥇 HR: Director, CHRO, CPO, People Manager\n🥈 Finance: CFO, Payroll, C&B Manager\n🥉 Ops: COO, Operations Director\n4️⃣ IT: CTO, IT Director",
+      "apollo": "Uso Apollo.io con filtros:\n• Dominio de la empresa\n• Títulos ICP por área\n• País: Spain/España\n• Email: verified o likely to engage",
+      "duplicados": "Tengo deduplicación inteligente:\nf.berta@ y filippo.berta@ = mismo contacto ✓\nDetecto por tokens del username del email.",
+      "ayuda": "Puedo responder sobre:\n• BPs encontrados y roles\n• lógica de búsqueda Apollo\n• deduplicación de contactos\n• progreso del universo A2\n\nEscribe tu pregunta 👇"
+    }
+  }
+}
