@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-07T14:51:55",
+  "last_updated": "2026-04-08T16:06:14",
   "agent1": {
     "summary": "853 empresas · 11 lotes · 91.9% éxito",
     "top_industries": [
@@ -72,6 +72,30 @@
       "apollo": "Uso Apollo.io con filtros:\n• Dominio de la empresa\n• Títulos ICP por área\n• País: Spain/España\n• Email: verified o likely to engage",
       "duplicados": "Tengo deduplicación inteligente:\nf.berta@ y filippo.berta@ = mismo contacto ✓\nDetecto por tokens del username del email.",
       "ayuda": "Puedo responder sobre:\n• BPs encontrados y roles\n• lógica de búsqueda Apollo\n• deduplicación de contactos\n• progreso del universo A2\n\nEscribe tu pregunta 👇"
+    }
+  },
+  "agent3": {
+    "summary": "2 señales · 27 escaneadas · 100.0% universo",
+    "recent_signals": [
+      {
+        "company": "Alea",
+        "signal": "Job Posting HR",
+        "date": "2026-04-08"
+      },
+      {
+        "company": "Adwake",
+        "signal": "Growth Signal",
+        "date": "2026-04-08"
+      }
+    ],
+    "answers": {
+      "hola": "¡Hola! Soy el Agente 3 de Trigger Buying. He detectado 2 señales de compra activas en 27 cuentas escaneadas. ¿Qué quieres saber?",
+      "señales": "Señales detectadas: 2 total · 1 Job Posting HR · 0 Job Posting Nómina/Payroll · 1 Growth Signal.",
+      "progreso": "He escaneado 27 de 27 cuentas ICP (100.0%). Último scan: 08/04/2026.",
+      "roles": "Monitorizo: HR Director, CHRO, Talent · Nómina/Payroll Manager · expansión/contratación masiva.",
+      "procesadas": "Universo activo: 27 empresas con BPs. Escaneadas: 27. Señales activas: 2.",
+      "ultimo": "Señales recientes:\n  Alea: Job Posting HR\n  Adwake: Growth Signal",
+      "ayuda": "Puedo contarte sobre: señales detectadas, tipos de señal, progreso de escaneo, empresas recientes con trigger. ¡Pregúntame!"
     }
   }
 }
