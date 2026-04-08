@@ -126,8 +126,9 @@
   /* ── OFICINA TAB ── */
   .oficina-wrap {
     display:flex; flex-direction:column; align-items:center;
-    justify-content:center; padding:24px 28px;
-    min-height:calc(100vh - 52px);
+    justify-content:center; padding:0;
+    height:calc(100vh - 52px);
+    overflow:hidden;
     background:var(--bg);
   }
   #poke-wrap {
@@ -973,10 +974,17 @@ if (sessionStorage.getItem('leadops_auth') === '1') {
 <!-- ═══════════════ POKEMON OFFICE ═══════════════ -->
 <script>
 function initPokemon() {
-const TS=18,COLS=52,ROWS=30,SCALE=2;
+const TS=18,COLS=52,ROWS=30;
 const W=COLS*TS,H=ROWS*TS;
 const canvas=document.getElementById('poke-canvas');
 const wrap=document.getElementById('poke-wrap');
+
+// Calcula SCALE para que quepa en pantalla sin scroll
+// Nav=52px, title-bar=24px, room-labels=22px, border=8px, margin=8px
+const availW = window.innerWidth  - 16;
+const availH = window.innerHeight - 52 - 24 - 22 - 16;
+const SCALE  = Math.min(availW / W, availH / H, 2);
+
 canvas.width=W; canvas.height=H;
 canvas.style.width=W*SCALE+'px'; canvas.style.height=H*SCALE+'px';
 wrap.style.width=W*SCALE+'px'; wrap.style.height=H*SCALE+'px';
