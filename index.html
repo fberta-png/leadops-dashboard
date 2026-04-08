@@ -261,12 +261,13 @@
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="switchTab('enrichment',this)">✦ Data Enrichment</button>
     <button class="nav-tab" onclick="switchTab('buyer',this)">✦ Buyer Enrichment</button>
+    <button class="nav-tab" onclick="switchTab('trigger',this)">⚡ Trigger Buying</button>
     <button class="nav-tab" onclick="switchTab('agentes',this)">○ Agentes</button>
     <button class="nav-tab" onclick="switchTab('oficina',this)">🏢 Oficina</button>
   </div>
   <div class="nav-status">
     <div class="dot"></div>
-    <span id="nav-status-text">2 agentes activos</span>
+    <span id="nav-status-text">3 agentes activos</span>
   </div>
 </nav>
 
@@ -511,6 +512,101 @@
 <div class="footer" id="a2-footer">Lead Ops · Sesame · Cargando datos...</div>
 </div>
 
+<!-- ═══════════════ TAB: TRIGGER BUYING ═══════════════ -->
+<div id="tab-trigger" class="tab-panel">
+<div class="main">
+
+  <div class="section-label">Estado del Agente</div>
+  <div class="agent-bar" style="border-left-color:var(--orange)">
+    <div class="agent-bar-left">
+      <div class="agent-avatar" style="background:rgba(249,115,22,0.15)">⚡</div>
+      <div>
+        <div class="agent-name">Trigger Buying Agent</div>
+        <div class="agent-info" id="a3-info">Cargando...</div>
+      </div>
+    </div>
+    <div class="agent-bar-right">
+      <div class="lote-badge" id="a3-status-badge" style="border-color:rgba(249,115,22,0.3);color:var(--orange);background:rgba(249,115,22,0.08)">⏳ Cargando</div>
+    </div>
+  </div>
+
+  <div class="section-label">Señales de Compra · Universo ICP</div>
+  <div class="universe-grid">
+    <div class="uni-card main-card">
+      <div class="uni-label">Universo A3</div>
+      <div class="uni-value col-orange" id="a3-universe">—</div>
+      <div class="uni-sub">Empresas con BPs activos</div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Señales detectadas</div>
+      <div class="uni-value col-yellow" id="a3-signals">—</div>
+      <div class="uni-sub">Job postings activos</div>
+      <div class="uni-deltas">
+        <span class="delta up" id="a3-hr-delta">—</span>
+        <span class="delta up" id="a3-payroll-delta">—</span>
+      </div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Escaneadas</div>
+      <div class="uni-value col-purple" id="a3-scanned">—</div>
+      <div class="uni-sub">Con Trigger Last Check</div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Progreso universo</div>
+      <div class="uni-value col-cyan" id="a3-progress-pct">—</div>
+      <div class="uni-sub">Del total de cuentas A2</div>
+      <div class="uni-deltas">
+        <span class="delta up">L-X-V 5:00am</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Señales por tipo</div>
+  <div class="progress-section">
+    <div class="prog-card">
+      <div class="prog-row">
+        <div class="prog-icon">👥</div>
+        <div class="prog-label-wrap"><div class="prog-label">Job Posting HR / People</div><div class="prog-total">CHRO · HR Director · Talent</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill green" id="a3-bar-hr" style="width:0%"></div></div>
+        <div class="prog-stats">
+          <div class="prog-stat"><div class="val val-green" id="a3-stat-hr">—</div><div class="lbl">señales</div></div>
+        </div>
+        <div class="prog-pct" id="a3-bar-hr-pct">—</div>
+      </div>
+      <div class="prog-row">
+        <div class="prog-icon">💰</div>
+        <div class="prog-label-wrap"><div class="prog-label">Job Posting Nómina / Finance</div><div class="prog-total">Payroll · C&B · CFO</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill" id="a3-bar-payroll" style="width:0%"></div></div>
+        <div class="prog-stats">
+          <div class="prog-stat"><div class="val val-green" id="a3-stat-payroll">—</div><div class="lbl">señales</div></div>
+        </div>
+        <div class="prog-pct" id="a3-bar-payroll-pct">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-grid">
+    <div class="lote-card">
+      <div class="section-label" style="margin-bottom:14px;">Keywords monitorizadas</div>
+      <div class="lote-row"><div class="lote-id">HR / People</div><div class="lote-pills"><span class="pill pill-ok">rrhh · hr · talent · people ops</span></div></div>
+      <div class="lote-row"><div class="lote-id">Nómina / Payroll</div><div class="lote-pills"><span class="pill pill-ind">nómina · payroll · c&b · retribución</span></div></div>
+      <div class="lote-row"><div class="lote-id">Crecimiento</div><div class="lote-pills"><span class="pill pill-emp">scaling · hiring · expansion · growth</span></div></div>
+    </div>
+    <div class="schedule-card">
+      <div class="section-label" style="margin-bottom:14px;">Configuración del Agente</div>
+      <div class="sched-row"><span class="sched-label">Archivo maestro</span><span class="sched-val" style="font-size:11px;color:var(--orange)">Lead Ops - Agent 2 - Buyer Enrichment.xlsx</span></div>
+      <div class="sched-row"><span class="sched-label">Empresas por run</span><span class="sched-val">200</span></div>
+      <div class="sched-row"><span class="sched-label">Frecuencia</span><span class="sched-val green">L-X-V · 5:00am</span></div>
+      <div class="sched-row"><span class="sched-label">Re-check por empresa</span><span class="sched-val">Cada 30 días</span></div>
+      <div class="sched-row"><span class="sched-label">Fuente señales</span><span class="sched-val green">Apollo Job Postings ✓</span></div>
+      <div class="sched-row"><span class="sched-label">Actualizado</span><span class="sched-val muted" id="a3-last-updated-sched">—</span></div>
+    </div>
+  </div>
+
+</div>
+<div class="footer" id="a3-footer">Lead Ops · Sesame · Trigger Buying Agent · Esperando primera ejecución...</div>
+</div>
+
 <!-- ═══════════════ TAB: AGENTES ═══════════════ -->
 <div id="tab-agentes" class="tab-panel">
 <div class="main">
@@ -528,11 +624,11 @@
       <div style="font-size:11px;color:var(--muted2);margin-bottom:12px;">Busca BPs ICP en Apollo · HR→Finance→Ops→IT · Max 2 BPs</div>
       <div style="font-size:11px;color:var(--purple);font-weight:600;">● Activo · L-V 4am</div>
     </div>
-    <div style="background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px;opacity:0.6;">
-      <div style="font-size:28px;margin-bottom:10px;">📈</div>
-      <div style="font-weight:700;margin-bottom:4px;">Agent 3 · Forecast</div>
-      <div style="font-size:11px;color:var(--muted2);margin-bottom:12px;">Forecast semanal de pipeline desde HubSpot</div>
-      <div style="font-size:11px;color:var(--muted2);font-weight:600;">○ Por configurar</div>
+    <div style="background:var(--panel);border:1px solid rgba(249,115,22,0.3);border-radius:12px;padding:20px;">
+      <div style="font-size:28px;margin-bottom:10px;">⚡</div>
+      <div style="font-weight:700;margin-bottom:4px;">Agent 3 · Trigger Buying</div>
+      <div style="font-size:11px;color:var(--muted2);margin-bottom:12px;">Señales de compra en cuentas ICP · Job Postings HR/Nómina · Excel Agent 2</div>
+      <div style="font-size:11px;color:var(--orange);font-weight:600;">● Activo · L-X-V 5am</div>
     </div>
     <div style="background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px;opacity:0.6;">
       <div style="font-size:28px;margin-bottom:10px;">💀</div>
@@ -684,6 +780,35 @@ async function loadData() {
     document.getElementById('a2-footer').textContent =
       `Lead Ops · Sesame · Actualizado ${dtStr} · ${fmt(a2.universe_total)} empresas en universo A2 · ${fmt(bpsTotal)} BPs encontrados`;
 
+    // ── Agent 3 ──────────────────────────────────────────
+    const a3 = d.agent3;
+    if (a3) {
+      document.getElementById('a3-info').textContent =
+        `${fmt(a3.signals_detected||0)} señales detectadas · ${fmt(a3.total_scanned||0)} escaneadas · Próximo scan: L-X-V 5am`;
+      document.getElementById('a3-status-badge').textContent =
+        (a3.signals_detected||0) > 0 ? `⚡ ${fmt(a3.signals_detected)} señales` : '● Escaneando...';
+      document.getElementById('a3-universe').textContent    = fmt(a3.universe_total||0);
+      document.getElementById('a3-signals').textContent     = fmt(a3.signals_detected||0);
+      document.getElementById('a3-hr-delta').textContent    = `↑ ${fmt(a3.signals_job_hr||0)} HR`;
+      document.getElementById('a3-payroll-delta').textContent = `↑ ${fmt(a3.signals_job_payroll||0)} Nómina`;
+      document.getElementById('a3-scanned').textContent     = fmt(a3.total_scanned||0);
+      document.getElementById('a3-progress-pct').textContent = pct(a3.progress_pct||0);
+
+      const totalSig = Math.max(1, a3.signals_detected||1);
+      const hrPct     = Math.min((a3.signals_job_hr||0) / totalSig * 100, 100);
+      const payrollPct= Math.min((a3.signals_job_payroll||0) / totalSig * 100, 100);
+      document.getElementById('a3-stat-hr').textContent       = fmt(a3.signals_job_hr||0);
+      document.getElementById('a3-bar-hr').style.width        = hrPct.toFixed(2) + '%';
+      document.getElementById('a3-bar-hr-pct').textContent    = pct(hrPct);
+      document.getElementById('a3-stat-payroll').textContent  = fmt(a3.signals_job_payroll||0);
+      document.getElementById('a3-bar-payroll').style.width   = payrollPct.toFixed(2) + '%';
+      document.getElementById('a3-bar-payroll-pct').textContent = pct(payrollPct);
+
+      document.getElementById('a3-last-updated-sched').textContent = dtStr;
+      document.getElementById('a3-footer').textContent =
+        `Lead Ops · Sesame · Actualizado ${dtStr} · ${fmt(a3.signals_detected||0)} señales detectadas · ${fmt(a3.total_scanned||0)} empresas escaneadas`;
+    }
+
   } catch(e) {
     console.error('Error cargando status.json:', e);
   }
@@ -710,8 +835,8 @@ const AGENT_META = [
   { id:1, name:'Buyer Enrichment Agent', sub:'HR · Finance · Ops · IT', avatar:'👤',
     color:'#fbbf24', insightKey:'agent2',
     chips:['¿Qué BPs buscas?','Roles ICP','Cómo usas Apollo','Deduplicación','¿Cuántos encontraste?'] },
-  { id:2, name:'Forecast Agent', sub:'Por configurar', avatar:'📊', color:'#60a5fa', insightKey:null,
-    chips:[] },
+  { id:2, name:'Trigger Buying Agent', sub:'Job Postings · HR · Nómina', avatar:'⚡', color:'#f97316', insightKey:'agent3',
+    chips:['¿Cuántas señales?','Top keywords','Empresas con señal','Último scan','Progreso universo'] },
   { id:3, name:'Lost Deals Agent', sub:'Por configurar', avatar:'🔍', color:'#f87171', insightKey:null,
     chips:[] },
 ];
@@ -728,6 +853,9 @@ const KEYWORDS = {
   'rol':'roles', 'cargo':'roles', 'titulo':'roles', 'título':'roles',
   'apollo':'apollo', 'busca':'apollo',
   'duplic':'duplicados', 'mismo':'duplicados',
+  'señal':'señales', 'signal':'señales', 'trigger':'señales', 'detecta':'señales',
+  'scan':'progreso', 'escane':'progreso', 'cheque':'progreso',
+  'keyword':'roles', 'palabra':'roles',
   'hola':'hola', 'buenas':'hola', 'hey':'hola', 'hi':'hola',
   'ayuda':'ayuda', 'help':'ayuda', 'puedes':'ayuda', 'qué sabes':'ayuda',
 };
@@ -886,9 +1014,9 @@ const AGENTS=[
    x:13.5,y:4,dir:'down',state:'sit',deskX:12,deskY:3,deskDir:'down',
    msgs:['Scanning Apollo…','HR Director ✓','ICP match!','2 BPs found!','Importing…','Spain verified','Finance CFO ✓'],
    particles:[],lastParticle:0},
-  {id:2,name:'Forecast',icon:'📊',color:'#60a5fa',hudId:'h2',hudClass:'hud-b',
+  {id:2,name:'Trigger',icon:'⚡',color:'#f97316',hudId:'h2',hudClass:'hud-y',
    x:6.5,y:14,dir:'up',state:'type',deskX:5,deskY:14,deskDir:'up',
-   msgs:['Forecast Q2…','Pipeline: €240k','Win rate: 34%','Trend ↑ +12%','Model training…','Accuracy: 91%','Report ready!'],
+   msgs:['Scanning signals…','Job: HR Director','Trigger found! 🎯','Apollo check…','Signal confirmed!','Queue updated!','15 signals today!'],
    particles:[],lastParticle:0},
   {id:3,name:'Lost Deals',icon:'🔍',color:'#f87171',hudId:'h3',hudClass:'hud-r',
    x:13.5,y:14,dir:'up',state:'type',deskX:12,deskY:14,deskDir:'up',
