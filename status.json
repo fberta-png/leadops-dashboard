@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-04-22T09:14:03",
+  "last_updated": "2026-04-27T09:08:46",
   "agent1": {
     "name": "Data Enrichment",
     "status": "active",
-    "total_processed": 1653,
-    "total_enriched": 1473,
-    "total_skipped": 180,
-    "total_lotes": 19,
-    "success_rate": 89.1,
+    "total_processed": 1753,
+    "total_enriched": 1558,
+    "total_skipped": 195,
+    "total_lotes": 20,
+    "success_rate": 88.9,
     "universe_total": 94311,
-    "progress_pct": 1.75,
-    "last_lote": "lote-19-2026-04-22",
+    "progress_pct": 1.86,
+    "last_lote": "lote-20-2026-04-27",
     "schedule": "L-V 3:00am"
   },
   "agent2": {
