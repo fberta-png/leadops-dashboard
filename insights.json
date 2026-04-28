@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-28T03:33:05",
+  "last_updated": "2026-04-28T04:25:27",
   "agent1": {
     "summary": "1853 empresas · 21 lotes · 88.5% éxito",
     "top_industries": [
@@ -37,64 +37,70 @@
         "name": "Retail",
         "count": 98,
         "pct": "6.0%"
+      },
+      {
+        "name": "Healthcare & Life Sciences",
+        "count": 96,
+        "pct": "5.9%"
       }
     ],
     "employees_distribution": {
-      "11-50": 251,
-      "1-10": 241,
-      "51-200": 108,
-      "10": 76,
-      "201-500": 47,
-      "5000+": 39,
-      "50": 36,
-      "250": 27,
-      "1001-5000": 26,
-      "501-1000": 21
+      "IT Consulting": 110,
+      "Software": 100,
+      "Building Construction & Renovation": 84,
+      "Materials & Components": 73,
+      "Specialized Trade": 72,
+      "Machinery & Equipment": 71,
+      "Advertising & Marketing": 67,
+      "Corporate Services": 50,
+      "Restaurants & Catering": 50,
+      "Maintenance": 49
     },
     "answers": {
-      "hola": "¡Hola! Soy el Data Enrichment Agent 🔬\nHe procesado 1853 empresas en 21 lotes con un 88.5% de éxito.\n¿En qué puedo ayudarte?",
-      "procesadas": "He procesado 1853 empresas en total (21 lotes).\n✅ Enriquecidas: 1640\n⏭ Skipped: 213\n📊 Tasa éxito: 88.5%",
-      "industrias": "Top industrias encontradas:\n  1. Technology: 237 empresas (14.5%)\n  2. Manufacturing: 204 empresas (12.4%)\n  3. Media & Entertainment: 129 empresas (7.9%)\n  4. Professional Services: 124 empresas (7.6%)\n  5. Hospitality: 121 empresas (7.4%)\n  6. Construction: 112 empresas (6.8%)\n  7. Retail: 98 empresas (6.0%)",
-      "empleados": "Distribución por nº empleados:\n  • 11-50: 251 empresas\n  • 1-10: 241 empresas\n  • 51-200: 108 empresas\n  • 10: 76 empresas\n  • 201-500: 47 empresas\n  • 5000+: 39 empresas\n  • 50: 36 empresas\n  • 250: 27 empresas\n  • 1001-5000: 26 empresas\n  • 501-1000: 21 empresas",
-      "progreso": "Llevo 1853 de 94,311 empresas (1.96% del universo).\nA 100 empresas/día L-V, terminaré en ~185 semanas laborables.",
-      "lotes": "He completado 21 lotes. Últimos:\n  • lote-17-2026-04-17: 100 (84 OK, 16 skip)\n  • lote-18-2026-04-20: 100 (71 OK, 29 skip)\n  • lote-19-2026-04-22: 100 (73 OK, 27 skip)\n  • lote-20-2026-04-27: 100 (85 OK, 15 skip)\n  • lote-21-2026-04-28: 100 (82 OK, 18 skip)",
-      "ultimo": "Último lote: lote-21-2026-04-28\n100 empresas · 82 OK · 18 skip",
-      "skipped": "He skipped 213 empresas (11.5%).\nMotivos: sin web pública, empresa muy pequeña, información no encontrable.",
-      "ayuda": "Puedo responder sobre:\n• industrias encontradas\n• distribución de empleados\n• empresas procesadas y skipped\n• progreso del universo\n• historial de lotes\n\nEscribe tu pregunta 👇"
+      "hola": "¡Hola! Soy el Agente 1 de Data Enrichment. He procesado 1853 empresas con un 88.5% de éxito. ¿En qué te ayudo?",
+      "procesadas": "He procesado 1853 empresas. 1640 enriquecidas y 213 skipped. Tasa: 88.5%",
+      "industrias": "Top industrias:\n  1. Technology: 237 (14.5%)\n  2. Manufacturing: 204 (12.4%)\n  3. Media & Entertainment: 129 (7.9%)\n  4. Professional Services: 124 (7.6%)\n  5. Hospitality: 121 (7.4%)",
+      "empleados": "Distribución tamaño empresa:\n  IT Consulting: 110\n  Software: 100\n  Building Construction & Renovation: 84\n  Materials & Components: 73\n  Specialized Trade: 72",
+      "progreso": "Llevo 1853 de 96353 (1.92%). Último lote: lote-21-2026-04-28",
+      "lotes": "Completados 21 lotes. Último: lote-21-2026-04-28",
+      "ultimo": "Último lote: lote-21-2026-04-28. Total acumulado: 1853.",
+      "skipped": "Skipped: 213 (datos ya completos o sin cambios).",
+      "ayuda": "Puedo contarte sobre: industrias, empleados, progreso, lotes, skipped. ¡Pregúntame!"
     }
   },
   "agent2": {
-    "summary": "150 empresas · 60 BPs encontrados",
+    "summary": "250 empresas · 128 BPs · 8.34% universo",
     "top_roles": [
       {
-        "role": "Director General",
+        "title": "Director General",
+        "count": 7
+      },
+      {
+        "title": "Managing Director",
+        "count": 6
+      },
+      {
+        "title": "Technical Director",
+        "count": 5
+      },
+      {
+        "title": "Director",
         "count": 4
       },
       {
-        "role": "Director",
+        "title": "Partner",
         "count": 4
-      },
-      {
-        "role": "Chief Financial Officer",
-        "count": 4
-      },
-      {
-        "role": "Communications Director",
-        "count": 2
-      },
-      {
-        "role": "Managing Director",
-        "count": 2
       }
     ],
     "answers": {
-      "hola": "¡Hola! Soy el Buyer Enrichment Agent 👤\nHe procesado 150 empresas y encontrado 60 BPs.\n¿En qué puedo ayudarte?",
-      "bps": "Resultados hasta ahora:\n✅ 2 BPs encontrados: 22 empresas\n✅ 1 BP encontrado: 16 empresas\n❌ Sin BP: 112 empresas\n📊 Total contactos: 60",
-      "roles": "Roles ICP más encontrados:\n  • Director General: 4 veces\n  • Director: 4 veces\n  • Chief Financial Officer: 4 veces\n  • Communications Director: 2 veces\n  • Managing Director: 2 veces",
-      "apollo": "Uso Apollo.io con filtros:\n• Dominio de la empresa\n• Títulos ICP por área\n• País: Spain/España\n• Email: verified o likely to engage",
-      "duplicados": "Tengo deduplicación inteligente:\nf.berta@ y filippo.berta@ = mismo contacto ✓",
-      "progreso": "He procesado 150 de 2999 empresas (5.0% del universo A2).",
-      "ayuda": "Puedo responder sobre:\n• BPs encontrados\n• roles ICP más frecuentes\n• lógica Apollo\n• deduplicación\n• progreso universo A2\n\nEscribe tu pregunta 👇"
+      "hola": "¡Hola! Soy el Agente 2 de Buyer Enrichment. He encontrado 128 BPs en 250 empresas. ¿Qué quieres saber?",
+      "procesadas": "He procesado 250 empresas. 51 con 2 BPs, 26 con 1 BP, 173 sin resultado.",
+      "bps": "Total BPs: 128 (51 empresas con 2 BPs, 26 con 1 BP)",
+      "progreso": "Llevo 250 de 2999 empresas (8.34% del universo).",
+      "roles": "Top cargos encontrados:\n  1. Director General: 7\n  2. Managing Director: 6\n  3. Technical Director: 5\n  4. Director: 4\n  5. Partner: 4",
+      "skipped": "173 empresas sin BP encontrado.",
+      "ultimo": "Última ejecución: 28/04/2026 04:25. Histórico: 250 empresas.",
+      "ayuda": "Puedo contarte sobre: BPs encontrados, progreso, top roles, sin resultado. ¡Pregúntame!"
     }
   },
   "agent3": {
