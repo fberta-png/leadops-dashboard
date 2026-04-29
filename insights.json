@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-28T04:25:27",
+  "last_updated": "2026-04-29T09:11:51",
   "agent1": {
     "summary": "1853 empresas · 21 lotes · 88.5% éxito",
     "top_industries": [
@@ -58,18 +58,18 @@
     },
     "answers": {
       "hola": "¡Hola! Soy el Agente 1 de Data Enrichment. He procesado 1853 empresas con un 88.5% de éxito. ¿En qué te ayudo?",
-      "procesadas": "He procesado 1853 empresas. 1640 enriquecidas y 213 skipped. Tasa: 88.5%",
-      "industrias": "Top industrias:\n  1. Technology: 237 (14.5%)\n  2. Manufacturing: 204 (12.4%)\n  3. Media & Entertainment: 129 (7.9%)\n  4. Professional Services: 124 (7.6%)\n  5. Hospitality: 121 (7.4%)",
-      "empleados": "Distribución tamaño empresa:\n  IT Consulting: 110\n  Software: 100\n  Building Construction & Renovation: 84\n  Materials & Components: 73\n  Specialized Trade: 72",
-      "progreso": "Llevo 1853 de 96353 (1.92%). Último lote: lote-21-2026-04-28",
-      "lotes": "Completados 21 lotes. Último: lote-21-2026-04-28",
-      "ultimo": "Último lote: lote-21-2026-04-28. Total acumulado: 1853.",
-      "skipped": "Skipped: 213 (datos ya completos o sin cambios).",
-      "ayuda": "Puedo contarte sobre: industrias, empleados, progreso, lotes, skipped. ¡Pregúntame!"
+      "procesadas": "He procesado 1853 empresas. 1640 enriquecidas y 213 skipped. Tasa de éxito: 88.5%",
+      "industrias": "Top industrias enriquecidas:\n  1. Technology: 237 (14.5%)\n  2. Manufacturing: 204 (12.4%)\n  3. Media & Entertainment: 129 (7.9%)\n  4. Professional Services: 124 (7.6%)\n  5. Hospitality: 121 (7.4%)",
+      "empleados": "Distribución de tamaño de empresa:\n  IT Consulting: 110\n  Software: 100\n  Building Construction & Renovation: 84\n  Materials & Components: 73\n  Specialized Trade: 72",
+      "progreso": "Llevo 1853 de 96353 empresas procesadas (1.92% del universo). Último lote: lote-21-2026-04-28",
+      "lotes": "He completado 21 lotes en total. Último: lote-21-2026-04-28",
+      "ultimo": "Mi último lote fue lote-21-2026-04-28. Procesé 1853 empresas acumuladas.",
+      "skipped": "Skipped: 213 empresas (datos ya completos o sin cambios necesarios).",
+      "ayuda": "Puedo contarte sobre: industrias enriquecidas, distribución de empleados, progreso, lotes completados, empresas skipped. ¡Pregúntame!"
     }
   },
   "agent2": {
-    "summary": "250 empresas · 128 BPs · 8.34% universo",
+    "summary": "300 empresas · 132 BPs · 10.0% universo",
     "top_roles": [
       {
         "title": "Director General",
@@ -93,14 +93,14 @@
       }
     ],
     "answers": {
-      "hola": "¡Hola! Soy el Agente 2 de Buyer Enrichment. He encontrado 128 BPs en 250 empresas. ¿Qué quieres saber?",
-      "procesadas": "He procesado 250 empresas. 51 con 2 BPs, 26 con 1 BP, 173 sin resultado.",
-      "bps": "Total BPs: 128 (51 empresas con 2 BPs, 26 con 1 BP)",
-      "progreso": "Llevo 250 de 2999 empresas (8.34% del universo).",
+      "hola": "¡Hola! Soy el Agente 2 de Buyer Enrichment. He encontrado 132 BPs en 300 empresas. ¿Qué quieres saber?",
+      "procesadas": "He procesado 300 empresas. 52 con 2 BPs, 28 con 1 BP, 220 sin resultado.",
+      "bps": "Total BPs encontrados: 132 (52 empresas con 2 BPs, 28 con 1 BP)",
+      "progreso": "Llevo 300 de 2999 empresas procesadas (10.0% del universo).",
       "roles": "Top cargos encontrados:\n  1. Director General: 7\n  2. Managing Director: 6\n  3. Technical Director: 5\n  4. Director: 4\n  5. Partner: 4",
-      "skipped": "173 empresas sin BP encontrado.",
-      "ultimo": "Última ejecución: 28/04/2026 04:25. Histórico: 250 empresas.",
-      "ayuda": "Puedo contarte sobre: BPs encontrados, progreso, top roles, sin resultado. ¡Pregúntame!"
+      "skipped": "220 empresas sin BP encontrado (sin contactos verificados en Apollo).",
+      "ultimo": "Última ejecución: 29/04/2026 09:11. 300 empresas en histórico.",
+      "ayuda": "Puedo contarte sobre: BPs encontrados, progreso del universo, top roles/cargos, empresas sin resultado. ¡Pregúntame!"
     }
   },
   "agent3": {
