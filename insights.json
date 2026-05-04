@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-30T12:20:57",
+  "last_updated": "2026-05-04T09:15:56",
   "agent1": {
     "summary": "1953 empresas · 22 lotes · 88.9% éxito",
     "top_industries": [
@@ -57,19 +57,19 @@
       "Maintenance": 51
     },
     "answers": {
-      "hola": "¡Hola! Soy el Agente 1. He procesado 1953 empresas con un 88.9% de éxito.",
-      "procesadas": "He procesado 1953 empresas. 1736 enriquecidas y 217 skipped. Tasa: 88.9%",
+      "hola": "¡Hola! Soy el Agente 1 de Data Enrichment. He procesado 1953 empresas con un 88.9% de éxito.",
+      "procesadas": "He procesado 1953 empresas en total. 1736 enriquecidas y 217 skipped. Tasa: 88.9%",
       "industrias": "Top industrias:\n  1. Technology: 274 (15.8%)\n  2. Manufacturing: 217 (12.5%)\n  3. Media & Entertainment: 140 (8.1%)\n  4. Professional Services: 133 (7.7%)\n  5. Hospitality: 124 (7.1%)",
-      "empleados": "Distribución:\n  IT Consulting: 125\n  Software: 118\n  Building Construction & Renovation: 86\n  Machinery & Equipment: 81\n  Advertising & Marketing: 75",
+      "empleados": "Distribución tamaño empresa:\n  IT Consulting: 125\n  Software: 118\n  Building Construction & Renovation: 86\n  Machinery & Equipment: 81\n  Advertising & Marketing: 75",
       "progreso": "Llevo 1953 de 96353 empresas (2.03%). Último lote: lote-22-2026-04-30",
-      "lotes": "He completado 22 lotes. Último: lote-22-2026-04-30",
-      "ultimo": "Último lote: lote-22-2026-04-30. 1953 empresas acumuladas.",
+      "lotes": "Completados 22 lotes. Último: lote-22-2026-04-30",
+      "ultimo": "Último lote: lote-22-2026-04-30. Acumulado: 1953 empresas.",
       "skipped": "Skipped: 217 empresas.",
       "ayuda": "Puedo contarte sobre: industrias, empleados, progreso, lotes, skipped."
     }
   },
   "agent2": {
-    "summary": "350 empresas · 149 BPs · 11.67% universo",
+    "summary": "400 empresas · 154 BPs · 13.34% universo",
     "top_roles": [
       {
         "title": "Director General",
@@ -93,14 +93,14 @@
       }
     ],
     "answers": {
-      "hola": "¡Hola! Soy el Agente 2. He encontrado 149 BPs en 350 empresas.",
-      "procesadas": "He procesado 350 empresas. 59 con 2 BPs, 31 con 1 BP, 260 sin resultado.",
-      "bps": "Total BPs: 149 (59 empresas con 2 BPs, 31 con 1 BP)",
-      "progreso": "Llevo 350 de 2999 empresas (11.67%).",
+      "hola": "¡Hola! Soy el Agente 2. He encontrado 154 BPs en 400 empresas.",
+      "procesadas": "Procesadas: 400. Con 2 BPs: 61, con 1 BP: 32, sin resultado: 307.",
+      "bps": "Total BPs: 154 (61 con 2 BPs, 32 con 1 BP)",
+      "progreso": "Llevo 400 de 2999 empresas (13.34%).",
       "roles": "Top cargos:\n  1. Director General: 7\n  2. Managing Director: 6\n  3. Technical Director: 5\n  4. Financial Director: 5\n  5. Manager: 5",
-      "skipped": "260 empresas sin BP encontrado.",
-      "ultimo": "Última ejecución: 30/04/2026 12:19. 350 empresas en histórico.",
-      "ayuda": "Puedo contarte sobre: BPs encontrados, progreso, top roles, sin resultado."
+      "skipped": "307 empresas sin BP encontrado.",
+      "ultimo": "Última ejecución: 04/05/2026 09:15. Histórico: 400 empresas.",
+      "ayuda": "Puedo contarte sobre: BPs, progreso, roles, empresas sin resultado."
     }
   },
   "agent3": {
