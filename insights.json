@@ -1,65 +1,65 @@
 {
-  "last_updated": "2026-05-04T09:17:37",
+  "last_updated": "2026-05-05T09:33:03",
   "agent1": {
-    "summary": "2053 empresas · 23 lotes · 89.3% éxito",
+    "summary": "2153 empresas · 24 lotes · 89.4% éxito",
     "top_industries": [
       {
         "name": "Technology",
-        "count": 296,
-        "pct": "16.1%"
+        "count": 319,
+        "pct": "16.6%"
       },
       {
         "name": "Manufacturing",
-        "count": 231,
-        "pct": "12.6%"
+        "count": 234,
+        "pct": "12.2%"
       },
       {
         "name": "Professional Services",
-        "count": 147,
-        "pct": "8.0%"
+        "count": 156,
+        "pct": "8.1%"
       },
       {
         "name": "Media & Entertainment",
-        "count": 140,
-        "pct": "7.6%"
+        "count": 143,
+        "pct": "7.4%"
       },
       {
         "name": "Hospitality",
-        "count": 127,
+        "count": 133,
         "pct": "6.9%"
       },
       {
         "name": "Construction",
         "count": 121,
-        "pct": "6.6%"
+        "pct": "6.3%"
       },
       {
         "name": "Retail",
-        "count": 110,
-        "pct": "6.0%"
+        "count": 121,
+        "pct": "6.3%"
       }
     ],
     "employees_distribution": {
-      "11-50": 263,
-      "1-10": 246,
-      "51-200": 144,
+      "11-50": 283,
+      "1-10": 247,
+      "51-200": 171,
       "10": 79,
-      "201-500": 69,
-      "5000+": 40,
+      "201-500": 78,
+      "5000+": 41,
       "50": 40,
-      "501-1000": 30,
-      "1001-5000": 30,
-      "250": 30
+      "501-1000": 31,
+      "250": 31,
+      "1001-5000": 30
     },
     "answers": {
-      "hola": "¡Hola! Soy el Data Enrichment Agent 🔬\nHe procesado 2053 empresas en 23 lotes con un 89.3% de éxito.\n¿En qué puedo ayudarte?",
-      "procesadas": "He procesado 2053 empresas en total (23 lotes).\n✅ Enriquecidas: 1833\n⏭ Skipped: 220\n📊 Tasa éxito: 89.3%",
-      "industrias": "Top industrias encontradas:\n  1. Technology: 296 empresas (16.1%)\n  2. Manufacturing: 231 empresas (12.6%)\n  3. Professional Services: 147 empresas (8.0%)\n  4. Media & Entertainment: 140 empresas (7.6%)\n  5. Hospitality: 127 empresas (6.9%)\n  6. Construction: 121 empresas (6.6%)\n  7. Retail: 110 empresas (6.0%)",
-      "empleados": "Distribución por nº empleados:\n  • 11-50: 263 empresas\n  • 1-10: 246 empresas\n  • 51-200: 144 empresas\n  • 10: 79 empresas\n  • 201-500: 69 empresas\n  • 5000+: 40 empresas\n  • 50: 40 empresas\n  • 501-1000: 30 empresas\n  • 1001-5000: 30 empresas\n  • 250: 30 empresas",
-      "progreso": "Llevo 2053 de 94,311 empresas (2.18% del universo).\nA 100 empresas/día L-V, terminaré en ~185 semanas laborables.",
-      "lotes": "He completado 23 lotes. Últimos:\n  • lote-19-2026-04-22: 100 (73 OK, 27 skip)\n  • lote-20-2026-04-27: 100 (85 OK, 15 skip)\n  • lote-21-2026-04-28: 100 (82 OK, 18 skip)\n  • lote-22-2026-04-30: 100 (96 OK, 4 skip)\n  • lote-23-2026-05-04: 100 (97 OK, 3 skip)",
-      "ultimo": "Último lote: lote-23-2026-05-04\n100 empresas · 97 OK · 3 skip",
-      "skipped": "He skipped 220 empresas (10.7%).\nMotivos: empresa en liquidación, sin web pública, empresa muy pequeña, registro de prueba.",
+      "hola": "¡Hola! Soy el Data Enrichment Agent 🔬\nHe procesado 2153 empresas en 24 lotes con un 89.4% de éxito.\n¿En qué puedo ayudarte?",
+      "procesadas": "He procesado 2153 empresas en total (24 lotes).\n✅ Enriquecidas: 1924\n⏭ Skipped: 229\n📊 Tasa éxito: 89.4%",
+      "industrias": "Top industrias encontradas:\n  1. Technology: 319 empresas (16.6%)\n  2. Manufacturing: 234 empresas (12.2%)\n  3. Professional Services: 156 empresas (8.1%)\n  4. Media & Entertainment: 143 empresas (7.4%)\n  5. Hospitality: 133 empresas (6.9%)\n  6. Construction: 121 empresas (6.3%)\n  7. Retail: 121 empresas (6.3%)",
+      "empleados": "Distribución por nº empleados:\n  • 11-50: 283 empresas\n  • 1-10: 247 empresas\n  • 51-200: 171 empresas\n  • 10: 79 empresas\n  • 201-500: 78 empresas\n  • 5000+: 41 empresas\n  • 50: 40 empresas\n  • 501-1000: 31 empresas\n  • 250: 31 empresas\n  • 1001-5000: 30 empresas",
+      "progreso": "Llevo 2153 de 94,311 empresas (2.28% del universo).\nA 100 empresas/día L-V, terminaré en ~184 semanas laborables.",
+      "lotes": "He completado 24 lotes. Últimos:\n  • lote-20-2026-04-27: 100 (85 OK, 15 skip)\n  • lote-21-2026-04-28: 100 (82 OK, 18 skip)\n  • lote-22-2026-04-30: 100 (96 OK, 4 skip)\n  • lote-23-2026-05-04: 100 (97 OK, 3 skip)\n  • lote-24-2026-05-05: 100 (91 OK, 9 skip)",
+      "ultimo": "Último lote: lote-24-2026-05-05\n100 empresas · 91 OK · 9 skip",
+      "skipped": "He skipped 229 empresas (10.6%).\nMotivos: sin web pública, empresa muy pequeña, información no encontrable.",
       "ayuda": "Puedo responder sobre:\n• industrias encontradas\n• distribución de empleados\n• empresas procesadas y skipped\n• progreso del universo\n• historial de lotes\n\nEscribe tu pregunta 👇"
     }
   },
