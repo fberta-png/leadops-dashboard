@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-08T09:19:20",
+  "last_updated": "2026-05-08T09:19:25",
   "agent1": {
     "name": "Data Enrichment",
     "status": "active",
@@ -8,8 +8,8 @@
     "total_skipped": 241,
     "total_lotes": 26,
     "success_rate": 89.8,
-    "universe_total": 94311,
-    "progress_pct": 2.49,
+    "universe_total": 96353,
+    "progress_pct": 2.44,
     "last_lote": "lote-26-2026-05-08",
     "schedule": "L-V 3:00am"
   },
