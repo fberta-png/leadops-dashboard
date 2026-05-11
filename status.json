@@ -25,19 +25,20 @@
     "schedule": "L-V 4:00am"
   },
   "agent3": {
-    "name": "Trigger Buying",
+    "name": "Funding Intelligence",
     "status": "active",
-    "signals_detected": 2,
-    "signals_job_hr": 1,
-    "signals_job_payroll": 0,
-    "total_scanned": 27,
-    "universe_total": 27,
-    "progress_pct": 100.0,
-    "last_scan": "2026-04-08",
-    "schedule": "L-X-V 5:00am",
-    "signals_scale": 1,
-    "signals_compliance": 0,
-    "signals_finance": 0,
-    "signals_hiring_surge": 0
+    "schedule": "Lunes 8:00am",
+    "semana_cubierta": "Test Run · Abr-May 2026",
+    "total_empresas": 11,
+    "prioridad_alta": 4,
+    "prioridad_media": 6,
+    "prioridad_baja": 1,
+    "en_hubspot": 6,
+    "ya_clientes": 1,
+    "no_en_hubspot": 5,
+    "deals_creados": 0,
+    "deals_pendientes": 10,
+    "total_historico": 11,
+    "last_run": "2026-05-08T08:00:00"
   }
 }

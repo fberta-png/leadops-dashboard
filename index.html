@@ -262,7 +262,7 @@
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="switchTab('enrichment',this)">✦ Data Enrichment</button>
     <button class="nav-tab" onclick="switchTab('buyer',this)">✦ Buyer Enrichment</button>
-    <button class="nav-tab" onclick="switchTab('trigger',this)">⚡ Trigger Buying</button>
+    <button class="nav-tab" onclick="switchTab('trigger',this)">💰 Funding Intelligence</button>
     <button class="nav-tab" onclick="switchTab('agentes',this)">○ Agentes</button>
     <button class="nav-tab" onclick="switchTab('oficina',this)">🏢 Oficina</button>
   </div>
@@ -513,16 +513,16 @@
 <div class="footer" id="a2-footer">Lead Ops · Sesame · Cargando datos...</div>
 </div>
 
-<!-- ═══════════════ TAB: TRIGGER BUYING ═══════════════ -->
+<!-- ═══════════════ TAB: FUNDING INTELLIGENCE ═══════════════ -->
 <div id="tab-trigger" class="tab-panel">
 <div class="main">
 
   <div class="section-label">Estado del Agente</div>
   <div class="agent-bar" style="border-left-color:var(--orange)">
     <div class="agent-bar-left">
-      <div class="agent-avatar" style="background:rgba(249,115,22,0.15)">⚡</div>
+      <div class="agent-avatar" style="background:rgba(249,115,22,0.15)">💰</div>
       <div>
-        <div class="agent-name">Trigger Buying Agent</div>
+        <div class="agent-name">Funding Intelligence Agent</div>
         <div class="agent-info" id="a3-info">Cargando...</div>
       </div>
     </div>
@@ -531,124 +531,111 @@
     </div>
   </div>
 
-  <div class="section-label">Señales de Compra · Universo ICP</div>
+  <div class="section-label">Rondas de Financiación · Semana Actual</div>
   <div class="universe-grid">
     <div class="uni-card main-card">
-      <div class="uni-label">Universo A3</div>
-      <div class="uni-value col-orange" id="a3-universe">—</div>
-      <div class="uni-sub">Empresas con BPs activos</div>
+      <div class="uni-label">Empresas esta semana</div>
+      <div class="uni-value col-orange" id="a3-total-empresas">—</div>
+      <div class="uni-sub" id="a3-semana-cubierta">Semana cargando...</div>
     </div>
     <div class="uni-card">
-      <div class="uni-label">Señales detectadas</div>
-      <div class="uni-value col-yellow" id="a3-signals">—</div>
-      <div class="uni-sub">Job postings activos</div>
+      <div class="uni-label">Prioridad Alta 🔴</div>
+      <div class="uni-value col-yellow" id="a3-prio-alta">—</div>
+      <div class="uni-sub">Serie A/B · ≥ €2M</div>
       <div class="uni-deltas">
-        <span class="delta up" id="a3-hr-delta">—</span>
-        <span class="delta up" id="a3-payroll-delta">—</span>
-        <span class="delta up" id="a3-compliance-delta">—</span>
-        <span class="delta up" id="a3-finance-delta">—</span>
-        <span class="delta up" id="a3-scale-delta">—</span>
-        <span class="delta up" id="a3-surge-delta">—</span>
+        <span class="delta up" id="a3-prio-media-delta">—</span>
+        <span class="delta up" id="a3-prio-baja-delta">—</span>
       </div>
     </div>
     <div class="uni-card">
-      <div class="uni-label">Escaneadas</div>
-      <div class="uni-value col-purple" id="a3-scanned">—</div>
-      <div class="uni-sub">Con Trigger Last Check</div>
+      <div class="uni-label">En HubSpot</div>
+      <div class="uni-value col-purple" id="a3-en-hubspot">—</div>
+      <div class="uni-sub" id="a3-ya-clientes-sub">Ya clientes: —</div>
     </div>
     <div class="uni-card">
-      <div class="uni-label">Progreso universo</div>
-      <div class="uni-value col-cyan" id="a3-progress-pct">—</div>
-      <div class="uni-sub">Del total de cuentas A2</div>
+      <div class="uni-label">Deals creados</div>
+      <div class="uni-value col-cyan" id="a3-deals-creados">—</div>
+      <div class="uni-sub">Pendientes: <span id="a3-deals-pendientes">—</span></div>
       <div class="uni-deltas">
-        <span class="delta up">L-X-V 5:00am</span>
+        <span class="delta up">Lunes · 8:00am</span>
       </div>
     </div>
   </div>
 
-  <div class="section-label">Señales por tipo</div>
+  <div class="section-label">Distribución de Rondas</div>
   <div class="progress-section">
     <div class="prog-card">
       <div class="prog-row">
-        <div class="prog-icon">👥</div>
-        <div class="prog-label-wrap"><div class="prog-label">Job Posting HR / People</div><div class="prog-total">CHRO · HR Director · Talent</div></div>
-        <div class="prog-bar-wrap"><div class="prog-fill green" id="a3-bar-hr" style="width:0%"></div></div>
+        <div class="prog-icon">🔴</div>
+        <div class="prog-label-wrap"><div class="prog-label">Prioridad Alta</div><div class="prog-total">Serie A o Serie B · importe ≥ €2M</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,#ef4444,#f87171)" id="a3-bar-alta" style="width:0%"></div></div>
         <div class="prog-stats">
-          <div class="prog-stat"><div class="val val-green" id="a3-stat-hr">—</div><div class="lbl">señales</div></div>
+          <div class="prog-stat"><div class="val val-red" id="a3-stat-alta">—</div><div class="lbl">empresas</div></div>
         </div>
-        <div class="prog-pct" id="a3-bar-hr-pct">—</div>
+        <div class="prog-pct" id="a3-bar-alta-pct">—</div>
       </div>
       <div class="prog-row">
-        <div class="prog-icon">💰</div>
-        <div class="prog-label-wrap"><div class="prog-label">Payroll Signal</div><div class="prog-total">Nómina · Payroll · C&B · Retribución</div></div>
-        <div class="prog-bar-wrap"><div class="prog-fill" id="a3-bar-payroll" style="width:0%"></div></div>
+        <div class="prog-icon">🟠</div>
+        <div class="prog-label-wrap"><div class="prog-label">Prioridad Media</div><div class="prog-total">Seed/Pre-Serie A · €500K–€2M</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,#f97316,#fb923c)" id="a3-bar-media" style="width:0%"></div></div>
         <div class="prog-stats">
-          <div class="prog-stat"><div class="val val-green" id="a3-stat-payroll">—</div><div class="lbl">señales</div></div>
+          <div class="prog-stat"><div class="val" style="color:#f97316" id="a3-stat-media">—</div><div class="lbl">empresas</div></div>
         </div>
-        <div class="prog-pct" id="a3-bar-payroll-pct">—</div>
+        <div class="prog-pct" id="a3-bar-media-pct">—</div>
       </div>
       <div class="prog-row">
-        <div class="prog-icon">⚖️</div>
-        <div class="prog-label-wrap"><div class="prog-label">Compliance Signal</div><div class="prog-total">Asesor Laboral · Relaciones Laborales · Técnico RRHH</div></div>
-        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,#a78bfa,#c4b5fd)" id="a3-bar-compliance" style="width:0%"></div></div>
+        <div class="prog-icon">✅</div>
+        <div class="prog-label-wrap"><div class="prog-label">En HubSpot · No Clientes</div><div class="prog-total">Ya en CRM · deal posible</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill green" id="a3-bar-hubspot" style="width:0%"></div></div>
         <div class="prog-stats">
-          <div class="prog-stat"><div class="val" style="color:#a78bfa" id="a3-stat-compliance">—</div><div class="lbl">señales</div></div>
+          <div class="prog-stat"><div class="val val-green" id="a3-stat-hubspot">—</div><div class="lbl">empresas</div></div>
         </div>
-        <div class="prog-pct" id="a3-bar-compliance-pct">—</div>
+        <div class="prog-pct" id="a3-bar-hubspot-pct">—</div>
       </div>
       <div class="prog-row">
-        <div class="prog-icon">📊</div>
-        <div class="prog-label-wrap"><div class="prog-label">Finance Signal</div><div class="prog-total">CFO · Director Financiero · Controller · Finance Director</div></div>
-        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,#34d399,#6ee7b7)" id="a3-bar-finance" style="width:0%"></div></div>
+        <div class="prog-icon">⛔</div>
+        <div class="prog-label-wrap"><div class="prog-label">Ya Clientes</div><div class="prog-total">lifecyclestage = customer · no crear deal</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,#a78bfa,#c4b5fd)" id="a3-bar-clientes" style="width:0%"></div></div>
         <div class="prog-stats">
-          <div class="prog-stat"><div class="val val-green" id="a3-stat-finance">—</div><div class="lbl">señales</div></div>
+          <div class="prog-stat"><div class="val" style="color:#a78bfa" id="a3-stat-clientes">—</div><div class="lbl">empresas</div></div>
         </div>
-        <div class="prog-pct" id="a3-bar-finance-pct">—</div>
+        <div class="prog-pct" id="a3-bar-clientes-pct">—</div>
       </div>
       <div class="prog-row">
-        <div class="prog-icon">🚀</div>
-        <div class="prog-label-wrap"><div class="prog-label">Scale Signal</div><div class="prog-total">COO · Chief of Staff · Head of People · Office Manager</div></div>
-        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,#f97316,#fb923c)" id="a3-bar-scale" style="width:0%"></div></div>
+        <div class="prog-icon">🤝</div>
+        <div class="prog-label-wrap"><div class="prog-label">Deals Creados</div><div class="prog-total">Confirmados por Phil tras revisión del Excel</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,#34d399,#6ee7b7)" id="a3-bar-deals" style="width:0%"></div></div>
         <div class="prog-stats">
-          <div class="prog-stat"><div class="val" style="color:#f97316" id="a3-stat-scale">—</div><div class="lbl">señales</div></div>
+          <div class="prog-stat"><div class="val val-green" id="a3-stat-deals">—</div><div class="lbl">deals</div></div>
         </div>
-        <div class="prog-pct" id="a3-bar-scale-pct">—</div>
-      </div>
-      <div class="prog-row">
-        <div class="prog-icon">🔥</div>
-        <div class="prog-label-wrap"><div class="prog-label">Hiring Surge</div><div class="prog-total">&gt;5 job postings activos simultáneos</div></div>
-        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,#ef4444,#f87171)" id="a3-bar-surge" style="width:0%"></div></div>
-        <div class="prog-stats">
-          <div class="prog-stat"><div class="val val-red" id="a3-stat-surge">—</div><div class="lbl">señales</div></div>
-        </div>
-        <div class="prog-pct" id="a3-bar-surge-pct">—</div>
+        <div class="prog-pct" id="a3-bar-deals-pct">—</div>
       </div>
     </div>
   </div>
 
   <div class="bottom-grid">
     <div class="lote-card">
-      <div class="section-label" style="margin-bottom:14px;">Keywords monitorizadas</div>
-      <div class="lote-row"><div class="lote-id">HR Signal</div><div class="lote-pills"><span class="pill pill-ok">rrhh · hr · talent · people ops · hrbp</span></div></div>
-      <div class="lote-row"><div class="lote-id">Payroll Signal</div><div class="lote-pills"><span class="pill pill-ind">nómina · payroll · c&b · retribución</span></div></div>
-      <div class="lote-row"><div class="lote-id">Compliance Signal</div><div class="lote-pills"><span class="pill" style="background:rgba(167,139,250,0.15);color:#a78bfa">asesor laboral · relaciones laborales · técnico rrhh</span></div></div>
-      <div class="lote-row"><div class="lote-id">Finance Signal</div><div class="lote-pills"><span class="pill pill-emp">cfo · director financiero · controller</span></div></div>
-      <div class="lote-row"><div class="lote-id">Scale Signal</div><div class="lote-pills"><span class="pill" style="background:rgba(249,115,22,0.15);color:#f97316">coo · chief of staff · head of people</span></div></div>
-      <div class="lote-row"><div class="lote-id">Hiring Surge</div><div class="lote-pills"><span class="pill" style="background:rgba(239,68,68,0.15);color:#ef4444">&gt;5 job postings activos</span></div></div>
+      <div class="section-label" style="margin-bottom:14px;">Fuentes monitorizadas</div>
+      <div class="lote-row"><div class="lote-id">Noticias ES</div><div class="lote-pills"><span class="pill pill-ok">elreferente.es · novobrief.com · ecosistemastartup.com</span></div></div>
+      <div class="lote-row"><div class="lote-id">Noticias EU</div><div class="lote-pills"><span class="pill pill-ind">eu-startups.com · techfundingnews.com · bebeez.eu</span></div></div>
+      <div class="lote-row"><div class="lote-id">Filtro fase</div><div class="lote-pills"><span class="pill" style="background:rgba(249,115,22,0.15);color:#f97316">Pre-Seed · Seed · Serie A · Serie B</span></div></div>
+      <div class="lote-row"><div class="lote-id">Filtro tamaño</div><div class="lote-pills"><span class="pill pill-emp">5–600 empleados · mínimo €300K</span></div></div>
+      <div class="lote-row"><div class="lote-id">Deduplicación</div><div class="lote-pills"><span class="pill" style="background:rgba(34,197,94,0.15);color:#22c55e">agent3_historico.json · 12 meses ventana</span></div></div>
+      <div class="lote-row"><div class="lote-id">Histórico</div><div class="lote-pills"><span class="pill pill-ok" id="a3-historico-pill">— empresas en total</span></div></div>
     </div>
     <div class="schedule-card">
       <div class="section-label" style="margin-bottom:14px;">Configuración del Agente</div>
-      <div class="sched-row"><span class="sched-label">Archivo maestro</span><span class="sched-val" style="font-size:11px;color:var(--orange)">Lead Ops - Agent 2 - Buyer Enrichment.xlsx</span></div>
-      <div class="sched-row"><span class="sched-label">Empresas por run</span><span class="sched-val">200</span></div>
-      <div class="sched-row"><span class="sched-label">Frecuencia</span><span class="sched-val green">L-X-V · 5:00am</span></div>
-      <div class="sched-row"><span class="sched-label">Re-check por empresa</span><span class="sched-val">Cada 30 días</span></div>
-      <div class="sched-row"><span class="sched-label">Fuente señales</span><span class="sched-val green">Apollo Job Postings ✓</span></div>
-      <div class="sched-row"><span class="sched-label">Actualizado</span><span class="sched-val muted" id="a3-last-updated-sched">—</span></div>
+      <div class="sched-row"><span class="sched-label">Output</span><span class="sched-val" style="font-size:11px;color:var(--orange)">Agent 3 - Rondas Financiacion - YYYY-MM-DD.xlsx</span></div>
+      <div class="sched-row"><span class="sched-label">Frecuencia</span><span class="sched-val green">Lunes · 8:00am ✓</span></div>
+      <div class="sched-row"><span class="sched-label">CRM check</span><span class="sched-val green">HubSpot · lifecyclestage ✓</span></div>
+      <div class="sched-row"><span class="sched-label">Ventana búsqueda</span><span class="sched-val">Últimos 7 días</span></div>
+      <div class="sched-row"><span class="sched-label">Workflow</span><span class="sched-val">Phil revisa → Deal Creado → devuelve Excel</span></div>
+      <div class="sched-row"><span class="sched-label">Última ejecución</span><span class="sched-val muted" id="a3-last-updated-sched">—</span></div>
     </div>
   </div>
 
 </div>
-<div class="footer" id="a3-footer">Lead Ops · Sesame · Trigger Buying Agent · Esperando primera ejecución...</div>
+<div class="footer" id="a3-footer">Lead Ops · Sesame · Funding Intelligence Agent · Monitoriza rondas de financiación en España cada lunes</div>
 </div>
 
 <!-- ═══════════════ TAB: AGENTES ═══════════════ -->
@@ -830,48 +817,54 @@ async function loadData() {
       document.getElementById('a3-info').textContent =
         `${fmt(a3.signals_detected||0)} señales detectadas · ${fmt(a3.total_scanned||0)} escaneadas · Próximo scan: L-X-V 5am`;
       document.getElementById('a3-status-badge').textContent =
-        (a3.signals_detected||0) > 0 ? `⚡ ${fmt(a3.signals_detected)} señales` : '● Escaneando...';
-      document.getElementById('a3-universe').textContent    = fmt(a3.universe_total||0);
-      document.getElementById('a3-signals').textContent     = fmt(a3.signals_detected||0);
-      document.getElementById('a3-hr-delta').textContent         = `↑ ${fmt(a3.signals_job_hr||0)} HR`;
-      document.getElementById('a3-payroll-delta').textContent    = `↑ ${fmt(a3.signals_job_payroll||0)} Nómina`;
-      document.getElementById('a3-compliance-delta').textContent = `↑ ${fmt(a3.signals_compliance||0)} Compliance`;
-      document.getElementById('a3-finance-delta').textContent    = `↑ ${fmt(a3.signals_finance||0)} Finance`;
-      document.getElementById('a3-scale-delta').textContent      = `↑ ${fmt(a3.signals_scale||a3.signals_growth||0)} Scale`;
-      document.getElementById('a3-surge-delta').textContent      = `↑ ${fmt(a3.signals_hiring_surge||0)} Surge`;
-      document.getElementById('a3-scanned').textContent          = fmt(a3.total_scanned||0);
-      document.getElementById('a3-progress-pct').textContent     = pct(a3.progress_pct||0);
+        (a3.total_empresas||0) > 0 ? `💰 ${fmt(a3.total_empresas)} rondas esta semana` : '● Esperando próximo lunes';
+      const totalE    = Math.max(1, a3.total_empresas||1);
+      const altaN     = a3.prioridad_alta||0;
+      const mediaN    = a3.prioridad_media||0;
+      const bajaN     = a3.prioridad_baja||0;
+      const hsN       = a3.en_hubspot||0;
+      const clientesN = a3.ya_clientes||0;
+      const hsNoCli   = Math.max(0, hsN - clientesN);
+      const dealsN    = a3.deals_creados||0;
+      const dealsPend = a3.deals_pendientes||0;
+      const histN     = a3.total_historico||0;
 
-      const totalSig      = Math.max(1, a3.signals_detected||1);
-      const hrPct         = Math.min((a3.signals_job_hr||0) / totalSig * 100, 100);
-      const payrollPct    = Math.min((a3.signals_job_payroll||0) / totalSig * 100, 100);
-      const compliancePct = Math.min((a3.signals_compliance||0) / totalSig * 100, 100);
-      const financePct    = Math.min((a3.signals_finance||0) / totalSig * 100, 100);
-      const scalePct      = Math.min((a3.signals_scale||a3.signals_growth||0) / totalSig * 100, 100);
-      const surgePct      = Math.min((a3.signals_hiring_surge||0) / totalSig * 100, 100);
+      document.getElementById('a3-total-empresas').textContent  = fmt(totalE);
+      document.getElementById('a3-semana-cubierta').textContent = a3.semana_cubierta || '—';
+      document.getElementById('a3-prio-alta').textContent       = fmt(altaN);
+      document.getElementById('a3-prio-media-delta').textContent= `🟠 ${fmt(mediaN)} Media`;
+      document.getElementById('a3-prio-baja-delta').textContent = `⚪ ${fmt(bajaN)} Baja`;
+      document.getElementById('a3-en-hubspot').textContent      = fmt(hsN);
+      document.getElementById('a3-ya-clientes-sub').textContent = `Ya clientes: ${fmt(clientesN)} ⛔`;
+      document.getElementById('a3-deals-creados').textContent   = fmt(dealsN);
+      document.getElementById('a3-deals-pendientes').textContent= fmt(dealsPend);
+      document.getElementById('a3-historico-pill').textContent  = `${fmt(histN)} empresas en histórico`;
 
-      document.getElementById('a3-stat-hr').textContent              = fmt(a3.signals_job_hr||0);
-      document.getElementById('a3-bar-hr').style.width               = hrPct.toFixed(2) + '%';
-      document.getElementById('a3-bar-hr-pct').textContent           = pct(hrPct);
-      document.getElementById('a3-stat-payroll').textContent         = fmt(a3.signals_job_payroll||0);
-      document.getElementById('a3-bar-payroll').style.width          = payrollPct.toFixed(2) + '%';
-      document.getElementById('a3-bar-payroll-pct').textContent      = pct(payrollPct);
-      document.getElementById('a3-stat-compliance').textContent      = fmt(a3.signals_compliance||0);
-      document.getElementById('a3-bar-compliance').style.width       = compliancePct.toFixed(2) + '%';
-      document.getElementById('a3-bar-compliance-pct').textContent   = pct(compliancePct);
-      document.getElementById('a3-stat-finance').textContent         = fmt(a3.signals_finance||0);
-      document.getElementById('a3-bar-finance').style.width          = financePct.toFixed(2) + '%';
-      document.getElementById('a3-bar-finance-pct').textContent      = pct(financePct);
-      document.getElementById('a3-stat-scale').textContent           = fmt(a3.signals_scale||a3.signals_growth||0);
-      document.getElementById('a3-bar-scale').style.width            = scalePct.toFixed(2) + '%';
-      document.getElementById('a3-bar-scale-pct').textContent        = pct(scalePct);
-      document.getElementById('a3-stat-surge').textContent           = fmt(a3.signals_hiring_surge||0);
-      document.getElementById('a3-bar-surge').style.width            = surgePct.toFixed(2) + '%';
-      document.getElementById('a3-bar-surge-pct').textContent        = pct(surgePct);
+      const altaPct    = Math.min(altaN    / totalE * 100, 100);
+      const mediaPct   = Math.min(mediaN   / totalE * 100, 100);
+      const hsPct      = Math.min(hsNoCli  / totalE * 100, 100);
+      const cliPct     = Math.min(clientesN/ totalE * 100, 100);
+      const dealsPct   = dealsPend > 0 ? Math.min(dealsN / Math.max(1, dealsN + dealsPend) * 100, 100) : 0;
+
+      document.getElementById('a3-stat-alta').textContent       = fmt(altaN);
+      document.getElementById('a3-bar-alta').style.width        = altaPct.toFixed(2) + '%';
+      document.getElementById('a3-bar-alta-pct').textContent    = pct(altaPct);
+      document.getElementById('a3-stat-media').textContent      = fmt(mediaN);
+      document.getElementById('a3-bar-media').style.width       = mediaPct.toFixed(2) + '%';
+      document.getElementById('a3-bar-media-pct').textContent   = pct(mediaPct);
+      document.getElementById('a3-stat-hubspot').textContent    = fmt(hsNoCli);
+      document.getElementById('a3-bar-hubspot').style.width     = hsPct.toFixed(2) + '%';
+      document.getElementById('a3-bar-hubspot-pct').textContent = pct(hsPct);
+      document.getElementById('a3-stat-clientes').textContent   = fmt(clientesN);
+      document.getElementById('a3-bar-clientes').style.width    = cliPct.toFixed(2) + '%';
+      document.getElementById('a3-bar-clientes-pct').textContent= pct(cliPct);
+      document.getElementById('a3-stat-deals').textContent      = fmt(dealsN);
+      document.getElementById('a3-bar-deals').style.width       = dealsPct.toFixed(2) + '%';
+      document.getElementById('a3-bar-deals-pct').textContent   = pct(dealsPct);
 
       document.getElementById('a3-last-updated-sched').textContent = dtStr;
       document.getElementById('a3-footer').textContent =
-        `Lead Ops · Sesame · Actualizado ${dtStr} · ${fmt(a3.signals_detected||0)} señales detectadas · ${fmt(a3.total_scanned||0)} empresas escaneadas`;
+        `Lead Ops · Sesame · Actualizado ${dtStr} · ${fmt(a3.total_empresas||0)} rondas detectadas · ${fmt(dealsN)} deals creados`;
     }
 
   } catch(e) {
