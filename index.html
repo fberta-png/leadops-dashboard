@@ -123,6 +123,14 @@
   .sched-val { font-weight:600; }
   .sched-val.green{color:var(--green)} .sched-val.yellow{color:var(--yellow)} .sched-val.muted{color:var(--muted2)}
 
+  /* ── DOWNLOAD BUTTON ── */
+  .dl-btn { display:flex; align-items:center; justify-content:center; gap:7px; width:100%; margin-top:14px; padding:9px 0; background:rgba(79,142,247,0.1); border:1px solid rgba(79,142,247,0.25); border-radius:8px; color:var(--blue); font-size:12px; font-weight:700; cursor:pointer; text-decoration:none; transition:all 0.18s; }
+  .dl-btn:hover { background:rgba(79,142,247,0.2); border-color:var(--blue); }
+  .dl-btn-orange { background:rgba(249,115,22,0.1); border-color:rgba(249,115,22,0.25); color:var(--orange); }
+  .dl-btn-orange:hover { background:rgba(249,115,22,0.2); border-color:var(--orange); }
+  .dl-btn-purple { background:rgba(155,109,255,0.1); border-color:rgba(155,109,255,0.25); color:var(--purple); }
+  .dl-btn-purple:hover { background:rgba(155,109,255,0.2); border-color:var(--purple); }
+
   /* ── OFICINA TAB ── */
   .oficina-wrap {
     display:flex; flex-direction:column; align-items:center;
@@ -396,6 +404,7 @@
       <div class="sched-row"><span class="sched-label">Frecuencia</span><span class="sched-val green">L-V · 3:00am</span></div>
       <div class="sched-row"><span class="sched-label">Último lote</span><span class="sched-val green" id="a1-last-lote-sched">—</span></div>
       <div class="sched-row"><span class="sched-label">Actualizado</span><span class="sched-val green" id="a1-last-updated-sched">—</span></div>
+      <button class="dl-btn" onclick="downloadAgentCSV(1)">⬇ Descargar último CSV</button>
     </div>
   </div>
 
@@ -506,6 +515,7 @@
       <div class="sched-row"><span class="sched-label">Max BPs por empresa</span><span class="sched-val">2</span></div>
       <div class="sched-row"><span class="sched-label">Fuente contactos</span><span class="sched-val green">Apollo.io ✓</span></div>
       <div class="sched-row"><span class="sched-label">Actualizado</span><span class="sched-val green" id="a2-last-updated-sched">—</span></div>
+      <button class="dl-btn dl-btn-purple" onclick="downloadAgentCSV(2)">⬇ Descargar último CSV</button>
     </div>
   </div>
 
@@ -631,6 +641,7 @@
       <div class="sched-row"><span class="sched-label">Ventana búsqueda</span><span class="sched-val">Últimos 7 días</span></div>
       <div class="sched-row"><span class="sched-label">Workflow</span><span class="sched-val">Phil revisa → Deal Creado → devuelve Excel</span></div>
       <div class="sched-row"><span class="sched-label">Última ejecución</span><span class="sched-val muted" id="a3-last-updated-sched">—</span></div>
+      <button class="dl-btn dl-btn-orange" onclick="downloadAgentCSV(3)">⬇ Descargar último CSV</button>
     </div>
   </div>
 
@@ -869,6 +880,29 @@ async function loadData() {
 
   } catch(e) {
     console.error('Error cargando status.json:', e);
+  }
+}
+
+async function downloadAgentCSV(agentId) {
+  const BASE = 'https://raw.githubusercontent.com/fberta-png/leadops-dashboard/main/downloads/';
+  const FILES = {
+    1: { url: BASE + 'agent1_latest.csv', name: 'Agent1_DataEnrichment_latest.csv' },
+    2: { url: BASE + 'agent2_latest.csv', name: 'Agent2_BuyerEnrichment_latest.csv' },
+    3: { url: BASE + 'agent3_latest.csv', name: 'Agent3_FundingIntelligence_latest.csv' },
+  };
+  const f = FILES[agentId];
+  if (!f) return;
+  try {
+    const resp = await fetch(f.url);
+    if (!resp.ok) throw new Error('not found');
+    const blob = await resp.blob();
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = f.name;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  } catch(e) {
+    window.open(f.url, '_blank');
   }
 }
 </script>
