@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-12T09:09:56",
+  "last_updated": "2026-05-12T21:06:04",
   "agent1": {
     "name": "Data Enrichment",
     "status": "active",
@@ -16,12 +16,12 @@
   "agent2": {
     "name": "Buyer Enrichment",
     "status": "active",
-    "total_processed": 650,
+    "total_processed": 700,
     "found_2bp": 68,
-    "found_1bp": 49,
-    "not_found": 533,
+    "found_1bp": 59,
+    "not_found": 573,
     "universe_total": 2999,
-    "progress_pct": 21.67,
+    "progress_pct": 23.34,
     "schedule": "L-V 4:00am"
   },
   "agent3": {

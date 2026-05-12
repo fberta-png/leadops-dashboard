@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-12T09:09:56",
+  "last_updated": "2026-05-12T21:06:04",
   "agent1": {
     "summary": "2453 empresas · 27 lotes · 89.7% éxito",
     "top_industries": [
@@ -57,19 +57,19 @@
       "Strategy Consulting": 61
     },
     "answers": {
-      "hola": "¡Hola! Soy el Agente 1 de Data Enrichment. He procesado 2453 empresas con un 89.7% de éxito. ¿En qué te ayudo?",
-      "procesadas": "He procesado 2453 empresas en total. 2201 enriquecidas y 252 skipped. Tasa de éxito: 89.7%",
-      "industrias": "Top industrias enriquecidas:\n  1. Technology: 381 (17.3%)\n  2. Manufacturing: 264 (12.0%)\n  3. Professional Services: 182 (8.3%)\n  4. Media & Entertainment: 159 (7.2%)\n  5. Hospitality: 152 (6.9%)",
-      "empleados": "Distribución de tamaño de empresa:\n  Software: 174\n  IT Consulting: 165\n  Machinery & Equipment: 99\n  Building Construction & Renovation: 98\n  Materials & Components: 89",
-      "progreso": "Llevo 2453 de 96353 empresas procesadas (2.55% del universo). Último lote: lote-27-2026-05-12",
-      "lotes": "He completado 27 lotes en total. Último: lote-27-2026-05-12",
-      "ultimo": "Mi último lote fue lote-27-2026-05-12. Procesé 2453 empresas acumuladas.",
-      "skipped": "Skipped: 252 empresas.",
-      "ayuda": "Puedo contarte sobre: industrias enriquecidas, distribución de empleados, progreso, lotes, empresas skipped."
+      "hola": "¡Hola! Soy el Agente 1. He procesado 2453 empresas con 89.7% de éxito.",
+      "procesadas": "2453 empresas. 2201 enriquecidas, 252 skipped. Tasa: 89.7%",
+      "industrias": "Top industrias:\n  1. Technology: 381 (17.3%)\n  2. Manufacturing: 264 (12.0%)\n  3. Professional Services: 182 (8.3%)\n  4. Media & Entertainment: 159 (7.2%)\n  5. Hospitality: 152 (6.9%)",
+      "empleados": "Distribución empleados:\n  Software: 174\n  IT Consulting: 165\n  Machinery & Equipment: 99\n  Building Construction & Renovation: 98\n  Materials & Components: 89",
+      "progreso": "2453 de 96353 (2.55%). Último lote: lote-27-2026-05-12",
+      "lotes": "27 lotes completados. Último: lote-27-2026-05-12",
+      "ultimo": "Último lote: lote-27-2026-05-12. 2453 acumuladas.",
+      "skipped": "252 skipped.",
+      "ayuda": "Puedo contarte: industrias, empleados, progreso, lotes, skipped."
     }
   },
   "agent2": {
-    "summary": "650 empresas · 185 BPs · 21.67% universo",
+    "summary": "700 empresas · 195 BPs · 23.34% universo",
     "top_roles": [
       {
         "title": "Director General",
@@ -80,11 +80,11 @@
         "count": 7
       },
       {
-        "title": "Managing Director",
-        "count": 6
+        "title": "Financial Director",
+        "count": 7
       },
       {
-        "title": "Financial Director",
+        "title": "Managing Director",
         "count": 6
       },
       {
@@ -93,14 +93,14 @@
       }
     ],
     "answers": {
-      "hola": "¡Hola! Soy el Agente 2 de Buyer Enrichment. He encontrado 185 BPs en 650 empresas. ¿Qué quieres saber?",
-      "procesadas": "He procesado 650 empresas. 68 con 2 BPs, 49 con 1 BP, 533 sin resultado.",
-      "bps": "Total BPs encontrados: 185 (68 empresas con 2 BPs, 49 con 1 BP)",
-      "progreso": "Llevo 650 de 2999 empresas procesadas (21.67% del universo).",
-      "roles": "Top cargos encontrados:\n  1. Director General: 8\n  2. Chief Financial Officer: 7\n  3. Managing Director: 6\n  4. Financial Director: 6\n  5. Technical Director: 5",
-      "skipped": "533 empresas sin BP encontrado.",
-      "ultimo": "Última ejecución: 12/05/2026 09:09. 650 empresas en histórico.",
-      "ayuda": "Puedo contarte sobre: BPs encontrados, progreso del universo, top roles/cargos, empresas sin resultado."
+      "hola": "¡Hola! Soy el Agente 2. He encontrado 195 BPs en 700 empresas.",
+      "procesadas": "700 empresas. 2BP=68, 1BP=59, sin resultado=573.",
+      "bps": "Total BPs: 195 (68 con 2, 59 con 1)",
+      "progreso": "700 de 2999 (23.34%).",
+      "roles": "Top cargos:\n  1. Director General: 8\n  2. Chief Financial Officer: 7\n  3. Financial Director: 7\n  4. Managing Director: 6\n  5. Technical Director: 5",
+      "skipped": "573 sin BP encontrado.",
+      "ultimo": "Última ejecución: 12/05/2026 21:06. 700 históricas.",
+      "ayuda": "Puedo contarte: BPs, progreso, roles, sin resultado."
     }
   },
   "agent3": {
