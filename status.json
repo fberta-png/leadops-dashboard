@@ -28,17 +28,17 @@
     "name": "Funding Intelligence",
     "status": "active",
     "schedule": "Lunes 8:00am",
-    "semana_cubierta": "Test Run · Abr-May 2026",
-    "total_empresas": 11,
+    "semana_cubierta": "Sem19–Sem20 · Abr-May 2026",
+    "total_empresas": 15,
     "prioridad_alta": 4,
-    "prioridad_media": 6,
-    "prioridad_baja": 1,
+    "prioridad_media": 9,
+    "prioridad_baja": 2,
     "en_hubspot": 6,
     "ya_clientes": 1,
-    "no_en_hubspot": 5,
-    "deals_creados": 0,
-    "deals_pendientes": 10,
-    "total_historico": 11,
-    "last_run": "2026-05-08T08:00:00"
+    "no_en_hubspot": 9,
+    "deals_creados": 5,
+    "deals_pendientes": 4,
+    "total_historico": 15,
+    "last_run": "2026-05-11T08:00:00"
   }
 }
