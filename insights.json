@@ -1,106 +1,98 @@
 {
-  "last_updated": "2026-05-12T21:06:04",
+  "last_updated": "2026-05-12T21:13:44",
   "agent1": {
-    "summary": "2453 empresas · 27 lotes · 89.7% éxito",
+    "summary": "2553 empresas - 28 lotes - 90.1% exito",
     "top_industries": [
       {
         "name": "Technology",
-        "count": 381,
-        "pct": "17.3%"
+        "count": 395,
+        "pct": "17.2%"
       },
       {
         "name": "Manufacturing",
-        "count": 264,
+        "count": 277,
         "pct": "12.0%"
       },
       {
         "name": "Professional Services",
-        "count": 182,
-        "pct": "8.3%"
-      },
-      {
-        "name": "Media & Entertainment",
-        "count": 159,
-        "pct": "7.2%"
+        "count": 193,
+        "pct": "8.4%"
       },
       {
         "name": "Hospitality",
-        "count": 152,
-        "pct": "6.9%"
+        "count": 164,
+        "pct": "7.1%"
+      },
+      {
+        "name": "Media & Entertainment",
+        "count": 160,
+        "pct": "7.0%"
       },
       {
         "name": "Construction",
-        "count": 130,
-        "pct": "5.9%"
-      },
-      {
-        "name": "Healthcare & Life Sciences",
-        "count": 127,
+        "count": 133,
         "pct": "5.8%"
       },
       {
         "name": "Retail",
-        "count": 127,
+        "count": 133,
         "pct": "5.8%"
       }
     ],
     "employees_distribution": {
-      "Software": 174,
-      "IT Consulting": 165,
-      "Machinery & Equipment": 99,
-      "Building Construction & Renovation": 98,
-      "Materials & Components": 89,
-      "Specialized Trade": 86,
-      "Advertising & Marketing": 83,
-      "Corporate Services": 74,
-      "Restaurants & Catering": 68,
-      "Strategy Consulting": 61
+      "11-50": 324,
+      "1-10": 265,
+      "51-200": 184,
+      "10": 101,
+      "201-500": 86,
+      "50": 50,
+      "5000+": 48,
+      "250": 41,
+      "501-1000": 34,
+      "1001-5000": 33
     },
     "answers": {
-      "hola": "¡Hola! Soy el Agente 1. He procesado 2453 empresas con 89.7% de éxito.",
-      "procesadas": "2453 empresas. 2201 enriquecidas, 252 skipped. Tasa: 89.7%",
-      "industrias": "Top industrias:\n  1. Technology: 381 (17.3%)\n  2. Manufacturing: 264 (12.0%)\n  3. Professional Services: 182 (8.3%)\n  4. Media & Entertainment: 159 (7.2%)\n  5. Hospitality: 152 (6.9%)",
-      "empleados": "Distribución empleados:\n  Software: 174\n  IT Consulting: 165\n  Machinery & Equipment: 99\n  Building Construction & Renovation: 98\n  Materials & Components: 89",
-      "progreso": "2453 de 96353 (2.55%). Último lote: lote-27-2026-05-12",
-      "lotes": "27 lotes completados. Último: lote-27-2026-05-12",
-      "ultimo": "Último lote: lote-27-2026-05-12. 2453 acumuladas.",
-      "skipped": "252 skipped.",
-      "ayuda": "Puedo contarte: industrias, empleados, progreso, lotes, skipped."
+      "hola": "Hola! Soy el Data Enrichment Agent. He procesado 2553 empresas en 28 lotes con un 90.1% de exito.",
+      "procesadas": "He procesado 2553 empresas en total (28 lotes). Enriquecidas: 2299, Skipped: 254, Tasa: 90.1%",
+      "industrias": "Top industrias:\n  1. Technology: 395 empresas (17.2%)\n  2. Manufacturing: 277 empresas (12.0%)\n  3. Professional Services: 193 empresas (8.4%)\n  4. Hospitality: 164 empresas (7.1%)\n  5. Media & Entertainment: 160 empresas (7.0%)\n  6. Construction: 133 empresas (5.8%)\n  7. Retail: 133 empresas (5.8%)",
+      "empleados": "Distribucion por empleados:\n  - 11-50: 324 empresas\n  - 1-10: 265 empresas\n  - 51-200: 184 empresas\n  - 10: 101 empresas\n  - 201-500: 86 empresas\n  - 50: 50 empresas\n  - 5000+: 48 empresas\n  - 250: 41 empresas\n  - 501-1000: 34 empresas\n  - 1001-5000: 33 empresas",
+      "progreso": "Llevo 2553 de 94,311 empresas (2.71%). A 100/dia L-V, ~184 semanas.",
+      "lotes": "Completados 28 lotes. Ultimos:\n  - lote-24-2026-05-05: 100 (91 OK, 9 skip)\n  - lote-25-2026-05-07: 100 (98 OK, 2 skip)\n  - lote-26-2026-05-08: 100 (90 OK, 10 skip)\n  - lote-27-2026-05-12: 100 (89 OK, 11 skip)\n  - lote-28-2026-05-13: 100 (98 OK, 2 skip)",
+      "ultimo": "Ultimo lote: lote-28-2026-05-13\n100 empresas - 98 OK - 2 skip",
+      "skipped": "He skipped 254 empresas (9.9%).",
+      "ayuda": "Puedo responder sobre: industrias, empleados, empresas procesadas, progreso, lotes"
     }
   },
   "agent2": {
-    "summary": "700 empresas · 195 BPs · 23.34% universo",
+    "summary": "700 empresas - 195 BPs encontrados",
     "top_roles": [
       {
-        "title": "Director General",
+        "role": "Director General",
         "count": 8
       },
       {
-        "title": "Chief Financial Officer",
+        "role": "Chief Financial Officer",
         "count": 7
       },
       {
-        "title": "Financial Director",
+        "role": "Financial Director",
         "count": 7
       },
       {
-        "title": "Managing Director",
+        "role": "Managing Director",
         "count": 6
       },
       {
-        "title": "Technical Director",
+        "role": "Technical Director",
         "count": 5
       }
     ],
     "answers": {
-      "hola": "¡Hola! Soy el Agente 2. He encontrado 195 BPs en 700 empresas.",
-      "procesadas": "700 empresas. 2BP=68, 1BP=59, sin resultado=573.",
-      "bps": "Total BPs: 195 (68 con 2, 59 con 1)",
-      "progreso": "700 de 2999 (23.34%).",
-      "roles": "Top cargos:\n  1. Director General: 8\n  2. Chief Financial Officer: 7\n  3. Financial Director: 7\n  4. Managing Director: 6\n  5. Technical Director: 5",
-      "skipped": "573 sin BP encontrado.",
-      "ultimo": "Última ejecución: 12/05/2026 21:06. 700 históricas.",
-      "ayuda": "Puedo contarte: BPs, progreso, roles, sin resultado."
+      "hola": "Hola! Soy el Buyer Enrichment Agent. He procesado 700 empresas y encontrado 195 BPs.",
+      "bps": "2BP: 68 | 1BP: 59 | Sin BP: 573 | Total: 195",
+      "roles": "Roles ICP:\n  - Director General: 8 veces\n  - Chief Financial Officer: 7 veces\n  - Financial Director: 7 veces\n  - Managing Director: 6 veces\n  - Technical Director: 5 veces",
+      "progreso": "Procesadas 700 de 2999 (23.3%)",
+      "ayuda": "Puedo responder sobre BPs, roles ICP, progreso universo A2"
     }
   },
   "agent3": {
