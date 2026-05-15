@@ -1,81 +1,81 @@
 {
-  "last_updated": "2026-05-12T21:13:44",
+  "last_updated": "2026-05-15T09:00:32",
   "agent1": {
-    "summary": "2553 empresas - 28 lotes - 90.1% exito",
+    "summary": "2653 empresas · 29 lotes · 90.2% éxito",
     "top_industries": [
       {
         "name": "Technology",
-        "count": 395,
-        "pct": "17.2%"
+        "count": 405,
+        "pct": "16.9%"
       },
       {
         "name": "Manufacturing",
-        "count": 277,
-        "pct": "12.0%"
+        "count": 297,
+        "pct": "12.4%"
       },
       {
         "name": "Professional Services",
-        "count": 193,
-        "pct": "8.4%"
+        "count": 198,
+        "pct": "8.3%"
       },
       {
         "name": "Hospitality",
-        "count": 164,
-        "pct": "7.1%"
-      },
-      {
-        "name": "Media & Entertainment",
-        "count": 160,
+        "count": 168,
         "pct": "7.0%"
       },
       {
-        "name": "Construction",
-        "count": 133,
-        "pct": "5.8%"
+        "name": "Media & Entertainment",
+        "count": 165,
+        "pct": "6.9%"
       },
       {
-        "name": "Retail",
-        "count": 133,
-        "pct": "5.8%"
+        "name": "Construction",
+        "count": 147,
+        "pct": "6.1%"
+      },
+      {
+        "name": "Healthcare & Life Sciences",
+        "count": 136,
+        "pct": "5.7%"
       }
     ],
     "employees_distribution": {
       "11-50": 324,
-      "1-10": 265,
+      "1-10": 268,
       "51-200": 184,
-      "10": 101,
+      "10": 108,
       "201-500": 86,
-      "50": 50,
-      "5000+": 48,
-      "250": 41,
+      "50": 52,
+      "5000+": 50,
+      "250": 42,
       "501-1000": 34,
-      "1001-5000": 33
+      "1001-5000": 34
     },
     "answers": {
-      "hola": "Hola! Soy el Data Enrichment Agent. He procesado 2553 empresas en 28 lotes con un 90.1% de exito.",
-      "procesadas": "He procesado 2553 empresas en total (28 lotes). Enriquecidas: 2299, Skipped: 254, Tasa: 90.1%",
-      "industrias": "Top industrias:\n  1. Technology: 395 empresas (17.2%)\n  2. Manufacturing: 277 empresas (12.0%)\n  3. Professional Services: 193 empresas (8.4%)\n  4. Hospitality: 164 empresas (7.1%)\n  5. Media & Entertainment: 160 empresas (7.0%)\n  6. Construction: 133 empresas (5.8%)\n  7. Retail: 133 empresas (5.8%)",
-      "empleados": "Distribucion por empleados:\n  - 11-50: 324 empresas\n  - 1-10: 265 empresas\n  - 51-200: 184 empresas\n  - 10: 101 empresas\n  - 201-500: 86 empresas\n  - 50: 50 empresas\n  - 5000+: 48 empresas\n  - 250: 41 empresas\n  - 501-1000: 34 empresas\n  - 1001-5000: 33 empresas",
-      "progreso": "Llevo 2553 de 94,311 empresas (2.71%). A 100/dia L-V, ~184 semanas.",
-      "lotes": "Completados 28 lotes. Ultimos:\n  - lote-24-2026-05-05: 100 (91 OK, 9 skip)\n  - lote-25-2026-05-07: 100 (98 OK, 2 skip)\n  - lote-26-2026-05-08: 100 (90 OK, 10 skip)\n  - lote-27-2026-05-12: 100 (89 OK, 11 skip)\n  - lote-28-2026-05-13: 100 (98 OK, 2 skip)",
-      "ultimo": "Ultimo lote: lote-28-2026-05-13\n100 empresas - 98 OK - 2 skip",
-      "skipped": "He skipped 254 empresas (9.9%).",
-      "ayuda": "Puedo responder sobre: industrias, empleados, empresas procesadas, progreso, lotes"
+      "hola": "¡Hola! Soy el Data Enrichment Agent 🔬\nHe procesado 2653 empresas en 29 lotes con un 90.2% de éxito.\n¿En qué puedo ayudarte?",
+      "procesadas": "He procesado 2653 empresas en total (29 lotes).\n✅ Enriquecidas: 2392\n⏭ Skipped: 261\n📊 Tasa éxito: 90.2%",
+      "industrias": "Top industrias encontradas:\n  1. Technology: 405 empresas (16.9%)\n  2. Manufacturing: 297 empresas (12.4%)\n  3. Professional Services: 198 empresas (8.3%)\n  4. Hospitality: 168 empresas (7.0%)\n  5. Media & Entertainment: 165 empresas (6.9%)\n  6. Construction: 147 empresas (6.1%)\n  7. Healthcare & Life Sciences: 136 empresas (5.7%)",
+      "empleados": "Distribución por nº empleados:\n  • 11-50: 324 empresas\n  • 1-10: 268 empresas\n  • 51-200: 184 empresas\n  • 10: 108 empresas\n  • 201-500: 86 empresas\n  • 50: 52 empresas\n  • 5000+: 50 empresas\n  • 250: 42 empresas\n  • 501-1000: 34 empresas\n  • 1001-5000: 34 empresas",
+      "progreso": "Llevo 2653 de 94,311 empresas (2.81% del universo).\nA 100 empresas/día L-V, terminaré en ~183 semanas laborables.",
+      "lotes": "He completado 29 lotes. Últimos:\n  • lote-25-2026-05-07: 100 (98 OK, 2 skip)\n  • lote-26-2026-05-08: 100 (90 OK, 10 skip)\n  • lote-27-2026-05-12: 100 (89 OK, 11 skip)\n  • lote-28-2026-05-13: 100 (98 OK, 2 skip)\n  • lote-29-2026-05-15: 100 (93 OK, 7 skip)",
+      "ultimo": "Último lote: lote-29-2026-05-15\n100 empresas · 93 OK · 7 skip",
+      "skipped": "He skipped 261 empresas (9.8%).\nMotivos: sin web pública, empresa muy pequeña, información no encontrable.",
+      "ayuda": "Puedo responder sobre:\n• industrias encontradas\n• distribución de empleados\n• empresas procesadas y skipped\n• progreso del universo\n• historial de lotes\n\nEscribe tu pregunta 👇"
     }
   },
   "agent2": {
-    "summary": "700 empresas - 195 BPs encontrados",
+    "summary": "750 empresas · 203 BPs encontrados",
     "top_roles": [
       {
         "role": "Director General",
         "count": 8
       },
       {
-        "role": "Chief Financial Officer",
-        "count": 7
+        "role": "Financial Director",
+        "count": 8
       },
       {
-        "role": "Financial Director",
+        "role": "Chief Financial Officer",
         "count": 7
       },
       {
@@ -88,11 +88,13 @@
       }
     ],
     "answers": {
-      "hola": "Hola! Soy el Buyer Enrichment Agent. He procesado 700 empresas y encontrado 195 BPs.",
-      "bps": "2BP: 68 | 1BP: 59 | Sin BP: 573 | Total: 195",
-      "roles": "Roles ICP:\n  - Director General: 8 veces\n  - Chief Financial Officer: 7 veces\n  - Financial Director: 7 veces\n  - Managing Director: 6 veces\n  - Technical Director: 5 veces",
-      "progreso": "Procesadas 700 de 2999 (23.3%)",
-      "ayuda": "Puedo responder sobre BPs, roles ICP, progreso universo A2"
+      "hola": "¡Hola! Soy el Buyer Enrichment Agent 👤\nHe procesado 750 empresas y encontrado 203 BPs.\nHR → Finance → Operations → IT\n¿En qué puedo ayudarte?",
+      "bps": "Resultados hasta ahora:\n✅ 2 BPs encontrados: 70 empresas\n✅ 1 BP encontrado: 63 empresas\n❌ Sin BP: 617 empresas\n📊 Total contactos: 203",
+      "roles": "Roles ICP más encontrados:\n  • Director General: 8 veces\n  • Financial Director: 8 veces\n  • Chief Financial Officer: 7 veces\n  • Managing Director: 6 veces\n  • Technical Director: 5 veces",
+      "apollo": "Uso Apollo.io con filtros:\n• Dominio de la empresa\n• Títulos ICP por área\n• País: Spain/España\n• Email: verified o likely to engage",
+      "duplicados": "Tengo deduplicación inteligente:\nf.berta@ y filippo.berta@ = mismo contacto ✓\nDetecto por tokens del username del email.",
+      "progreso": "He procesado 750 de 2999 empresas (25.0% del universo A2).",
+      "ayuda": "Puedo responder sobre:\n• BPs encontrados\n• roles ICP más frecuentes\n• lógica Apollo\n• deduplicación\n• progreso universo A2\n\nEscribe tu pregunta 👇"
     }
   },
   "agent3": {
