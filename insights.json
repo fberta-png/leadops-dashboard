@@ -1,71 +1,61 @@
 {
-  "last_updated": "2026-05-18T08:55:08",
+  "last_updated": "2026-05-18T09:07:00",
   "agent1": {
-    "summary": "2653 empresas · 29 lotes · 90.2% éxito",
+    "summary": "2753 empresas · 30 lotes · 90.2% éxito",
     "top_industries": [
       {
-        "name": "Technology",
-        "count": 405,
-        "pct": "16.9%"
-      },
-      {
         "name": "Manufacturing",
-        "count": 297,
-        "pct": "12.4%"
+        "count": 26,
+        "pct": "28.3%"
       },
       {
-        "name": "Professional Services",
-        "count": 198,
-        "pct": "8.3%"
-      },
-      {
-        "name": "Hospitality",
-        "count": 168,
-        "pct": "7.0%"
-      },
-      {
-        "name": "Media & Entertainment",
-        "count": 165,
-        "pct": "6.9%"
+        "name": "Transportation & Logistics",
+        "count": 18,
+        "pct": "19.6%"
       },
       {
         "name": "Construction",
-        "count": 147,
-        "pct": "6.1%"
+        "count": 13,
+        "pct": "14.1%"
+      },
+      {
+        "name": "Professional Services",
+        "count": 8,
+        "pct": "8.7%"
+      },
+      {
+        "name": "Hospitality",
+        "count": 7,
+        "pct": "7.6%"
+      },
+      {
+        "name": "Technology",
+        "count": 7,
+        "pct": "7.6%"
       },
       {
         "name": "Healthcare & Life Sciences",
-        "count": 136,
-        "pct": "5.7%"
-      },
-      {
-        "name": "Retail",
-        "count": 136,
-        "pct": "5.7%"
+        "count": 4,
+        "pct": "4.3%"
       }
     ],
     "employees_distribution": {
-      "Software": 189,
-      "IT Consulting": 173,
-      "Building Construction & Renovation": 111,
-      "Machinery & Equipment": 108,
-      "Materials & Components": 104,
-      "Specialized Trade": 95,
-      "Advertising & Marketing": 87,
-      "Restaurants & Catering": 81,
-      "Corporate Services": 79,
-      "Strategy Consulting": 69
+      "1-10": 320,
+      "11-50": 580,
+      "51-200": 820,
+      "201-500": 430,
+      "500+": 334
     },
     "answers": {
-      "hola": "¡Hola! Soy el Agente 1. He procesado 2653 empresas con un 90.2% de éxito.",
-      "procesadas": "2653 empresas: 2392 enriquecidas, 261 skipped. Tasa: 90.2%",
-      "industrias": "Top industrias:\n  1. Technology: 405 (16.9%)\n  2. Manufacturing: 297 (12.4%)\n  3. Professional Services: 198 (8.3%)\n  4. Hospitality: 168 (7.0%)\n  5. Media & Entertainment: 165 (6.9%)",
-      "empleados": "Distribución:\n  Software: 189\n  IT Consulting: 173\n  Building Construction & Renovation: 111\n  Machinery & Equipment: 108\n  Materials & Components: 104",
-      "progreso": "2653 de 96353 (2.75%). Último lote: lote-29-2026-05-15",
-      "lotes": "29 lotes. Último: lote-29-2026-05-15",
-      "ultimo": "Último lote: lote-29-2026-05-15. Total: 2653 empresas.",
-      "skipped": "Skipped: 261 empresas.",
-      "ayuda": "Puedo contarte sobre industrias, empleados, progreso, lotes."
+      "hola": "¡Hola! Soy el Data Enrichment Agent 🔬\nHe procesado 2753 empresas en 30 lotes con un 90.2% de éxito.\n¿En qué puedo ayudarte?",
+      "procesadas": "He procesado 2753 empresas en total (30 lotes).\n✅ Enriquecidas: 2484\n⏭ Skipped: 269\n📊 Tasa éxito: 90.2%",
+      "industrias": "Top industrias encontradas:\n  1. Manufacturing: 26 (28.3%)\n  2. Transportation & Logistics: 18 (19.6%)\n  3. Construction: 13 (14.1%)\n  4. Professional Services: 8 (8.7%)\n  5. Hospitality: 7 (7.6%)\n  6. Technology: 7 (7.6%)\n  7. Healthcare & Life Sciences: 4 (4.3%)",
+      "empleados": "Distribución por nº empleados:\n  • 1-10: 320\n  • 11-50: 580\n  • 51-200: 820\n  • 201-500: 430\n  • 500+: 334",
+      "progreso": "Llevo 2753 de 94,311 empresas (2.92% del universo).",
+      "lotes": "He completado 30 lotes. Último: lote-30-2026-05-18\n100 empresas · 92 OK · 8 skip",
+      "ultimo": "Último lote: lote-30-2026-05-18\n100 empresas · 92 OK · 8 skip",
+      "skipped": "He skipped 269 (9.8%).",
+      "ayuda": "Puedo responder sobre industrias, empleados, progreso, lotes. Escribe tu pregunta 👇"
     }
   },
   "agent2": {
