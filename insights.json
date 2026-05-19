@@ -1,96 +1,106 @@
 {
-  "last_updated": "2026-05-18T09:07:00",
+  "last_updated": "2026-05-19T07:00:13",
   "agent1": {
     "summary": "2753 empresas · 30 lotes · 90.2% éxito",
     "top_industries": [
       {
+        "name": "Technology",
+        "count": 413,
+        "pct": "16.6%"
+      },
+      {
         "name": "Manufacturing",
-        "count": 26,
-        "pct": "28.3%"
-      },
-      {
-        "name": "Transportation & Logistics",
-        "count": 18,
-        "pct": "19.6%"
-      },
-      {
-        "name": "Construction",
-        "count": 13,
-        "pct": "14.1%"
+        "count": 317,
+        "pct": "12.8%"
       },
       {
         "name": "Professional Services",
-        "count": 8,
-        "pct": "8.7%"
+        "count": 206,
+        "pct": "8.3%"
       },
       {
         "name": "Hospitality",
-        "count": 7,
-        "pct": "7.6%"
+        "count": 174,
+        "pct": "7.0%"
       },
       {
-        "name": "Technology",
-        "count": 7,
-        "pct": "7.6%"
+        "name": "Media & Entertainment",
+        "count": 167,
+        "pct": "6.7%"
+      },
+      {
+        "name": "Construction",
+        "count": 157,
+        "pct": "6.3%"
       },
       {
         "name": "Healthcare & Life Sciences",
-        "count": 4,
-        "pct": "4.3%"
+        "count": 140,
+        "pct": "5.6%"
+      },
+      {
+        "name": "Retail",
+        "count": 139,
+        "pct": "5.6%"
       }
     ],
     "employees_distribution": {
-      "1-10": 320,
-      "11-50": 580,
-      "51-200": 820,
-      "201-500": 430,
-      "500+": 334
+      "Software": 194,
+      "IT Consulting": 175,
+      "Building Construction & Renovation": 118,
+      "Machinery & Equipment": 114,
+      "Materials & Components": 110,
+      "Specialized Trade": 97,
+      "Advertising & Marketing": 87,
+      "Restaurants & Catering": 85,
+      "Corporate Services": 84,
+      "Food & Beverage": 72
     },
     "answers": {
-      "hola": "¡Hola! Soy el Data Enrichment Agent 🔬\nHe procesado 2753 empresas en 30 lotes con un 90.2% de éxito.\n¿En qué puedo ayudarte?",
-      "procesadas": "He procesado 2753 empresas en total (30 lotes).\n✅ Enriquecidas: 2484\n⏭ Skipped: 269\n📊 Tasa éxito: 90.2%",
-      "industrias": "Top industrias encontradas:\n  1. Manufacturing: 26 (28.3%)\n  2. Transportation & Logistics: 18 (19.6%)\n  3. Construction: 13 (14.1%)\n  4. Professional Services: 8 (8.7%)\n  5. Hospitality: 7 (7.6%)\n  6. Technology: 7 (7.6%)\n  7. Healthcare & Life Sciences: 4 (4.3%)",
-      "empleados": "Distribución por nº empleados:\n  • 1-10: 320\n  • 11-50: 580\n  • 51-200: 820\n  • 201-500: 430\n  • 500+: 334",
-      "progreso": "Llevo 2753 de 94,311 empresas (2.92% del universo).",
-      "lotes": "He completado 30 lotes. Último: lote-30-2026-05-18\n100 empresas · 92 OK · 8 skip",
-      "ultimo": "Último lote: lote-30-2026-05-18\n100 empresas · 92 OK · 8 skip",
-      "skipped": "He skipped 269 (9.8%).",
-      "ayuda": "Puedo responder sobre industrias, empleados, progreso, lotes. Escribe tu pregunta 👇"
+      "hola": "¡Hola! Soy el Agente 1 de Data Enrichment. He procesado 2753 empresas con un 90.2% de éxito.",
+      "procesadas": "He procesado 2753 empresas en total. 2484 enriquecidas y 269 skipped. Tasa de éxito: 90.2%",
+      "industrias": "Top industrias enriquecidas:\n  1. Technology: 413 (16.6%)\n  2. Manufacturing: 317 (12.8%)\n  3. Professional Services: 206 (8.3%)\n  4. Hospitality: 174 (7.0%)\n  5. Media & Entertainment: 167 (6.7%)",
+      "empleados": "Distribución de tamaño de empresa:\n  Software: 194\n  IT Consulting: 175\n  Building Construction & Renovation: 118\n  Machinery & Equipment: 114\n  Materials & Components: 110",
+      "progreso": "Llevo 2753 de 96353 empresas procesadas (2.86% del universo). Último lote: lote-30-2026-05-18",
+      "lotes": "He completado 30 lotes en total. Último: lote-30-2026-05-18",
+      "ultimo": "Mi último lote fue lote-30-2026-05-18. Procesé 2753 empresas acumuladas.",
+      "skipped": "Skipped: 269 empresas.",
+      "ayuda": "Puedo contarte sobre: industrias, distribución de empleados, progreso, lotes completados. ¡Pregúntame!"
     }
   },
   "agent2": {
-    "summary": "800 empresas · 207 BPs · 26.68% universo",
+    "summary": "850 empresas · 223 BPs · 28.34% universo",
     "top_roles": [
+      {
+        "title": "Financial Director",
+        "count": 9
+      },
       {
         "title": "Director General",
         "count": 8
       },
       {
-        "title": "Financial Director",
-        "count": 8
-      },
-      {
         "title": "Chief Financial Officer",
-        "count": 7
+        "count": 8
       },
       {
         "title": "Managing Director",
         "count": 6
       },
       {
-        "title": "Technical Director",
-        "count": 5
+        "title": "HR Manager",
+        "count": 6
       }
     ],
     "answers": {
-      "hola": "¡Hola! Soy el Agente 2. Encontré 207 BPs en 800 empresas.",
-      "procesadas": "800 empresas: 70 con 2BPs, 67 con 1BP, 663 sin resultado.",
-      "bps": "Total BPs: 207 (70×2BP, 67×1BP)",
-      "progreso": "800 de 2999 (26.68%).",
-      "roles": "Top cargos:\n  1. Director General: 8\n  2. Financial Director: 8\n  3. Chief Financial Officer: 7\n  4. Managing Director: 6\n  5. Technical Director: 5",
-      "skipped": "663 sin BP encontrado.",
-      "ultimo": "Última ejecución: 18/05/2026 08:55. Total: 800 empresas.",
-      "ayuda": "Puedo contarte sobre BPs, progreso, top roles, sin resultado."
+      "hola": "¡Hola! Soy el Agente 2 de Buyer Enrichment. He encontrado 223 BPs en 850 empresas.",
+      "procesadas": "He procesado 850 empresas. 74 con 2 BPs, 75 con 1 BP, 701 sin resultado.",
+      "bps": "Total BPs encontrados: 223 (74 empresas con 2 BPs, 75 con 1 BP)",
+      "progreso": "Llevo 850 de 2999 empresas procesadas (28.34% del universo).",
+      "roles": "Top cargos encontrados:\n  1. Financial Director: 9\n  2. Director General: 8\n  3. Chief Financial Officer: 8\n  4. Managing Director: 6\n  5. HR Manager: 6",
+      "skipped": "701 empresas sin BP encontrado.",
+      "ultimo": "Última ejecución: 19/05/2026 07:00. 850 empresas en histórico.",
+      "ayuda": "Puedo contarte sobre: BPs encontrados, progreso del universo, top roles. ¡Pregúntame!"
     }
   },
   "agent3": {
