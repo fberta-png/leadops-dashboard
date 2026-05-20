@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-19T07:00:13",
+  "last_updated": "2026-05-20T08:31:43",
   "agent1": {
     "summary": "2753 empresas · 30 lotes · 90.2% éxito",
     "top_industries": [
@@ -58,18 +58,18 @@
     },
     "answers": {
       "hola": "¡Hola! Soy el Agente 1 de Data Enrichment. He procesado 2753 empresas con un 90.2% de éxito.",
-      "procesadas": "He procesado 2753 empresas en total. 2484 enriquecidas y 269 skipped. Tasa de éxito: 90.2%",
-      "industrias": "Top industrias enriquecidas:\n  1. Technology: 413 (16.6%)\n  2. Manufacturing: 317 (12.8%)\n  3. Professional Services: 206 (8.3%)\n  4. Hospitality: 174 (7.0%)\n  5. Media & Entertainment: 167 (6.7%)",
-      "empleados": "Distribución de tamaño de empresa:\n  Software: 194\n  IT Consulting: 175\n  Building Construction & Renovation: 118\n  Machinery & Equipment: 114\n  Materials & Components: 110",
-      "progreso": "Llevo 2753 de 96353 empresas procesadas (2.86% del universo). Último lote: lote-30-2026-05-18",
-      "lotes": "He completado 30 lotes en total. Último: lote-30-2026-05-18",
-      "ultimo": "Mi último lote fue lote-30-2026-05-18. Procesé 2753 empresas acumuladas.",
+      "procesadas": "He procesado 2753 empresas. 2484 enriquecidas y 269 skipped. Tasa: 90.2%",
+      "industrias": "Top industrias:\n  1. Technology: 413 (16.6%)\n  2. Manufacturing: 317 (12.8%)\n  3. Professional Services: 206 (8.3%)\n  4. Hospitality: 174 (7.0%)\n  5. Media & Entertainment: 167 (6.7%)",
+      "empleados": "Distribución de tamaño:\n  Software: 194\n  IT Consulting: 175\n  Building Construction & Renovation: 118\n  Machinery & Equipment: 114\n  Materials & Components: 110",
+      "progreso": "Llevo 2753 de 96353 (2.86%). Último lote: lote-30-2026-05-18",
+      "lotes": "He completado 30 lotes. Último: lote-30-2026-05-18",
+      "ultimo": "Último lote: lote-30-2026-05-18. Total: 2753 empresas.",
       "skipped": "Skipped: 269 empresas.",
-      "ayuda": "Puedo contarte sobre: industrias, distribución de empleados, progreso, lotes completados. ¡Pregúntame!"
+      "ayuda": "Puedo contarte sobre: industrias, empleados, progreso, lotes, skipped."
     }
   },
   "agent2": {
-    "summary": "850 empresas · 223 BPs · 28.34% universo",
+    "summary": "900 empresas · 226 BPs · 30.01% universo",
     "top_roles": [
       {
         "title": "Financial Director",
@@ -84,23 +84,23 @@
         "count": 8
       },
       {
-        "title": "Managing Director",
-        "count": 6
+        "title": "HR Manager",
+        "count": 7
       },
       {
-        "title": "HR Manager",
+        "title": "Managing Director",
         "count": 6
       }
     ],
     "answers": {
-      "hola": "¡Hola! Soy el Agente 2 de Buyer Enrichment. He encontrado 223 BPs en 850 empresas.",
-      "procesadas": "He procesado 850 empresas. 74 con 2 BPs, 75 con 1 BP, 701 sin resultado.",
-      "bps": "Total BPs encontrados: 223 (74 empresas con 2 BPs, 75 con 1 BP)",
-      "progreso": "Llevo 850 de 2999 empresas procesadas (28.34% del universo).",
-      "roles": "Top cargos encontrados:\n  1. Financial Director: 9\n  2. Director General: 8\n  3. Chief Financial Officer: 8\n  4. Managing Director: 6\n  5. HR Manager: 6",
-      "skipped": "701 empresas sin BP encontrado.",
-      "ultimo": "Última ejecución: 19/05/2026 07:00. 850 empresas en histórico.",
-      "ayuda": "Puedo contarte sobre: BPs encontrados, progreso del universo, top roles. ¡Pregúntame!"
+      "hola": "¡Hola! Soy el Agente 2. He encontrado 226 BPs en 900 empresas.",
+      "procesadas": "900 empresas. 74 con 2 BPs, 78 con 1 BP, 748 sin resultado.",
+      "bps": "Total BPs: 226 (74 con 2 BPs, 78 con 1 BP)",
+      "progreso": "Llevo 900 de 2999 (30.01% del universo).",
+      "roles": "Top cargos:\n  1. Financial Director: 9\n  2. Director General: 8\n  3. Chief Financial Officer: 8\n  4. HR Manager: 7\n  5. Managing Director: 6",
+      "skipped": "748 empresas sin BP en Apollo.",
+      "ultimo": "Última ejecución: 20/05/2026 08:31. 900 en histórico.",
+      "ayuda": "Puedo contarte sobre: BPs encontrados, progreso, top roles, sin resultado."
     }
   },
   "agent3": {
