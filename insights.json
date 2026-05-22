@@ -1,62 +1,54 @@
 {
-  "last_updated": "2026-05-21T11:34:04",
+  "last_updated": "2026-05-22T07:11:26",
   "agent1": {
-    "summary": "2953 empresas · 32 lotes · 90.3% éxito",
-    "top_industries": [
-      {
-        "name": "Professional Services",
-        "count": 960
-      },
-      {
-        "name": "Technology",
-        "count": 290
-      },
-      {
-        "name": "Healthcare & Life Sciences",
-        "count": 210
-      },
-      {
-        "name": "Manufacturing",
-        "count": 190
-      },
-      {
-        "name": "Construction",
-        "count": 120
-      },
-      {
-        "name": "Hospitality",
-        "count": 110
-      },
-      {
-        "name": "Transportation & Logistics",
-        "count": 80
-      }
-    ],
-    "employees_distribution": {
-      "1-10": 950,
-      "11-50": 280,
-      "51-200": 320,
-      "201-500": 190,
-      "1001-5000": 80
-    },
+    "summary": "0 empresas · 0 lotes · 0.0% éxito",
+    "top_industries": [],
+    "employees_distribution": {},
     "answers": {
-      "hola": "¡Hola! Soy el Data Enrichment Agent 🔬\nHe procesado 2953 empresas en 32 lotes con un 90.3% de éxito.\n¿En qué puedo ayudarte?",
-      "procesadas": "He procesado 2953 empresas en total (32 lotes).\n✅ Enriquecidas: 2666\n⏭ Skipped: 287\n📊 Tasa éxito: 90.3%",
-      "industrias": "Top industrias encontradas:\n  1. Professional Services: 960\n  2. Technology: 290\n  3. Healthcare & Life Sciences: 210\n  4. Manufacturing: 190\n  5. Construction: 120\n  6. Hospitality: 110\n  7. Transportation & Logistics: 80",
-      "progreso": "Llevo 2953 de 94,311 empresas (3.13% del universo).\nA 100 empresas/día L-V, terminaré en ~183 semanas laborables.",
-      "ultimo": "Último lote: lote-32-2026-05-21\n100 empresas · 96 OK · 4 skip",
-      "skipped": "He skipped 287 empresas (9.7%).",
-      "ayuda": "Puedo responder sobre: industrias, empleados, progreso, lotes\nEscribe tu pregunta 👇"
+      "hola": "¡Hola! Soy el Agente 1 de Data Enrichment. He procesado 0 empresas con un 0.0% de éxito. ¿En qué te ayudo?",
+      "procesadas": "He procesado 0 empresas en total. 0 enriquecidas y 0 skipped. Tasa de éxito: 0.0%",
+      "industrias": "Top industrias enriquecidas:\nSin datos aún",
+      "empleados": "Distribución de tamaño de empresa:\nSin datos aún",
+      "progreso": "Llevo 0 de 0 empresas procesadas (0.0% del universo). Último lote: N/A",
+      "lotes": "He completado 0 lotes en total. Último: N/A",
+      "ultimo": "Mi último lote fue N/A. Procesé 0 empresas acumuladas.",
+      "skipped": "Skipped: 0 empresas (datos ya completos o sin cambios necesarios).",
+      "ayuda": "Puedo contarte sobre: industrias enriquecidas, distribución de empleados, progreso, lotes completados, empresas skipped. ¡Pregúntame!"
     }
   },
   "agent2": {
-    "summary": "950 empresas · 234 BPs encontrados",
-    "top_roles": [],
+    "summary": "999 empresas · 239 BPs · 33.31% universo",
+    "top_roles": [
+      {
+        "title": "Financial Director",
+        "count": 12
+      },
+      {
+        "title": "Director General",
+        "count": 8
+      },
+      {
+        "title": "Chief Financial Officer",
+        "count": 8
+      },
+      {
+        "title": "HR Manager",
+        "count": 7
+      },
+      {
+        "title": "Managing Director",
+        "count": 6
+      }
+    ],
     "answers": {
-      "hola": "¡Hola! Soy el Buyer Enrichment Agent 👤\nHe procesado 950 empresas y encontrado 234 BPs.",
-      "bps": "✅ 2 BPs: 76 · ✅ 1 BP: 82 · ❌ Sin BP: 792",
-      "progreso": "He procesado 950 de 2999 empresas.",
-      "ayuda": "Puedo responder sobre: BPs, roles ICP, progreso\nEscribe tu pregunta 👇"
+      "hola": "¡Hola! Soy el Agente 2 de Buyer Enrichment. He encontrado 239 BPs en 999 empresas. ¿Qué quieres saber?",
+      "procesadas": "He procesado 999 empresas. 77 con 2 BPs, 85 con 1 BP, 837 sin resultado.",
+      "bps": "Total BPs encontrados: 239 (77 empresas con 2 BPs, 85 con 1 BP)",
+      "progreso": "Llevo 999 de 2999 empresas procesadas (33.31% del universo).",
+      "roles": "Top cargos encontrados:\n  1. Financial Director: 12\n  2. Director General: 8\n  3. Chief Financial Officer: 8\n  4. HR Manager: 7\n  5. Managing Director: 6",
+      "skipped": "837 empresas sin BP encontrado (sin contactos verificados en Apollo).",
+      "ultimo": "Última ejecución: 22/05/2026 07:11. 999 empresas en histórico.",
+      "ayuda": "Puedo contarte sobre: BPs encontrados, progreso del universo, top roles/cargos, empresas sin resultado. ¡Pregúntame!"
     }
   },
   "agent3": {
