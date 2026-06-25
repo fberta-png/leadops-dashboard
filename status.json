@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-25T09:00:00",
+  "last_updated": "2026-06-25T10:00:00",
   "agent1": {
     "name": "Data Enrichment",
     "status": "active",
@@ -36,8 +36,8 @@
     "en_hubspot": 11,
     "ya_clientes": 1,
     "no_en_hubspot": 19,
-    "deals_creados": 10,
-    "deals_pendientes": 20,
+    "deals_creados": 15,
+    "deals_pendientes": 0,
     "total_historico": 30,
     "last_run": "2026-06-25T09:00:00"
   }
