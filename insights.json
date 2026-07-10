@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-27T08:06:02",
+  "last_updated": "2026-07-10T10:30:00",
   "agent1": {
     "summary": "3053 empresas · 33 lotes · 90.5% éxito",
     "top_industries": [
@@ -104,17 +104,27 @@
     }
   },
   "agent3": {
-    "summary": "2 señales · 27 escaneadas · 100.0% universo",
+    "summary": "34 empresas · 4 nuevas esta semana · 2 ya clientes",
     "recent_signals": [
       {
-        "company": "Alea",
-        "signal": "Job Posting HR",
-        "date": "2026-04-08"
+        "company": "Sherpa.ai",
+        "signal": "Serie B · 15.75M€ (ya cliente)",
+        "date": "2026-07-06"
       },
       {
-        "company": "Adwake",
-        "signal": "Growth Signal",
-        "date": "2026-04-08"
+        "company": "Balance",
+        "signal": "Seed · 3M€",
+        "date": "2026-07-06"
+      },
+      {
+        "company": "8Layers",
+        "signal": "Pre-Seed · 1M€",
+        "date": "2026-07-07"
+      },
+      {
+        "company": "Tokenized Green (twelve.)",
+        "signal": "Seed · 1.1M€",
+        "date": "2026-07-03"
       }
     ],
     "answers": {

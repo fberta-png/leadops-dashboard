@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-25T10:00:00",
+  "last_updated": "2026-07-10T10:30:00",
   "agent1": {
     "name": "Data Enrichment",
     "status": "active",
@@ -28,17 +28,17 @@
     "name": "Funding Intelligence",
     "status": "active",
     "schedule": "Lunes 8:00am",
-    "semana_cubierta": "Sem22–Sem26 · May-Jun 2026",
-    "total_empresas": 30,
-    "prioridad_alta": 6,
-    "prioridad_media": 17,
-    "prioridad_baja": 7,
-    "en_hubspot": 11,
-    "ya_clientes": 1,
-    "no_en_hubspot": 19,
+    "semana_cubierta": "Sem27–Sem28 · Jul 2026",
+    "total_empresas": 34,
+    "prioridad_alta": 7,
+    "prioridad_media": 19,
+    "prioridad_baja": 8,
+    "en_hubspot": 13,
+    "ya_clientes": 2,
+    "no_en_hubspot": 21,
     "deals_creados": 15,
-    "deals_pendientes": 0,
-    "total_historico": 30,
-    "last_run": "2026-06-25T09:00:00"
+    "deals_pendientes": 5,
+    "total_historico": 34,
+    "last_run": "2026-07-10T10:30:00"
   }
 }
