@@ -268,9 +268,7 @@
     </div>
   </div>
   <div class="nav-tabs">
-    <button class="nav-tab active" onclick="switchTab('enrichment',this)">✦ Data Enrichment</button>
-    <button class="nav-tab" onclick="switchTab('buyer',this)">✦ Buyer Enrichment</button>
-    <button class="nav-tab" onclick="switchTab('trigger',this)">💰 Funding Intelligence</button>
+    <button class="nav-tab active" onclick="switchTab('trigger',this)">💰 Funding Intelligence</button>
     <button class="nav-tab" onclick="switchTab('agentes',this)">○ Agentes</button>
     <button class="nav-tab" onclick="switchTab('oficina',this)">🏢 Oficina</button>
   </div>
@@ -300,8 +298,8 @@
   </div>
 </div>
 
-<!-- ═══════════════ TAB: DATA ENRICHMENT ═══════════════ -->
-<div id="tab-enrichment" class="tab-panel active">
+<!-- ═══════════════ TAB: DATA ENRICHMENT (CERRADO) ═══════════════ -->
+<div id="tab-enrichment" class="tab-panel">
 <div class="main">
 
   <div class="section-label">Estado del Agente</div>
@@ -524,7 +522,7 @@
 </div>
 
 <!-- ═══════════════ TAB: FUNDING INTELLIGENCE ═══════════════ -->
-<div id="tab-trigger" class="tab-panel">
+<div id="tab-trigger" class="tab-panel active">
 <div class="main">
 
   <div class="section-label">Estado del Agente</div>
@@ -532,7 +530,7 @@
     <div class="agent-bar-left">
       <div class="agent-avatar" style="background:rgba(249,115,22,0.15)">💰</div>
       <div>
-        <div class="agent-name">Funding Intelligence Agent</div>
+        <div class="agent-name">Agente Funding Intelligence</div>
         <div class="agent-info" id="a3-info">Cargando...</div>
       </div>
     </div>
@@ -635,7 +633,7 @@
     </div>
     <div class="schedule-card">
       <div class="section-label" style="margin-bottom:14px;">Configuración del Agente</div>
-      <div class="sched-row"><span class="sched-label">Output</span><span class="sched-val" style="font-size:11px;color:var(--orange)">Agent 3 - Rondas Financiacion - YYYY-MM-DD.xlsx</span></div>
+      <div class="sched-row"><span class="sched-label">Output</span><span class="sched-val" style="font-size:11px;color:var(--orange)">Rondas Financiacion - YYYY-MM-DD.xlsx</span></div>
       <div class="sched-row"><span class="sched-label">Frecuencia</span><span class="sched-val green">Lunes · 8:00am ✓</span></div>
       <div class="sched-row"><span class="sched-label">CRM check</span><span class="sched-val green">HubSpot · lifecyclestage ✓</span></div>
       <div class="sched-row"><span class="sched-label">Ventana búsqueda</span><span class="sched-val">Últimos 7 días</span></div>
@@ -646,7 +644,7 @@
   </div>
 
 </div>
-<div class="footer" id="a3-footer">Lead Ops · Sesame · Funding Intelligence Agent · Monitoriza rondas de financiación en España cada lunes</div>
+<div class="footer" id="a3-footer">Lead Ops · Sesame · Agente Funding Intelligence · Monitoriza rondas de financiación en España cada lunes</div>
 </div>
 
 <!-- ═══════════════ TAB: AGENTES ═══════════════ -->
@@ -657,52 +655,16 @@
 
   <div style="display:flex;flex-direction:column;gap:16px;">
 
-    <!-- AGENT 1 - CERRADO -->
-    <div style="background:var(--panel);border:1px solid rgba(239,68,68,0.25);border-radius:12px;padding:24px;display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:start;">
-      <div style="font-size:32px;padding-top:2px;">🔬</div>
-      <div>
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
-          <span style="font-weight:700;font-size:15px;">Agent 1 · Data Enrichment</span>
-          <span style="background:rgba(239,68,68,0.15);color:#ef4444;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:0.5px;">CERRADO</span>
-        </div>
-        <div style="font-size:13px;color:var(--muted2);line-height:1.7;">
-          El proyecto arrancó con <strong style="color:var(--text)">54.716 empresas</strong> españolas sin datos ICP completos. Antes de que el sistema fallara, se importaron y confirmaron <strong style="color:var(--text)">3.469 empresas enriquecidas</strong> en HubSpot. El agente dejó de acumular historial correctamente — cada run sobrescribía el archivo anterior en lugar de añadir, y el historial se perdió. <span style="color:var(--blue)">Aprendizaje identificado: arquitectura de append-only con baseline capturado el día cero. Se retomará en futuros agentes con estos aprendizajes aplicados.</span>
-        </div>
-      </div>
-      <div style="text-align:right;white-space:nowrap;">
-        <div style="font-size:11px;color:var(--muted2);">Última run</div>
-        <div style="font-size:12px;font-weight:600;color:var(--red);">27 may 2026</div>
-      </div>
-    </div>
-
-    <!-- AGENT 2 - CERRADO -->
-    <div style="background:var(--panel);border:1px solid rgba(239,68,68,0.25);border-radius:12px;padding:24px;display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:start;">
-      <div style="font-size:32px;padding-top:2px;">👤</div>
-      <div>
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
-          <span style="font-weight:700;font-size:15px;">Agent 2 · Buyer Enrichment</span>
-          <span style="background:rgba(239,68,68,0.15);color:#ef4444;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:0.5px;">CERRADO</span>
-        </div>
-        <div style="font-size:13px;color:var(--muted2);line-height:1.7;">
-          El proyecto arrancó con <strong style="color:var(--text)">4.443 empresas</strong> objetivo para encontrar decisores. Se identificaron <strong style="color:var(--text)">192 buyer personas</strong> con nombre, cargo y email, de los cuales <strong style="color:var(--text)">183 fueron subidos a HubSpot</strong>. La tasa de éxito fue del ~16% — Apollo no tenía datos suficientes para la mayoría de PYMEs españolas.
-        </div>
-      </div>
-      <div style="text-align:right;white-space:nowrap;">
-        <div style="font-size:11px;color:var(--muted2);">Última run</div>
-        <div style="font-size:12px;font-weight:600;color:var(--red);">27 may 2026</div>
-      </div>
-    </div>
-
-    <!-- AGENT 3 - ACTIVO -->
+    <!-- AGENTE FUNDING INTELLIGENCE - ACTIVO -->
     <div style="background:var(--panel);border:1px solid rgba(34,197,94,0.3);border-radius:12px;padding:24px;display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:start;">
       <div style="font-size:32px;padding-top:2px;">💰</div>
       <div>
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
-          <span style="font-weight:700;font-size:15px;">Agent 3 · Funding Intelligence</span>
+          <span style="font-weight:700;font-size:15px;">Agente Funding Intelligence</span>
           <span style="background:rgba(34,197,94,0.15);color:#22c55e;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:0.5px;">ACTIVO</span>
         </div>
         <div style="font-size:13px;color:var(--muted2);line-height:1.7;">
-          Monitoriza rondas de financiación en España en tiempo real. <strong style="color:var(--text)">40 empresas</strong> identificadas entre mayo y julio 2026 (de Seed a Serie B), con prioridad, link a HubSpot y tracking de deals. El más estable de los tres — continúa como base del nuevo proyecto de agentes.
+          Monitoriza rondas de financiación en España en tiempo real. <strong style="color:var(--text)">40 empresas</strong> identificadas entre mayo y julio 2026 (de Seed a Serie B), con prioridad, link a HubSpot y tracking de deals. Agente activo — base del nuevo proyecto de agentes.
         </div>
       </div>
       <div style="text-align:right;white-space:nowrap;">
