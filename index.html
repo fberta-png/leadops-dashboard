@@ -269,12 +269,13 @@
   </div>
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="switchTab('trigger',this)">💰 Funding Intelligence</button>
+    <button class="nav-tab" onclick="switchTab('groupintel',this)">🏢 Group Intelligence</button>
     <button class="nav-tab" onclick="switchTab('agentes',this)">○ Agentes</button>
     <button class="nav-tab" onclick="switchTab('oficina',this)">🏢 Oficina</button>
   </div>
   <div class="nav-status">
     <div class="dot"></div>
-    <span id="nav-status-text">1 agente activo</span>
+    <span id="nav-status-text">2 agentes activos</span>
   </div>
 </nav>
 
@@ -647,11 +648,91 @@
 <div class="footer" id="a3-footer">Lead Ops · Sesame · Agente Funding Intelligence · Monitoriza rondas de financiación en España cada lunes</div>
 </div>
 
+<!-- ═══════════════ TAB: GROUP INTELLIGENCE ═══════════════ -->
+<div id="tab-groupintel" class="tab-panel">
+<div class="main">
+
+  <div class="section-label">Estado del Agente</div>
+  <div class="agent-bar" style="border-left-color:#06b6d4">
+    <div class="agent-bar-left">
+      <div class="agent-avatar" style="background:rgba(6,182,212,0.15)">🏢</div>
+      <div>
+        <div class="agent-name">Agente Group Intelligence</div>
+        <div class="agent-info" id="a4-info">En pausa · Lanzamiento pendiente</div>
+      </div>
+    </div>
+    <div class="agent-bar-right">
+      <div class="lote-badge" style="border-color:rgba(234,179,8,0.3);color:#eab308;background:rgba(234,179,8,0.08)">⏸ En pausa</div>
+    </div>
+  </div>
+
+  <div class="section-label">Universo · 11.368 empresas españolas</div>
+  <div class="universe-grid">
+    <div class="uni-card main-card">
+      <div class="uni-label">Total Input</div>
+      <div class="uni-value" style="color:#06b6d4">11.368</div>
+      <div class="uni-sub">Empresas Spain · En HubSpot</div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Con Grupo detectado</div>
+      <div class="uni-value col-green" id="a4-con-grupo">—</div>
+      <div class="uni-sub">Pertenecen a un holding</div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Grupo en HubSpot</div>
+      <div class="uni-value col-yellow" id="a4-grupo-hs">—</div>
+      <div class="uni-sub">Con Record ID localizado</div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Con Deals activos</div>
+      <div class="uni-value col-orange" id="a4-con-deals">—</div>
+      <div class="uni-sub">Último deal encontrado</div>
+    </div>
+  </div>
+
+  <div class="section-label">Progreso del procesamiento</div>
+  <div class="progress-section">
+    <div class="prog-card">
+      <div class="prog-row">
+        <div class="prog-icon">📋</div>
+        <div class="prog-label-wrap"><div class="prog-label">Empresas procesadas</div><div class="prog-total" id="a4-prog-total">0 / 11.368</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,#06b6d4,#67e8f9);width:0%" id="a4-prog-bar"></div></div>
+        <div class="prog-stats">
+          <div class="prog-stat"><div class="val" style="color:#06b6d4" id="a4-prog-pct">0%</div><div class="lbl">completado</div></div>
+        </div>
+        <div class="prog-pct" id="a4-prog-eta">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-grid">
+    <div class="lote-card">
+      <div class="section-label" style="margin-bottom:14px;">Arquitectura · Lecciones aprendidas</div>
+      <div class="lote-row"><div class="lote-id">Input</div><div class="lote-pills"><span class="pill pill-ok">CSV solo lectura · nunca modificado</span></div></div>
+      <div class="lote-row"><div class="lote-id">Checkpoint</div><div class="lote-pills"><span class="pill pill-ind">JSON escrito empresa por empresa</span></div></div>
+      <div class="lote-row"><div class="lote-id">Output</div><div class="lote-pills"><span class="pill pill-ok">Excel append-only · backup antes de cada run</span></div></div>
+      <div class="lote-row"><div class="lote-id">Fuente</div><div class="lote-pills"><span class="pill pill-emp">Web scraping · HubSpot CRM</span></div></div>
+    </div>
+    <div class="schedule-card">
+      <div class="section-label" style="margin-bottom:14px;">Configuración del Agente</div>
+      <div class="sched-row"><span class="sched-label">Input</span><span class="sched-val" style="font-size:11px;color:#06b6d4">INPUT_empresas.csv (11.368 filas)</span></div>
+      <div class="sched-row"><span class="sched-label">Output</span><span class="sched-val" style="font-size:11px;color:#06b6d4">Agent 4 - Group Intelligence - OUTPUT.xlsx</span></div>
+      <div class="sched-row"><span class="sched-label">Empresas por run</span><span class="sched-val">75</span></div>
+      <div class="sched-row"><span class="sched-label">Frecuencia</span><span class="sched-val" style="color:#eab308">⏸ Manual · pendiente de lanzamiento</span></div>
+      <div class="sched-row"><span class="sched-label">Runs estimadas</span><span class="sched-val">~152 runs · ~7 meses L-V</span></div>
+      <button class="dl-btn" style="background:rgba(6,182,212,0.15);border-color:rgba(6,182,212,0.4);color:#06b6d4" onclick="downloadAgentCSV(4)">⬇ Descargar último CSV</button>
+    </div>
+  </div>
+
+</div>
+<div class="footer">Lead Ops · Sesame · Agente Group Intelligence · Detecta grupos empresariales y cruza con HubSpot CRM</div>
+</div>
+
 <!-- ═══════════════ TAB: AGENTES ═══════════════ -->
 <div id="tab-agentes" class="tab-panel">
 <div class="main">
   <div class="section-label" style="margin-bottom:8px;">Estado de los Agentes</div>
-  <div style="font-size:12px;color:var(--muted2);margin-bottom:24px;">Fase 1 cerrada · Aprendizajes documentados · Próxima fase en construcción</div>
+  <div style="font-size:12px;color:var(--muted2);margin-bottom:24px;">Fase 1 cerrada · 2 agentes activos · Aprendizajes aplicados</div>
 
   <div style="display:flex;flex-direction:column;gap:16px;">
 
@@ -688,6 +769,24 @@
       <div style="text-align:right;white-space:nowrap;">
         <div style="font-size:11px;color:var(--muted2);">Última run</div>
         <div style="font-size:12px;font-weight:600;color:var(--red);">27 may 2026</div>
+      </div>
+    </div>
+
+    <!-- AGENTE GROUP INTELLIGENCE - EN PAUSA -->
+    <div style="background:var(--panel);border:1px solid rgba(234,179,8,0.3);border-radius:12px;padding:24px;display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:start;">
+      <div style="font-size:32px;padding-top:2px;">🏢</div>
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+          <span style="font-weight:700;font-size:15px;">Agente Group Intelligence</span>
+          <span style="background:rgba(234,179,8,0.15);color:#eab308;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:0.5px;">EN PAUSA</span>
+        </div>
+        <div style="font-size:13px;color:var(--muted2);line-height:1.7;">
+          Detecta si las <strong style="color:var(--text)">11.368 empresas españolas</strong> en HubSpot pertenecen a un grupo empresarial. Por cada empresa del grupo localizada en el CRM, reporta el último deal creado (Pipeline, Stage, Owner). Arquitectura append-only con checkpoint por empresa — listo para lanzar.
+        </div>
+      </div>
+      <div style="text-align:right;white-space:nowrap;">
+        <div style="font-size:11px;color:var(--muted2);">Estado</div>
+        <div style="font-size:12px;font-weight:600;color:#eab308;">Pendiente</div>
       </div>
     </div>
 
@@ -920,6 +1019,7 @@ async function downloadAgentCSV(agentId) {
     1: { url: BASE + 'agent1_latest.csv', name: 'Agent1_DataEnrichment_latest.csv' },
     2: { url: BASE + 'agent2_latest.csv', name: 'Agent2_BuyerEnrichment_latest.csv' },
     3: { url: BASE + 'agent3_latest.csv', name: 'Agent3_FundingIntelligence_latest.csv' },
+    4: { url: BASE + 'agent4_latest.csv', name: 'Agent4_GroupIntelligence_latest.csv' },
   };
   const f = FILES[agentId];
   if (!f) return;
