@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-10T11:15:00",
+  "last_updated": "2026-09-15T09:20:00",
   "funding": {
     "summary": "34 empresas · 4 nuevas esta semana · 19 deals creados",
     "recent_signals": [
@@ -35,9 +35,66 @@
     }
   },
   "tender": {
-    "summary": "Sin ejecuciones todavia. Detecta licitaciones publicas de software de RRHH, control horario y portal del empleado.",
-    "top_organismos": [],
-    "recent_signals": [],
+    "summary": "Primera ejecución: 55 licitaciones detectadas en 14 días (22.125 anuncios revisados). 8 admiten oferta ahora mismo.",
+    "top_organismos": [
+      {
+        "tipo": "Otro organismo público",
+        "n": 21
+      },
+      {
+        "tipo": "Ayuntamiento",
+        "n": 17
+      },
+      {
+        "tipo": "Universidad",
+        "n": 5
+      },
+      {
+        "tipo": "Autoridad portuaria",
+        "n": 3
+      },
+      {
+        "tipo": "Fundación",
+        "n": 3
+      }
+    ],
+    "recent_signals": [
+      {
+        "organo": "Autoridad Portuaria de Marín y Ría de Pontevedra",
+        "objeto": "Implantación y mantenimiento de solución informática para la gestión i",
+        "importe": 280115,
+        "dias_restantes": 13,
+        "fecha_limite": "2026-09-28"
+      },
+      {
+        "organo": "Gobierno de Cantabria",
+        "objeto": "Reposición parcial del sistema de control horario",
+        "importe": 30855,
+        "dias_restantes": 14,
+        "fecha_limite": "2026-09-29"
+      },
+      {
+        "organo": "Mancomunidad Intermunicipal Alto Palancia",
+        "objeto": "Sistema integral y centralizado de control horario y gestión de presen",
+        "importe": 13100,
+        "dias_restantes": 14,
+        "fecha_limite": "2026-09-29"
+      },
+      {
+        "organo": "FORTA",
+        "objeto": "Asesoramiento y consultoría en gestión de Recursos Humanos",
+        "importe": 45980,
+        "dias_restantes": 15,
+        "fecha_limite": "2026-09-30"
+      },
+      {
+        "organo": "Autoridad Portuaria de la Bahía de Algeciras",
+        "objeto": "Despliegue y mantenimiento de una Suite de RRHH",
+        "importe": 137940,
+        "dias_restantes": 16,
+        "fecha_limite": "2026-10-01"
+      }
+    ],
     "answers": {
       "que_busca": "Licitaciones con CPV de software de RRHH/control horario, o cuyo objeto menciona control horario, fichaje, portal del empleado, RRHH o nominas.",
       "por_que_importa": "Abre canal de oportunidad en sector publico: ayuntamientos, diputaciones y universidades.",
