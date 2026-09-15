@@ -270,6 +270,7 @@
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="switchTab('trigger',this)">💰 Funding Intelligence</button>
     <button class="nav-tab" onclick="switchTab('groupintel',this)">🏢 Group Intelligence</button>
+    <button class="nav-tab" onclick="switchTab('tender',this)">📜 Tender Intelligence</button>
     <button class="nav-tab" onclick="switchTab('agentes',this)">○ Agentes</button>
     <button class="nav-tab" onclick="switchTab('oficina',this)">🏢 Oficina</button>
   </div>
@@ -403,7 +404,7 @@
       <div class="sched-row"><span class="sched-label">Frecuencia</span><span class="sched-val green">L-V · 3:00am</span></div>
       <div class="sched-row"><span class="sched-label">Último lote</span><span class="sched-val green" id="a1-last-lote-sched">—</span></div>
       <div class="sched-row"><span class="sched-label">Actualizado</span><span class="sched-val green" id="a1-last-updated-sched">—</span></div>
-      <button class="dl-btn" onclick="downloadAgentCSV(1)">⬇ Descargar último CSV</button>
+      <button class="dl-btn" onclick="alert('Agente retirado — datos dados de baja')" disabled style="opacity:.4;cursor:not-allowed">⬇ Descargar último CSV</button>
     </div>
   </div>
 
@@ -514,7 +515,7 @@
       <div class="sched-row"><span class="sched-label">Max BPs por empresa</span><span class="sched-val">2</span></div>
       <div class="sched-row"><span class="sched-label">Fuente contactos</span><span class="sched-val green">Apollo.io ✓</span></div>
       <div class="sched-row"><span class="sched-label">Actualizado</span><span class="sched-val green" id="a2-last-updated-sched">—</span></div>
-      <button class="dl-btn dl-btn-purple" onclick="downloadAgentCSV(2)">⬇ Descargar último CSV</button>
+      <button class="dl-btn dl-btn-purple" onclick="alert('Agente retirado — datos dados de baja')" disabled style="opacity:.4;cursor:not-allowed">⬇ Descargar último CSV</button>
     </div>
   </div>
 
@@ -640,7 +641,7 @@
       <div class="sched-row"><span class="sched-label">Ventana búsqueda</span><span class="sched-val">Últimos 7 días</span></div>
       <div class="sched-row"><span class="sched-label">Workflow</span><span class="sched-val">Phil revisa → Deal Creado → devuelve Excel</span></div>
       <div class="sched-row"><span class="sched-label">Última ejecución</span><span class="sched-val muted" id="a3-last-updated-sched">—</span></div>
-      <button class="dl-btn dl-btn-orange" onclick="downloadAgentCSV(3)">⬇ Descargar último CSV</button>
+      <button class="dl-btn dl-btn-orange" onclick="downloadAgentCSV('funding')">⬇ Descargar último CSV</button>
     </div>
   </div>
 
@@ -720,7 +721,7 @@
       <div class="sched-row"><span class="sched-label">Empresas por run</span><span class="sched-val">75</span></div>
       <div class="sched-row"><span class="sched-label">Frecuencia</span><span class="sched-val" style="color:#eab308">⏸ Manual · pendiente de lanzamiento</span></div>
       <div class="sched-row"><span class="sched-label">Runs estimadas</span><span class="sched-val">~152 runs · ~7 meses L-V</span></div>
-      <button class="dl-btn" style="background:rgba(6,182,212,0.15);border-color:rgba(6,182,212,0.4);color:#06b6d4" onclick="downloadAgentCSV(4)">⬇ Descargar último CSV</button>
+      <button class="dl-btn" style="background:rgba(6,182,212,0.15);border-color:rgba(6,182,212,0.4);color:#06b6d4" onclick="downloadAgentCSV('group')">⬇ Descargar último CSV</button>
     </div>
   </div>
 
@@ -729,6 +730,106 @@
 </div>
 
 <!-- ═══════════════ TAB: AGENTES ═══════════════ -->
+<!-- ═══════════════ TAB: TENDER INTELLIGENCE ═══════════════ -->
+<div id="tab-tender" class="tab-panel">
+<div class="main">
+
+  <div class="section-label">Estado del Agente</div>
+  <div class="agent-bar" style="border-left-color:#a855f7">
+    <div class="agent-bar-left">
+      <div class="agent-avatar" style="background:rgba(168,85,247,0.15)">📜</div>
+      <div>
+        <div class="agent-name">Tender Intelligence</div>
+        <div class="agent-info" id="tender-info">En pausa · Lanzamiento pendiente</div>
+      </div>
+    </div>
+    <div class="agent-bar-right">
+      <div class="lote-badge" id="tender-status-badge" style="border-color:rgba(234,179,8,0.3);color:#eab308;background:rgba(234,179,8,0.08)">⏸ En pausa</div>
+    </div>
+  </div>
+
+  <div class="section-label">Licitaciones públicas · Software de RRHH, control horario y portal del empleado</div>
+  <div class="universe-grid">
+    <div class="uni-card main-card">
+      <div class="uni-label">Abiertas ahora</div>
+      <div class="uni-value" style="color:#a855f7" id="tender-abiertas">—</div>
+      <div class="uni-sub">Admiten oferta hoy</div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Plazo crítico</div>
+      <div class="uni-value col-orange" id="tender-criticas">—</div>
+      <div class="uni-sub">Menos de 5 días para presentar</div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Importe detectado</div>
+      <div class="uni-value col-green" id="tender-importe">—</div>
+      <div class="uni-sub">Acumulado del histórico</div>
+    </div>
+    <div class="uni-card">
+      <div class="uni-label">Histórico acumulado</div>
+      <div class="uni-value col-yellow" id="tender-historico">—</div>
+      <div class="uni-sub">Licitaciones en el Excel</div>
+    </div>
+  </div>
+
+  <div class="section-label">Reparto por prioridad</div>
+  <div class="progress-section">
+    <div class="prog-card">
+      <div class="prog-row">
+        <div class="prog-icon">🔴</div>
+        <div class="prog-label-wrap"><div class="prog-label">Alta · abierta y encaje directo</div><div class="prog-total" id="tender-alta-total">—</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,#ef4444,#fca5a5);width:0%" id="tender-bar-alta"></div></div>
+        <div class="prog-stats"><div class="prog-stat"><div class="val" style="color:#ef4444" id="tender-stat-alta">—</div><div class="lbl">alta</div></div></div>
+        <div class="prog-pct" id="tender-bar-alta-pct">—</div>
+      </div>
+      <div class="prog-row">
+        <div class="prog-icon">🟠</div>
+        <div class="prog-label-wrap"><div class="prog-label">Media · abierta por texto o plazo corto</div><div class="prog-total" id="tender-media-total">—</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,#f59e0b,#fcd34d);width:0%" id="tender-bar-media"></div></div>
+        <div class="prog-stats"><div class="prog-stat"><div class="val" style="color:#f59e0b" id="tender-stat-media">—</div><div class="lbl">media</div></div></div>
+        <div class="prog-pct" id="tender-bar-media-pct">—</div>
+      </div>
+      <div class="prog-row">
+        <div class="prog-icon">⚪</div>
+        <div class="prog-label-wrap"><div class="prog-label">Baja · cerrada o adjudicada (inteligencia de mercado)</div><div class="prog-total" id="tender-baja-total">—</div></div>
+        <div class="prog-bar-wrap"><div class="prog-fill" style="background:linear-gradient(90deg,#64748b,#cbd5e1);width:0%" id="tender-bar-baja"></div></div>
+        <div class="prog-stats"><div class="prog-stat"><div class="val" style="color:#94a3b8" id="tender-stat-baja">—</div><div class="lbl">baja</div></div></div>
+        <div class="prog-pct" id="tender-bar-baja-pct">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Últimas licitaciones con plazo abierto</div>
+  <div class="progress-section">
+    <div class="prog-card" id="tender-recientes" style="padding:6px 0">
+      <div class="lote-row"><div class="lote-id">—</div><div class="lote-pills"><span class="pill pill-ind">Sin ejecuciones todavía</span></div></div>
+    </div>
+  </div>
+
+  <div class="bottom-grid">
+    <div class="lote-card">
+      <div class="section-label" style="margin-bottom:14px;">Arquitectura</div>
+      <div class="lote-row"><div class="lote-id">Fuente</div><div class="lote-pills"><span class="pill pill-emp">PLACSP · feed oficial del Estado</span></div></div>
+      <div class="lote-row"><div class="lote-id">Acceso</div><div class="lote-pills"><span class="pill pill-ind">Navegador integrado · mismo origen</span></div></div>
+      <div class="lote-row"><div class="lote-id">Filtro</div><div class="lote-pills"><span class="pill pill-ok">CPV + texto ES/CA con límites de palabra</span></div></div>
+      <div class="lote-row"><div class="lote-id">Checkpoint</div><div class="lote-pills"><span class="pill pill-ind">tender_vistos.json · por expediente</span></div></div>
+      <div class="lote-row"><div class="lote-id">Output</div><div class="lote-pills"><span class="pill pill-ok">Excel y CSV acumulativos · append-only</span></div></div>
+    </div>
+    <div class="schedule-card">
+      <div class="section-label" style="margin-bottom:14px;">Configuración del Agente</div>
+      <div class="sched-row"><span class="sched-label">Fuente</span><span class="sched-val" style="font-size:11px;color:#a855f7">contrataciondelestado.es</span></div>
+      <div class="sched-row"><span class="sched-label">Output</span><span class="sched-val" style="font-size:11px;color:#a855f7">Tender Intelligence - OUTPUT.xlsx</span></div>
+      <div class="sched-row"><span class="sched-label">Frecuencia</span><span class="sched-val">Lunes 8:00 · + manual</span></div>
+      <div class="sched-row"><span class="sched-label">Última ejecución</span><span class="sched-val" id="tender-last-run">—</span></div>
+      <div class="sched-row"><span class="sched-label">Nuevas última run</span><span class="sched-val" id="tender-nuevas">—</span></div>
+      <button class="dl-btn" style="background:rgba(168,85,247,0.15);border-color:rgba(168,85,247,0.4);color:#a855f7" onclick="downloadAgentCSV('tender')">⬇ Descargar histórico completo</button>
+    </div>
+  </div>
+
+</div>
+<div class="footer">Lead Ops · Sesame · Tender Intelligence · Concursos públicos de software de RRHH y control horario</div>
+</div>
+
 <div id="tab-agentes" class="tab-panel">
 <div class="main">
   <div class="section-label" style="margin-bottom:8px;">Estado de los Agentes</div>
@@ -1013,13 +1114,65 @@ async function loadData() {
   }
 }
 
+// ── Tender Intelligence ────────────────────────────────────────
+async function loadTender() {
+  try {
+    const r = await fetch('status.json?t=' + Date.now());
+    if (!r.ok) return;
+    const t = (await r.json()).tender;
+    if (!t) return;
+    const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+    const alta = t.prioridad_alta || 0, media = t.prioridad_media || 0, baja = t.prioridad_baja || 0;
+    const tot = alta + media + baja || 1;
+    set('tender-abiertas',  fmt(t.abiertas_ahora));
+    set('tender-criticas',  fmt(t.plazo_critico));
+    set('tender-importe',   '€' + fmt(Math.round(t.importe_total_detectado || 0)));
+    set('tender-historico', fmt(t.total_historico));
+    set('tender-nuevas',    fmt(t.nuevas_esta_run));
+    [['alta', alta], ['media', media], ['baja', baja]].forEach(([k, v]) => {
+      set('tender-stat-' + k, fmt(v));
+      set('tender-' + k + '-total', fmt(v) + ' / ' + fmt(tot));
+      const bar = document.getElementById('tender-bar-' + k);
+      if (bar) bar.style.width = (v / tot * 100).toFixed(2) + '%';
+      set('tender-bar-' + k + '-pct', pct(v / tot * 100));
+    });
+    if (t.last_run) {
+      const d = new Date(t.last_run);
+      set('tender-last-run', d.toLocaleDateString('es-ES') + ' ' + d.toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'}));
+      set('tender-info', 'Activo · última ejecución ' + d.toLocaleDateString('es-ES'));
+      const b = document.getElementById('tender-status-badge');
+      if (b && t.status === 'active') {
+        b.textContent = '● Activo';
+        b.style.borderColor = 'rgba(168,85,247,0.4)';
+        b.style.color = '#a855f7';
+        b.style.background = 'rgba(168,85,247,0.08)';
+      }
+    }
+    const ins = await fetch('insights.json?t=' + Date.now()).then(x => x.ok ? x.json() : null).catch(() => null);
+    const rec = ins && ins.tender && ins.tender.recent_signals;
+    const box = document.getElementById('tender-recientes');
+    if (rec && rec.length && box) {
+      box.innerHTML = rec.map(x => {
+        const dias = x.dias_restantes;
+        const cls = (dias != null && dias < 5) ? 'pill-emp' : 'pill-ok';
+        const plazo = (dias != null) ? (dias + ' días') : (x.fecha_limite || '—');
+        return '<div class="lote-row"><div class="lote-id" style="min-width:auto">' + (x.organo || '') +
+               '</div><div class="lote-pills"><span class="pill pill-ind">' + (x.objeto || '') +
+               '</span><span class="pill ' + cls + '">⏳ ' + plazo + '</span>' +
+               (x.importe ? '<span class="pill pill-ok">€' + fmt(Math.round(x.importe)) + '</span>' : '') +
+               '</div></div>';
+      }).join('');
+    }
+  } catch (e) { console.error('Error cargando Tender Intelligence:', e); }
+}
+loadTender();
+
 async function downloadAgentCSV(agentId) {
   const BASE = 'https://raw.githubusercontent.com/fberta-png/leadops-dashboard/main/downloads/';
   const FILES = {
-    1: { url: BASE + 'agent1_latest.csv', name: 'Agent1_DataEnrichment_latest.csv' },
-    2: { url: BASE + 'agent2_latest.csv', name: 'Agent2_BuyerEnrichment_latest.csv' },
-    3: { url: BASE + 'funding_latest.csv', name: 'AgentFundingIntelligence_latest.csv' },
-    4: { url: BASE + 'agent4_latest.csv', name: 'Agent4_GroupIntelligence_latest.csv' },
+    'funding': { url: BASE + 'funding_latest.csv', name: 'FundingIntelligence_historico.csv' },
+    'group':   { url: BASE + 'group_latest.csv',   name: 'GroupIntelligence_historico.csv' },
+    'tender':  { url: BASE + 'tender_latest.csv',  name: 'TenderIntelligence_historico.csv' },
   };
   const f = FILES[agentId];
   if (!f) return;

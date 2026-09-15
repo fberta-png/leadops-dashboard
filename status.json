@@ -1,29 +1,5 @@
 {
   "last_updated": "2026-07-29T12:00:00",
-  "agent1": {
-    "name": "Data Enrichment",
-    "status": "active",
-    "total_processed": 41377,
-    "total_enriched": 41377,
-    "total_skipped": 304,
-    "total_lotes": 34,
-    "success_rate": 90.4,
-    "universe_total": 54716,
-    "progress_pct": 75.62,
-    "last_lote": "master-export-2026-07-29",
-    "schedule": "L-V 3:00am"
-  },
-  "agent2": {
-    "name": "Buyer Enrichment",
-    "status": "active",
-    "total_processed": 1199,
-    "found_2bp": 85,
-    "found_1bp": 107,
-    "not_found": 1007,
-    "universe_total": 2999,
-    "progress_pct": 39.98,
-    "schedule": "L-V 4:00am"
-  },
   "funding": {
     "name": "Agent Funding Intelligence",
     "status": "active",
@@ -41,5 +17,24 @@
     "total_historico": 40,
     "last_run": "2026-07-29T08:00:00",
     "deals_descartados": 15
+  },
+  "group": {
+    "name": "Group Intelligence",
+    "status": "pending",
+    "schedule": "Manual"
+  },
+  "tender": {
+    "name": "Tender Intelligence",
+    "status": "pending",
+    "schedule": "Lunes 8:00am",
+    "last_run": null,
+    "total_historico": 0,
+    "abiertas_ahora": 0,
+    "plazo_critico": 0,
+    "prioridad_alta": 0,
+    "prioridad_media": 0,
+    "prioridad_baja": 0,
+    "importe_total_detectado": 0,
+    "nuevas_esta_run": 0
   }
 }
