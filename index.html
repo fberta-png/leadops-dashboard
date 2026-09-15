@@ -954,6 +954,9 @@ async function loadData() {
     if (!r.ok) throw new Error('status.json no disponible');
     const d = await r.json();
     const a1 = d.agent1, a2 = d.agent2;
+    // Agentes 1 y 2 retirados de status.json. Sin esta guarda, a1.total_enriched lanza
+    // TypeError, el catch se lo traga y NADA de lo que viene despues se pinta.
+    if (a1 && a2) {
     const dt = new Date(d.last_updated);
     const dtStr = dt.toLocaleDateString('es-ES') + ' ' + dt.toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
 
@@ -1052,14 +1055,15 @@ async function loadData() {
     document.getElementById('a2-last-updated-sched').textContent = dtStr;
     document.getElementById('a2-footer').textContent =
       `Lead Ops · Sesame · Actualizado ${dtStr} · ${fmt(a2.universe_total)} empresas en universo A2 · ${fmt(bpsTotal)} BPs encontrados`;
+    }
 
-    // ── Agent 3 ──────────────────────────────────────────
+    // ── Agent Funding Intelligence ───────────────────────
     const a3 = d.funding;
     if (a3) {
       document.getElementById('a3-info').textContent =
         `${fmt(a3.total_historico||0)} empresas en histórico · ${fmt(a3.deals_creados||0)} deals creados · ${a3.schedule||'Lunes 8:00am'}`;
       document.getElementById('a3-status-badge').textContent =
-        (a3.total_empresas||0) > 0 ? `💰 ${fmt(a3.total_empresas)} rondas esta semana` : '● Esperando próximo lunes';
+        (a3.total_empresas||0) > 0 ? `💰 ${fmt(a3.total_empresas)} empresas · ${a3.semana_cubierta||''}` : '● Esperando próximo lunes';
       const totalE    = Math.max(1, a3.total_empresas||1);
       const altaN     = a3.prioridad_alta||0;
       const mediaN    = a3.prioridad_media||0;

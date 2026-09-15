@@ -1,37 +1,38 @@
 {
-  "last_updated": "2026-09-15T09:20:00",
+  "last_updated": "2026-09-15T09:22:58",
   "funding": {
-    "summary": "34 empresas · 4 nuevas esta semana · 19 deals creados",
+    "summary": "40 empresas · 8 prioridad alta · 19 deals creados",
     "recent_signals": [
       {
-        "company": "Sherpa.ai",
-        "signal": "Serie B · 15.75M€ (ya cliente)",
-        "date": "2026-07-06"
+        "company": "Tripjoin",
+        "signal": "Pre-Seed · 300000€",
+        "date": "28/07/2026"
       },
       {
-        "company": "Balance",
-        "signal": "Seed · 3M€",
-        "date": "2026-07-06"
+        "company": "Onalabs",
+        "signal": "Serie A · 9300000€",
+        "date": "27/07/2026"
       },
       {
-        "company": "8Layers",
-        "signal": "Pre-Seed · 1M€",
-        "date": "2026-07-07"
+        "company": "Ratio",
+        "signal": "Seed · 400000€",
+        "date": "27/07/2026"
       },
       {
-        "company": "Tokenized Green (twelve.)",
-        "signal": "Seed · 1.1M€",
-        "date": "2026-07-03"
+        "company": "PageMind",
+        "signal": "Seed · 1200000€",
+        "date": "24/07/2026"
       }
     ],
     "answers": {
-      "hola": "¡Hola! Soy el Agente 3 de Trigger Buying. He detectado 2 señales de compra activas en 27 cuentas escaneadas. ¿Qué quieres saber?",
-      "señales": "Señales detectadas: 2 total · 1 Job Posting HR · 0 Job Posting Nómina/Payroll · 1 Growth Signal.",
-      "progreso": "He escaneado 27 de 27 cuentas ICP (100.0%). Último scan: 08/04/2026.",
-      "roles": "Monitorizo: HR Director, CHRO, Talent · Nómina/Payroll Manager · expansión/contratación masiva.",
-      "procesadas": "Universo activo: 27 empresas con BPs. Escaneadas: 27. Señales activas: 2.",
-      "ultimo": "Señales recientes:\n  Alea: Job Posting HR\n  Adwake: Growth Signal",
-      "ayuda": "Puedo contarte sobre: señales detectadas, tipos de señal, progreso de escaneo, empresas recientes con trigger. ¡Pregúntame!"
+      "hola": "¡Hola! Soy Agent Funding Intelligence. Tengo 40 empresas con ronda detectada. ¿Qué quieres saber?",
+      "señales": "40 empresas · 8 alta · 21 media · 11 baja · 15 ya en HubSpot · 2 ya clientes ⛔",
+      "progreso": "Histórico: 40 empresas, periodo Sep 2025 – Jul 2026. Sin runs desde el 29/07/2026 — se retoma el próximo lunes.",
+      "roles": "Busco startups y pymes españolas con rondas Pre-Seed, Seed, Serie A o Serie B anunciadas en los últimos 7 días.",
+      "procesadas": "40 empresas procesadas en total.",
+      "deals": "Deals creados: 19 · descartados: 15 · sin decidir: 6.",
+      "ultimo": "Último run: 29/07/2026. El agente se retoma el lunes con cadencia semanal normal.",
+      "ayuda": "Puedo contarte: empresas detectadas, prioridades, estado en HubSpot, deals creados e histórico."
     }
   },
   "tender": {
