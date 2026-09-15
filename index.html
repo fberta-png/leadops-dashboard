@@ -629,7 +629,7 @@
       <div class="lote-row"><div class="lote-id">Noticias EU</div><div class="lote-pills"><span class="pill pill-ind">eu-startups.com · techfundingnews.com · bebeez.eu</span></div></div>
       <div class="lote-row"><div class="lote-id">Filtro fase</div><div class="lote-pills"><span class="pill" style="background:rgba(249,115,22,0.15);color:#f97316">Pre-Seed · Seed · Serie A · Serie B</span></div></div>
       <div class="lote-row"><div class="lote-id">Filtro tamaño</div><div class="lote-pills"><span class="pill pill-emp">5–600 empleados · mínimo €300K</span></div></div>
-      <div class="lote-row"><div class="lote-id">Deduplicación</div><div class="lote-pills"><span class="pill" style="background:rgba(34,197,94,0.15);color:#22c55e">agent3_historico.json · 12 meses ventana</span></div></div>
+      <div class="lote-row"><div class="lote-id">Deduplicación</div><div class="lote-pills"><span class="pill" style="background:rgba(34,197,94,0.15);color:#22c55e">historico.json · ventana 7 días</span></div></div>
       <div class="lote-row"><div class="lote-id">Histórico</div><div class="lote-pills"><span class="pill pill-ok" id="a3-historico-pill">— empresas en total</span></div></div>
     </div>
     <div class="schedule-card">
@@ -953,10 +953,10 @@ async function loadData() {
       `Lead Ops · Sesame · Actualizado ${dtStr} · ${fmt(a2.universe_total)} empresas en universo A2 · ${fmt(bpsTotal)} BPs encontrados`;
 
     // ── Agent 3 ──────────────────────────────────────────
-    const a3 = d.agent3;
+    const a3 = d.funding;
     if (a3) {
       document.getElementById('a3-info').textContent =
-        `${fmt(a3.signals_detected||0)} señales detectadas · ${fmt(a3.total_scanned||0)} escaneadas · Próximo scan: L-X-V 5am`;
+        `${fmt(a3.total_historico||0)} empresas en histórico · ${fmt(a3.deals_creados||0)} deals creados · ${a3.schedule||'Lunes 8:00am'}`;
       document.getElementById('a3-status-badge').textContent =
         (a3.total_empresas||0) > 0 ? `💰 ${fmt(a3.total_empresas)} rondas esta semana` : '● Esperando próximo lunes';
       const totalE    = Math.max(1, a3.total_empresas||1);
@@ -1018,7 +1018,7 @@ async function downloadAgentCSV(agentId) {
   const FILES = {
     1: { url: BASE + 'agent1_latest.csv', name: 'Agent1_DataEnrichment_latest.csv' },
     2: { url: BASE + 'agent2_latest.csv', name: 'Agent2_BuyerEnrichment_latest.csv' },
-    3: { url: BASE + 'agent3_latest.csv', name: 'Agent3_FundingIntelligence_latest.csv' },
+    3: { url: BASE + 'funding_latest.csv', name: 'AgentFundingIntelligence_latest.csv' },
     4: { url: BASE + 'agent4_latest.csv', name: 'Agent4_GroupIntelligence_latest.csv' },
   };
   const f = FILES[agentId];
@@ -1058,8 +1058,8 @@ const AGENT_META = [
   { id:1, name:'Buyer Enrichment Agent', sub:'HR · Finance · Ops · IT', avatar:'👤',
     color:'#fbbf24', insightKey:'agent2',
     chips:['¿Qué BPs buscas?','Roles ICP','Cómo usas Apollo','Deduplicación','¿Cuántos encontraste?'] },
-  { id:2, name:'Trigger Buying Agent', sub:'Job Postings · HR · Nómina', avatar:'⚡', color:'#f97316', insightKey:'agent3',
-    chips:['¿Cuántas señales?','Top keywords','Empresas con señal','Último scan','Progreso universo'] },
+  { id:2, name:'Agent Funding Intelligence', sub:'Rondas · HubSpot · SDR', avatar:'💰', color:'#f97316', insightKey:'funding',
+    chips:['¿Cuántas rondas?','Prioridad alta','Ya en HubSpot','Deals creados','Último run','Histórico'] },
   { id:3, name:'Lost Deals Agent', sub:'Por configurar', avatar:'🔍', color:'#f87171', insightKey:null,
     chips:[] },
 ];

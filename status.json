@@ -24,8 +24,8 @@
     "progress_pct": 39.98,
     "schedule": "L-V 4:00am"
   },
-  "agent3": {
-    "name": "Funding Intelligence",
+  "funding": {
+    "name": "Agent Funding Intelligence",
     "status": "active",
     "schedule": "Lunes 8:00am",
     "semana_cubierta": "Sem22–Sem30 · May-Jul 2026",
@@ -39,6 +39,7 @@
     "deals_creados": 19,
     "deals_pendientes": 6,
     "total_historico": 40,
-    "last_run": "2026-07-29T08:00:00"
+    "last_run": "2026-07-29T08:00:00",
+    "deals_descartados": 15
   }
 }
