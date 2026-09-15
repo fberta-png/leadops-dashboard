@@ -276,7 +276,7 @@
   </div>
   <div class="nav-status">
     <div class="dot"></div>
-    <span id="nav-status-text">2 agentes activos</span>
+    <span id="nav-status-text">3 agentes activos</span>
   </div>
 </nav>
 
@@ -833,7 +833,7 @@
 <div id="tab-agentes" class="tab-panel">
 <div class="main">
   <div class="section-label" style="margin-bottom:8px;">Estado de los Agentes</div>
-  <div style="font-size:12px;color:var(--muted2);margin-bottom:24px;">Fase 1 cerrada · 2 agentes activos · Aprendizajes aplicados</div>
+  <div style="font-size:12px;color:var(--muted2);margin-bottom:24px;">Fase 1 cerrada · 3 agentes activos · Aprendizajes aplicados</div>
 
   <div style="display:flex;flex-direction:column;gap:16px;">
 
@@ -873,21 +873,21 @@
       </div>
     </div>
 
-    <!-- AGENTE GROUP INTELLIGENCE - EN PAUSA -->
-    <div style="background:var(--panel);border:1px solid rgba(234,179,8,0.3);border-radius:12px;padding:24px;display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:start;">
+    <!-- AGENTE GROUP INTELLIGENCE - ACTIVO -->
+    <div style="background:var(--panel);border:1px solid rgba(34,197,94,0.3);border-radius:12px;padding:24px;display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:start;">
       <div style="font-size:32px;padding-top:2px;">🏢</div>
       <div>
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
           <span style="font-weight:700;font-size:15px;">Agente Group Intelligence</span>
-          <span style="background:rgba(234,179,8,0.15);color:#eab308;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:0.5px;">EN PAUSA</span>
+          <span style="background:rgba(34,197,94,0.15);color:#22c55e;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:0.5px;">ACTIVO</span>
         </div>
         <div style="font-size:13px;color:var(--muted2);line-height:1.7;">
-          Detecta si las <strong style="color:var(--text)">11.368 empresas españolas</strong> en HubSpot pertenecen a un grupo empresarial. Por cada empresa del grupo localizada en el CRM, reporta el último deal creado (Pipeline, Stage, Owner). Arquitectura append-only con checkpoint por empresa — listo para lanzar.
+          Detecta si las <strong style="color:var(--text)">11.368 empresas españolas</strong> en HubSpot pertenecen a un grupo empresarial. Por cada empresa del grupo localizada en el CRM, reporta el último deal creado (Pipeline, Stage, Owner). <strong style="color:var(--text)">18 empresas procesadas</strong>, 3 con grupo detectado. Arquitectura append-only con checkpoint por empresa y guardia anti-duplicados.
         </div>
       </div>
       <div style="text-align:right;white-space:nowrap;">
-        <div style="font-size:11px;color:var(--muted2);">Estado</div>
-        <div style="font-size:12px;font-weight:600;color:#eab308;">Pendiente</div>
+        <div style="font-size:11px;color:var(--muted2);">Progreso</div>
+        <div style="font-size:12px;font-weight:600;color:var(--green);">18 / 11.368</div>
       </div>
     </div>
 
@@ -901,6 +901,24 @@
         </div>
         <div style="font-size:13px;color:var(--muted2);line-height:1.7;">
           Monitoriza rondas de financiación en España en tiempo real. <strong style="color:var(--text)">40 empresas</strong> identificadas entre mayo y julio 2026 (de Seed a Serie B), con prioridad, link a HubSpot y tracking de deals. Agente activo — base del nuevo proyecto de agentes.
+        </div>
+      </div>
+      <div style="text-align:right;white-space:nowrap;">
+        <div style="font-size:11px;color:var(--muted2);">Próxima run</div>
+        <div style="font-size:12px;font-weight:600;color:var(--green);">Lunes 8am</div>
+      </div>
+    </div>
+
+    <!-- AGENTE TENDER INTELLIGENCE - ACTIVO -->
+    <div style="background:var(--panel);border:1px solid rgba(34,197,94,0.3);border-radius:12px;padding:24px;display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:start;">
+      <div style="font-size:32px;padding-top:2px;">📋</div>
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+          <span style="font-weight:700;font-size:15px;">Agente Tender Intelligence</span>
+          <span style="background:rgba(34,197,94,0.15);color:#22c55e;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:0.5px;">ACTIVO</span>
+        </div>
+        <div style="font-size:13px;color:var(--muted2);line-height:1.7;">
+          Rastrea licitaciones públicas de software de RRHH, control horario y fichaje. Primera ejecución: <strong style="color:var(--text)">55 licitaciones</strong> detectadas sobre 22.125 anuncios revisados, <strong style="color:var(--text)">8 admiten oferta ahora mismo</strong> y 16,1 M€ de importe total detectado. Abre canal en sector público: ayuntamientos, diputaciones y universidades.
         </div>
       </div>
       <div style="text-align:right;white-space:nowrap;">

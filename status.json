@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-15T09:22:58",
+  "last_updated": "2026-09-15T12:39:19",
   "funding": {
     "name": "Agent Funding Intelligence",
     "status": "active",
@@ -21,8 +21,17 @@
   },
   "group": {
     "name": "Group Intelligence",
-    "status": "pending",
-    "schedule": "Manual"
+    "status": "active",
+    "schedule": "Manual",
+    "last_run": "2026-09-15T12:39:19",
+    "universo_total": 11368,
+    "total_procesadas": 18,
+    "con_grupo": 3,
+    "sin_grupo": 13,
+    "sin_datos": 2,
+    "empresas_grupo_en_hubspot": 0,
+    "filas_historico": 18,
+    "fuente": "downloads/group_latest.csv"
   },
   "tender": {
     "name": "Tender Intelligence",
