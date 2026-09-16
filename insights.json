@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-16T09:44:48",
+  "last_updated": "2026-09-16T13:20:11",
   "funding": {
     "summary": "40 empresas (histórico) · 0 nuevas esta semana (Sep 9-16) · Nota: 7 semanas sin run desde 29/07",
     "recent_signals": [
@@ -36,15 +36,15 @@
     }
   },
   "tender": {
-    "summary": "Primera ejecución: 55 licitaciones detectadas en 14 días (22.125 anuncios revisados). 8 admiten oferta ahora mismo.",
+    "summary": "57 licitaciones (histórico) · 2 nuevas esta run (Sep 15-16) · 10 admiten oferta ahora",
     "top_organismos": [
       {
         "tipo": "Otro organismo público",
-        "n": 21
+        "n": 22
       },
       {
         "tipo": "Ayuntamiento",
-        "n": 17
+        "n": 18
       },
       {
         "tipo": "Universidad",
@@ -52,7 +52,7 @@
       },
       {
         "tipo": "Autoridad portuaria",
-        "n": 3
+        "n": 4
       },
       {
         "tipo": "Fundación",
@@ -61,45 +61,46 @@
     ],
     "recent_signals": [
       {
+        "organo": "Presidencia del Organismo Público Puertos del Estado",
+        "objeto": "Sistema integral de gestión de recursos humanos para Puertos del Estado",
+        "importe": 267864,
+        "dias_restantes": 27,
+        "fecha_limite": "2026-10-13"
+      },
+      {
         "organo": "Autoridad Portuaria de Marín y Ría de Pontevedra",
         "objeto": "Implantación y mantenimiento de solución informática para la gestión i",
         "importe": 280115,
-        "dias_restantes": 13,
+        "dias_restantes": 12,
         "fecha_limite": "2026-09-28"
       },
       {
         "organo": "Gobierno de Cantabria",
         "objeto": "Reposición parcial del sistema de control horario",
         "importe": 30855,
-        "dias_restantes": 14,
+        "dias_restantes": 13,
         "fecha_limite": "2026-09-29"
       },
       {
         "organo": "Mancomunidad Intermunicipal Alto Palancia",
         "objeto": "Sistema integral y centralizado de control horario y gestión de presen",
         "importe": 13100,
-        "dias_restantes": 14,
+        "dias_restantes": 13,
         "fecha_limite": "2026-09-29"
       },
       {
-        "organo": "FORTA",
-        "objeto": "Asesoramiento y consultoría en gestión de Recursos Humanos",
-        "importe": 45980,
-        "dias_restantes": 15,
-        "fecha_limite": "2026-09-30"
-      },
-      {
-        "organo": "Autoridad Portuaria de la Bahía de Algeciras",
-        "objeto": "Despliegue y mantenimiento de una Suite de RRHH",
-        "importe": 137940,
-        "dias_restantes": 16,
-        "fecha_limite": "2026-10-01"
+        "organo": "Ajuntament de Caldes d'Estrac",
+        "objeto": "Servei gestió de nòmines, fiscal i seguretat social del personal",
+        "importe": 65856,
+        "dias_restantes": 776,
+        "fecha_limite": "2028-10-31"
       }
     ],
     "answers": {
       "que_busca": "Licitaciones con CPV de software de RRHH/control horario, o cuyo objeto menciona control horario, fichaje, portal del empleado, RRHH o nominas.",
       "por_que_importa": "Abre canal de oportunidad en sector publico: ayuntamientos, diputaciones y universidades.",
-      "limitacion": "Requiere el navegador integrado; la red de ejecucion no alcanza contrataciondelestado.es directamente."
+      "limitacion": "Requiere el navegador integrado; la red de ejecucion no alcanza contrataciondelestado.es directamente.",
+      "novedades": "2 nuevas esta run: Puertos del Estado (RRHH integral, €267K, Alta prioridad, plazo 13 Oct) y Caldes d'Estrac (nominas, €65K, Media)."
     }
   }
 }
