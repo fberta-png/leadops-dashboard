@@ -1199,7 +1199,7 @@ async function downloadAgentCSV(agentId) {
   const f = FILES[agentId];
   if (!f) return;
   try {
-    const resp = await fetch(f.url);
+    const resp = await fetch(f.url + '?t=' + Date.now(), { cache: 'no-store' });
     if (!resp.ok) throw new Error('not found');
     const blob = await resp.blob();
     const a = document.createElement('a');
