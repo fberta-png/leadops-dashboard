@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-09-15T09:22:58",
+  "last_updated": "2026-09-16T09:44:48",
   "funding": {
-    "summary": "40 empresas · 8 prioridad alta · 19 deals creados",
+    "summary": "40 empresas (histórico) · 0 nuevas esta semana (Sep 9-16) · Nota: 7 semanas sin run desde 29/07",
     "recent_signals": [
       {
         "company": "Tripjoin",
@@ -25,14 +25,14 @@
       }
     ],
     "answers": {
-      "hola": "¡Hola! Soy Agent Funding Intelligence. Tengo 40 empresas con ronda detectada. ¿Qué quieres saber?",
-      "señales": "40 empresas · 8 alta · 21 media · 11 baja · 15 ya en HubSpot · 2 ya clientes ⛔",
-      "progreso": "Histórico: 40 empresas, periodo Sep 2025 – Jul 2026. Sin runs desde el 29/07/2026 — se retoma el próximo lunes.",
+      "hola": "¡Hola! Soy Agent Funding Intelligence. Esta semana no encontré rondas en el radar (Sep 9-16). Histórico: 40 empresas.",
+      "señales": "0 rondas esta semana (Sep 9-16) · Histórico total: 40 empresas · 8 alta · 21 media · 11 baja",
+      "progreso": "Histórico: 40 empresas. ⚠️ El agente lleva 7 semanas sin run (último: 29/07/2026). Se recomienda un run de recuperación para cubrir Jul 29 → Sep 16.",
       "roles": "Busco startups y pymes españolas con rondas Pre-Seed, Seed, Serie A o Serie B anunciadas en los últimos 7 días.",
-      "procesadas": "40 empresas procesadas en total.",
-      "deals": "Deals creados: 19 · descartados: 15 · sin decidir: 6.",
-      "ultimo": "Último run: 29/07/2026. El agente se retoma el lunes con cadencia semanal normal.",
-      "ayuda": "Puedo contarte: empresas detectadas, prioridades, estado en HubSpot, deals creados e histórico."
+      "procesadas": "0 empresas nuevas esta semana. Histórico total: 40 empresas.",
+      "ultimo": "Último run: 16/09/2026. 0 nuevas esta semana (ventana Sep 9-16). 40 en histórico.",
+      "deals": "Deals creados: 19 · descartados: 15 · sin decidir: 6. Total histórico: 40.",
+      "ayuda": "Puedo contarte: rondas detectadas esta semana, prioridades, estado en HubSpot, deals creados e histórico acumulado."
     }
   },
   "tender": {
