@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-16T13:45:02",
+  "last_updated": "2026-09-17T09:30:00",
   "funding": {
     "summary": "40 empresas · 21 deals creados · 1 pendientes",
     "recent_signals": [
@@ -36,64 +36,75 @@
     }
   },
   "tender": {
-    "summary": "57 licitaciones (histórico) · 2 nuevas esta run (Sep 15-16) · 10 admiten oferta ahora",
+    "summary": "Run completa sobre las dos fuentes: 231 licitaciones (108.089 anuncios revisados). 26 admiten oferta ahora; 4 con menos de 5 días.",
     "top_organismos": [
       {
-        "tipo": "Otro organismo público",
-        "n": 22
-      },
-      {
         "tipo": "Ayuntamiento",
-        "n": 18
+        "n": 79
       },
       {
-        "tipo": "Universidad",
-        "n": 5
-      },
-      {
-        "tipo": "Autoridad portuaria",
-        "n": 4
+        "tipo": "Otro organismo público",
+        "n": 69
       },
       {
         "tipo": "Fundación",
-        "n": 3
+        "n": 16
+      },
+      {
+        "tipo": "Universidad",
+        "n": 14
+      },
+      {
+        "tipo": "Consorcio",
+        "n": 12
+      },
+      {
+        "tipo": "Diputación",
+        "n": 11
       }
     ],
     "recent_signals": [
       {
-        "organo": "Presidencia del Organismo Público Puertos del Estado",
-        "objeto": "Sistema integral de gestión de recursos humanos para Puertos del Estado",
-        "importe": 267864,
-        "dias_restantes": 27,
-        "fecha_limite": "2026-10-13"
+        "organo": "Ajuntament d'Amer",
+        "objeto": "Sistema de control horari i aparells de registre",
+        "importe": 6030,
+        "dias_restantes": 1,
+        "fecha_limite": "2026-09-18"
       },
       {
-        "organo": "Autoridad Portuaria de Marín y Ría de Pontevedra",
-        "objeto": "Implantación y mantenimiento de solución informática para la gestión i",
-        "importe": 280115,
-        "dias_restantes": 12,
-        "fecha_limite": "2026-09-28"
+        "organo": "Consejería de Educación de Castilla y León",
+        "objeto": "Asistencia técnica para servicios de gestión de personal",
+        "importe": 546374,
+        "dias_restantes": 4,
+        "fecha_limite": "2026-09-21"
       },
       {
-        "organo": "Gobierno de Cantabria",
-        "objeto": "Reposición parcial del sistema de control horario",
-        "importe": 30855,
-        "dias_restantes": 13,
-        "fecha_limite": "2026-09-29"
+        "organo": "Diputación de Almería",
+        "objeto": "Suscripción de una solución software de gestión integral",
+        "importe": 1738638,
+        "dias_restantes": 4,
+        "fecha_limite": "2026-09-21"
       },
       {
-        "organo": "Mancomunidad Intermunicipal Alto Palancia",
-        "objeto": "Sistema integral y centralizado de control horario y gestión de presen",
-        "importe": 13100,
-        "dias_restantes": 13,
-        "fecha_limite": "2026-09-29"
+        "organo": "SECOMSA",
+        "objeto": "Gestoria i assessorament laboral",
+        "importe": 306437,
+        "dias_restantes": 4,
+        "fecha_limite": "2026-09-21"
       },
       {
-        "organo": "Ajuntament de Caldes d'Estrac",
-        "objeto": "Servei gestió de nòmines, fiscal i seguretat social del personal",
-        "importe": 65856,
-        "dias_restantes": 776,
-        "fecha_limite": "2028-10-31"
+        "organo": "Consorci Mercat de les Flors",
+        "objeto": "Servei integral de control horari",
+        "importe": 18800,
+        "dias_restantes": 5,
+        "fecha_limite": "2026-09-22"
+      },
+      {
+        "organo": "Consejería de Economía, Empleo y Transformación Digital",
+        "objeto": "Mantenimiento, evolución y gestión del ciclo de nómina y migración de ",
+        "importe": 3148022,
+        "dias_restantes": 8,
+        "fecha_limite": "2026-09-25"
       }
     ],
     "answers": {

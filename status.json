@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-16T13:45:02",
+  "last_updated": "2026-09-17T09:30:00",
   "funding": {
     "name": "Agent Funding Intelligence",
     "status": "active",
@@ -37,14 +37,14 @@
     "name": "Tender Intelligence",
     "status": "active",
     "schedule": "Lunes 8:00am",
-    "last_run": "2026-09-16T13:20:11",
-    "total_historico": 57,
-    "abiertas_ahora": 10,
-    "plazo_critico": 0,
-    "prioridad_alta": 5,
-    "prioridad_media": 5,
-    "prioridad_baja": 47,
-    "importe_total_detectado": 16456584,
-    "nuevas_esta_run": 2
+    "last_run": "2026-09-17T09:30:00",
+    "total_historico": 231,
+    "abiertas_ahora": 26,
+    "plazo_critico": 4,
+    "prioridad_alta": 13,
+    "prioridad_media": 13,
+    "prioridad_baja": 205,
+    "importe_total_detectado": 125393529,
+    "nuevas_esta_run": 176
   }
 }
