@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-21T10:19:52",
+  "last_updated": "2026-09-21T10:30:00",
   "funding": {
     "summary": "44 empresas · 4 nuevas esta semana · 2 prioridad alta",
     "recent_signals": [
@@ -36,19 +36,19 @@
     }
   },
   "tender": {
-    "summary": "Run completa sobre las dos fuentes: 231 licitaciones (108.089 anuncios revisados). 26 admiten oferta ahora; 4 con menos de 5 días.",
+    "summary": "Run del 21/09 sobre las dos fuentes: 9.381 anuncios revisados, 11 licitaciones nuevas (histórico acumulado 242). 31 admiten oferta ahora mismo; 7 con menos de 5 días, de las cuales 3 cierran hoy.",
     "top_organismos": [
       {
         "tipo": "Ayuntamiento",
-        "n": 79
+        "n": 84
       },
       {
         "tipo": "Otro organismo público",
-        "n": 69
+        "n": 70
       },
       {
         "tipo": "Fundación",
-        "n": 16
+        "n": 17
       },
       {
         "tipo": "Universidad",
@@ -65,45 +65,38 @@
     ],
     "recent_signals": [
       {
-        "organo": "Ajuntament d'Amer",
-        "objeto": "Sistema de control horari i aparells de registre",
-        "importe": 6030,
-        "dias_restantes": 1,
-        "fecha_limite": "2026-09-18"
-      },
-      {
         "organo": "Consejería de Educación de Castilla y León",
         "objeto": "Asistencia técnica para servicios de gestión de personal",
         "importe": 546374,
-        "dias_restantes": 4,
+        "dias_restantes": 0,
         "fecha_limite": "2026-09-21"
       },
       {
         "organo": "Diputación de Almería",
         "objeto": "Suscripción de una solución software de gestión integral",
         "importe": 1738638,
-        "dias_restantes": 4,
+        "dias_restantes": 0,
         "fecha_limite": "2026-09-21"
       },
       {
         "organo": "SECOMSA",
         "objeto": "Gestoria i assessorament laboral",
         "importe": 306437,
-        "dias_restantes": 4,
+        "dias_restantes": 0,
         "fecha_limite": "2026-09-21"
       },
       {
         "organo": "Consorci Mercat de les Flors",
         "objeto": "Servei integral de control horari",
         "importe": 18800,
-        "dias_restantes": 5,
+        "dias_restantes": 1,
         "fecha_limite": "2026-09-22"
       },
       {
         "organo": "Consejería de Economía, Empleo y Transformación Digital",
         "objeto": "Mantenimiento, evolución y gestión del ciclo de nómina y migración de ",
         "importe": 3148022,
-        "dias_restantes": 8,
+        "dias_restantes": 4,
         "fecha_limite": "2026-09-25"
       }
     ],
@@ -111,7 +104,8 @@
       "que_busca": "Licitaciones con CPV de software de RRHH/control horario, o cuyo objeto menciona control horario, fichaje, portal del empleado, RRHH o nominas.",
       "por_que_importa": "Abre canal de oportunidad en sector publico: ayuntamientos, diputaciones y universidades.",
       "limitacion": "Requiere el navegador integrado; la red de ejecucion no alcanza contrataciondelestado.es directamente.",
-      "novedades": "2 nuevas esta run: Puertos del Estado (RRHH integral, €267K, Alta prioridad, plazo 13 Oct) y Caldes d'Estrac (nominas, €65K, Media)."
+      "novedades": "11 nuevas esta run. Las abiertas: Sumar-Catalunya (software de seleccion y reclutamiento, 42K, Alta, cierra 5 Oct), BiscayTIK (RRHH+nominas+portal del empleado, 1,17M, cierra 2 Oct), Daganzo de Arriba (plataforma RRHH+nominas+control horario, 160K, cierra 2 Oct), Orihuela (nominas, 201K, cierra 15 Oct), Caldes d'Estrac y Costa Brava Girona (gestoria, fecha de cierre dudosa en el feed).",
+      "urgente": "Lo que caduca no son las nuevas sino el stock: 3 cierran hoy 21/09 (Educacion Castilla y Leon 546K, Diputacion de Almeria 1,74M, SECOMSA 306K) y Mercat de les Flors cierra el 22/09."
     }
   }
 }
