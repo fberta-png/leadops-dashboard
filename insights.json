@@ -1,37 +1,37 @@
 {
-  "last_updated": "2026-09-17T09:30:00",
+  "last_updated": "2026-09-21T10:19:52",
   "funding": {
-    "summary": "40 empresas · 21 deals creados · 1 pendientes",
+    "summary": "44 empresas · 4 nuevas esta semana · 2 prioridad alta",
     "recent_signals": [
       {
-        "company": "Tripjoin",
-        "signal": "Pre-Seed · 300000€",
-        "date": "28/07/2026"
+        "company": "Health Force",
+        "signal": "Seed · 4,2M€",
+        "date": "2026-09-17"
       },
       {
-        "company": "Onalabs",
-        "signal": "Serie A · 9300000€",
-        "date": "27/07/2026"
+        "company": "Nearby Computing",
+        "signal": "Serie A · 1,4M€",
+        "date": "2026-09-17"
       },
       {
-        "company": "Ratio",
-        "signal": "Seed · 400000€",
-        "date": "27/07/2026"
+        "company": "011h Sustainable Construction",
+        "signal": "Serie B · 12M€",
+        "date": "2026-09-15"
       },
       {
-        "company": "PageMind",
-        "signal": "Seed · 1200000€",
-        "date": "24/07/2026"
+        "company": "Cubicup",
+        "signal": "Serie A · 2M€",
+        "date": "2026-09-15"
       }
     ],
     "answers": {
-      "hola": "¡Hola! Soy Agent Funding Intelligence. Esta semana no encontré rondas en el radar (Sep 9-16). Histórico: 40 empresas.",
-      "señales": "40 empresas · 8 alta · 21 media · 11 baja · 15 en HubSpot · 2 ya clientes ⛔",
-      "progreso": "Histórico: 40 empresas. ⚠️ El agente lleva 7 semanas sin run (último: 29/07/2026). Se recomienda un run de recuperación para cubrir Jul 29 → Sep 16.",
+      "hola": "¡Hola! Soy Agent Funding Intelligence. He detectado 4 rondas esta semana en España. ¿Qué quieres saber?",
+      "señales": "Esta semana: 4 rondas · 2 prioridad alta · 3 ya en HubSpot · 0 ya clientes ⛔",
+      "progreso": "Histórico acumulado: 44 empresas. Última ejecución: 21/09/2026.",
       "roles": "Busco startups y pymes españolas con rondas Pre-Seed, Seed, Serie A o Serie B anunciadas en los últimos 7 días.",
-      "procesadas": "0 empresas nuevas esta semana. Histórico total: 40 empresas.",
-      "ultimo": "Último run: 16/09/2026. 0 nuevas esta semana (ventana Sep 9-16). 40 en histórico.",
-      "deals": "Deals creados: 21 · descartados: 18 · sin decidir: 1. Total histórico: 40.",
+      "procesadas": "Esta semana procesé 4 empresas nuevas. Histórico total: 44.",
+      "ultimo": "Último run: 21/09/2026. 4 nuevas · 2 alta prioridad · 0 ya clientes.",
+      "deals": "Deals creados: 21 · descartados: 18 · sin decidir: 5. Total histórico: 44.",
       "ayuda": "Puedo contarte: rondas detectadas esta semana, prioridades, estado en HubSpot, deals creados e histórico acumulado."
     }
   },
