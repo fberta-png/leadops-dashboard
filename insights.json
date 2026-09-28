@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-28T10:09:19",
+  "last_updated": "2026-09-28T10:20:00",
   "funding": {
     "summary": "50 empresas · 6 nuevas esta semana · 2 prioridad alta",
     "recent_signals": [
@@ -36,76 +36,76 @@
     }
   },
   "tender": {
-    "summary": "Run del 21/09 sobre las dos fuentes: 9.381 anuncios revisados, 11 licitaciones nuevas (histórico acumulado 242). 31 admiten oferta ahora mismo; 7 con menos de 5 días, de las cuales 3 cierran hoy.",
+    "summary": "Run del 28/09 sobre las dos fuentes: 20.582 anuncios revisados, 29 licitaciones nuevas (histórico acumulado 268). 34 admiten oferta ahora mismo; 14 con menos de 5 días, de las cuales 3 cierran hoy.",
     "top_organismos": [
       {
         "tipo": "Ayuntamiento",
-        "n": 84
+        "n": 100
       },
       {
         "tipo": "Otro organismo público",
-        "n": 70
+        "n": 76
       },
       {
         "tipo": "Fundación",
-        "n": 17
+        "n": 18
       },
       {
         "tipo": "Universidad",
-        "n": 14
+        "n": 15
+      },
+      {
+        "tipo": "Diputación",
+        "n": 12
       },
       {
         "tipo": "Consorcio",
         "n": 12
-      },
-      {
-        "tipo": "Diputación",
-        "n": 11
       }
     ],
     "recent_signals": [
       {
-        "organo": "Consejería de Educación de Castilla y León",
-        "objeto": "Asistencia técnica para servicios de gestión de personal",
-        "importe": 546374,
+        "organo": "SEPIDES Gestión",
+        "objeto": "Gestión de nóminas, seguridad social, contratación e IRPF",
+        "importe": 4840,
         "dias_restantes": 0,
-        "fecha_limite": "2026-09-21"
+        "fecha_limite": "2026-09-28"
       },
       {
-        "organo": "Diputación de Almería",
-        "objeto": "Suscripción de una solución software de gestión integral",
-        "importe": 1738638,
+        "organo": "Autoridad Portuaria de Marín y Ría de Pontevedra",
+        "objeto": "Implantación y mantenimiento de solución para la gestión integral de RRHH",
+        "importe": 280115,
         "dias_restantes": 0,
-        "fecha_limite": "2026-09-21"
+        "fecha_limite": "2026-09-28"
       },
       {
-        "organo": "SECOMSA",
-        "objeto": "Gestoria i assessorament laboral",
-        "importe": 306437,
+        "organo": "Reus Serveis Municipals",
+        "objeto": "Equips i servei integral de suport d'un sistema de control de presència",
+        "importe": 110640,
         "dias_restantes": 0,
-        "fecha_limite": "2026-09-21"
+        "fecha_limite": "2026-09-28"
       },
       {
-        "organo": "Consorci Mercat de les Flors",
-        "objeto": "Servei integral de control horari",
-        "importe": 18800,
+        "organo": "Gobierno de Cantabria",
+        "objeto": "Reposición parcial del sistema de control horario",
+        "importe": 30855,
         "dias_restantes": 1,
-        "fecha_limite": "2026-09-22"
+        "fecha_limite": "2026-09-29"
       },
       {
-        "organo": "Consejería de Economía, Empleo y Transformación Digital",
-        "objeto": "Mantenimiento, evolución y gestión del ciclo de nómina y migración de ",
-        "importe": 3148022,
-        "dias_restantes": 4,
-        "fecha_limite": "2026-09-25"
+        "organo": "Mancomunidad Intermunicipal Alto Palancia",
+        "objeto": "Sistema integral y centralizado de control horario y gestión de presencia",
+        "importe": 13100,
+        "dias_restantes": 1,
+        "fecha_limite": "2026-09-29"
       }
     ],
     "answers": {
       "que_busca": "Licitaciones con CPV de software de RRHH/control horario, o cuyo objeto menciona control horario, fichaje, portal del empleado, RRHH o nominas.",
       "por_que_importa": "Abre canal de oportunidad en sector publico: ayuntamientos, diputaciones y universidades.",
-      "limitacion": "Requiere el navegador integrado; la red de ejecucion no alcanza contrataciondelestado.es directamente.",
-      "novedades": "11 nuevas esta run. Las abiertas: Sumar-Catalunya (software de seleccion y reclutamiento, 42K, Alta, cierra 5 Oct), BiscayTIK (RRHH+nominas+portal del empleado, 1,17M, cierra 2 Oct), Daganzo de Arriba (plataforma RRHH+nominas+control horario, 160K, cierra 2 Oct), Orihuela (nominas, 201K, cierra 15 Oct), Caldes d'Estrac y Costa Brava Girona (gestoria, fecha de cierre dudosa en el feed).",
-      "urgente": "Lo que caduca no son las nuevas sino el stock: 3 cierran hoy 21/09 (Educacion Castilla y Leon 546K, Diputacion de Almeria 1,74M, SECOMSA 306K) y Mercat de les Flors cierra el 22/09."
+      "limitacion": "Requiere el navegador integrado; la red de ejecucion no alcanza contrataciondelestado.es directamente. El feed de perfiles del contratante publica con varios dias de retraso: esta run llega hasta el 22/09, el de plataformas agregadas hasta el 28/09.",
+      "novedades": "29 nuevas esta run. Las abiertas por plazo: Palencia (RRHH+control horario+nomina, 272K, cierra 21 Oct), Diputacion de Valladolid (RRHH+control horario+nomina, 410K, cierra 20 Oct), Concello de Nigran (contabilidad+recaudacion+nominas, 388K, cierra 23 Oct), Aoiz (gestoria laboral, cierra 12 Oct), Consell Comarcal de l'Anoia (valoracion de puestos, cierra 9 Oct), Cervera, CTTC y Fundacio s'Estel (gestion de personal y nominas, cierran 7 Oct), Cassa de la Selva (RRHH SaaS, cierra 6 Oct).",
+      "urgente": "Lo que caduca es el stock, no lo nuevo: 3 cierran hoy 28/09 (SEPIDES, Autoridad Portuaria de Marin, Reus Serveis Municipals); 3 cierran el 29/09 (Gobierno de Cantabria, Mancomunidad Alto Palancia, Ajuntament de Rubi); 3 el 30/09 (FORTA, Caldes d'Estrac, Tractament i Seleccio de Residus); 2 el 1/10 (Autoridad Portuaria de Algeciras, Fundacion Investigacion Biomedica Hospital Clinico San Carlos) y 3 el 2/10 (Daganzo de Arriba, BiscayTIK, Costa Brava Girona)."
     }
   }
 }
