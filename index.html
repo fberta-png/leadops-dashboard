@@ -972,11 +972,13 @@ async function loadData() {
     if (!r.ok) throw new Error('status.json no disponible');
     const d = await r.json();
     const a1 = d.agent1, a2 = d.agent2;
+    // dtStr definido aquí fuera para que funding y group puedan usarlo
+    // aunque los agentes 1 y 2 estén retirados y no entren al if de abajo
+    const dt = d.last_updated ? new Date(d.last_updated) : new Date();
+    const dtStr = dt.toLocaleDateString('es-ES') + ' ' + dt.toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
     // Agentes 1 y 2 retirados de status.json. Sin esta guarda, a1.total_enriched lanza
     // TypeError, el catch se lo traga y NADA de lo que viene despues se pinta.
     if (a1 && a2) {
-    const dt = new Date(d.last_updated);
-    const dtStr = dt.toLocaleDateString('es-ES') + ' ' + dt.toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
 
     // ── Agent 1 ──────────────────────────────────────────
     // Baseline universe numbers (known from HubSpot export)
