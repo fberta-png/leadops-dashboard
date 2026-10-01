@@ -1131,6 +1131,29 @@ async function loadData() {
         `Lead Ops · Sesame · Actualizado ${dtStr} · ${fmt(a3.total_empresas||0)} rondas detectadas · ${fmt(dealsN)} deals creados`;
     }
 
+    // ── Group Intelligence ─────────────────────────────────────────
+    const a4 = d.group;
+    if (a4) {
+      const procesadas = a4.total_procesadas || 0;
+      const universo   = a4.universo_total   || 11368;
+      const conGrupo   = a4.con_grupo        || 0;
+      const grupoHS    = a4.empresas_grupo_en_hubspot || 0;
+      const pct4       = universo > 0 ? (procesadas / universo * 100) : 0;
+
+      document.getElementById('a4-info').textContent =
+        `${fmt(procesadas)} empresas procesadas · ${fmt(conGrupo)} con grupo detectado · ${a4.schedule || 'Manual'}`;
+      document.getElementById('a4-con-grupo').textContent = fmt(conGrupo);
+      document.getElementById('a4-grupo-hs').textContent  = fmt(grupoHS);
+      document.getElementById('a4-con-deals').textContent = fmt(a4.con_deals_activos || 0);
+      document.getElementById('a4-prog-total').textContent =
+        `${fmt(procesadas)} / ${fmt(universo)} empresas procesadas`;
+      document.getElementById('a4-prog-bar').style.width  = pct4.toFixed(2) + '%';
+      document.getElementById('a4-prog-pct').textContent  = pct(pct4);
+      document.getElementById('a4-prog-eta').textContent  = a4.last_run
+        ? new Date(a4.last_run).toLocaleDateString('es-ES')
+        : '—';
+    }
+
   } catch(e) {
     console.error('Error cargando status.json:', e);
   }
