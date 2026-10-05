@@ -31,68 +31,68 @@
     }
   },
   "tender": {
-    "summary": "Run del 28/09 sobre las dos fuentes: 20.582 anuncios revisados, 29 licitaciones nuevas (histórico acumulado 268). 34 admiten oferta ahora mismo; 14 con menos de 5 días, de las cuales 3 cierran hoy.",
+    "summary": "Run del 05/10 sobre las dos fuentes: 20.488 anuncios revisados, 29 licitaciones nuevas y 24 actualizadas (histórico acumulado 297). 35 admiten oferta ahora mismo; 9 con menos de 5 días, de las cuales 2 cierran hoy.",
     "top_organismos": [
       {
         "tipo": "Ayuntamiento",
-        "n": 100
+        "n": 106
       },
       {
         "tipo": "Otro organismo público",
-        "n": 76
+        "n": 85
       },
       {
         "tipo": "Fundación",
-        "n": 18
+        "n": 19
       },
       {
         "tipo": "Universidad",
-        "n": 15
+        "n": 17
       },
       {
         "tipo": "Diputación",
-        "n": 12
+        "n": 16
       },
       {
-        "tipo": "Consorcio",
-        "n": 12
+        "tipo": "Empresa pública",
+        "n": 13
       }
     ],
     "recent_signals": [
       {
-        "organo": "SEPIDES Gestión",
-        "objeto": "Gestión de nóminas, seguridad social, contratación e IRPF",
-        "importe": 4840,
+        "organo": "Sumar, Serveis Públics d'Acció Social de Catalunya",
+        "objeto": "Subministrament d'un programari per a la gestió de la selecció i el reclutament de personal per SUMAR, inclosa la implem",
+        "importe": 42000,
         "dias_restantes": 0,
-        "fecha_limite": "2026-09-28"
+        "fecha_limite": "2026-10-05"
       },
       {
-        "organo": "Autoridad Portuaria de Marín y Ría de Pontevedra",
-        "objeto": "Implantación y mantenimiento de solución para la gestión integral de RRHH",
-        "importe": 280115,
+        "organo": "Consejería de Gobierno de Presidencia y Movilidad Sostenible del Cabildo de Gran Canaria",
+        "objeto": "Continuidad (evolución, mantenimiento y soporte) del servicio integral de control horario del personal del Cabildo de Gr",
+        "importe": 450427.2,
         "dias_restantes": 0,
-        "fecha_limite": "2026-09-28"
+        "fecha_limite": "2026-10-05"
       },
       {
-        "organo": "Reus Serveis Municipals",
-        "objeto": "Equips i servei integral de suport d'un sistema de control de presència",
-        "importe": 110640,
-        "dias_restantes": 0,
-        "fecha_limite": "2026-09-28"
-      },
-      {
-        "organo": "Gobierno de Cantabria",
-        "objeto": "Reposición parcial del sistema de control horario",
-        "importe": 30855,
+        "organo": "Ajuntament de Cassà de la Selva",
+        "objeto": "Subministrament, instal·lació, parametrització i manteniment d'un sistema d'informació per a la gestió integrada dels re",
+        "importe": 75900,
         "dias_restantes": 1,
-        "fecha_limite": "2026-09-29"
+        "fecha_limite": "2026-10-06"
       },
       {
-        "organo": "Mancomunidad Intermunicipal Alto Palancia",
-        "objeto": "Sistema integral y centralizado de control horario y gestión de presencia",
-        "importe": 13100,
-        "dias_restantes": 1,
-        "fecha_limite": "2026-09-29"
+        "organo": "Presidència de la Fundació Institut Socioeducatiu s'Estel",
+        "objeto": "Servicio de asesoramiento, de gestión laboral y de Seguridad Social de la Fundació Institut Socioeducatiu S´Estel (FISE)",
+        "importe": 44780.99,
+        "dias_restantes": 2,
+        "fecha_limite": "2026-10-07"
+      },
+      {
+        "organo": "Presidencia del Consejo de Administración de la Empresa Provincial de Aguas de Córdoba S.A.",
+        "objeto": "Suministro de Licencias de Microsoft Business Central",
+        "importe": 55424.87,
+        "dias_restantes": 2,
+        "fecha_limite": "2026-10-07"
       }
     ],
     "answers": {
