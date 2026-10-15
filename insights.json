@@ -1,32 +1,37 @@
 {
-  "last_updated": "2026-10-05T10:10:02",
+  "last_updated": "2026-10-15T10:40:02",
   "funding": {
-    "summary": "53 empresas · 3 nuevas esta semana · 0 prioridad alta",
+    "summary": "59 empresas · 6 nuevas esta semana · 1 prioridad alta",
     "recent_signals": [
       {
-        "company": "Kompanion",
-        "signal": "Seed · 0.8M€",
-        "date": "2026-10-05"
+        "company": "Ruit",
+        "signal": "Pre-Seed · 880K€",
+        "date": "2026-10-15"
       },
       {
-        "company": "Tenoro",
-        "signal": "Seed · 1.7M€",
-        "date": "2026-09-30"
+        "company": "Qilimanjaro Quantum Tech",
+        "signal": "Serie A · 19.6M€",
+        "date": "2026-10-14"
       },
       {
-        "company": "PerpTools (equipo DEXTools)",
-        "signal": "Seed · 7.0M€",
-        "date": "2026-09-30"
+        "company": "Causa Prima",
+        "signal": "Seed · 18M€",
+        "date": "2026-10-13"
+      },
+      {
+        "company": "Cofrai",
+        "signal": "Seed · 2.6M€",
+        "date": "2026-10-13"
       }
     ],
     "answers": {
-      "hola": "¡Hola! Soy Agent Funding Intelligence. He detectado 3 rondas esta semana en España. ¿Qué quieres saber?",
-      "señales": "Esta semana: 3 rondas · 0 prioridad alta · 1 ya en HubSpot · 0 ya clientes ⛔",
-      "progreso": "Histórico acumulado: 53 empresas. Última ejecución: 05/10/2026.",
+      "hola": "¡Hola! Soy Agent Funding Intelligence. He detectado 6 rondas esta semana en España. ¿Qué quieres saber?",
+      "señales": "Esta semana: 6 rondas · 1 prioridad alta · 3 ya en HubSpot · 0 ya clientes ⛔",
+      "progreso": "Histórico acumulado: 59 empresas. Última ejecución: 15/10/2026.",
       "roles": "Busco startups y pymes españolas con rondas Pre-Seed, Seed, Serie A o Serie B anunciadas en los últimos 7 días.",
-      "procesadas": "Esta semana procesé 3 empresas nuevas. Histórico total: 53.",
-      "ultimo": "Último run: 05/10/2026. 3 nuevas · 0 alta prioridad · 0 ya clientes.",
-      "deals": "Deals creados: 21 · descartados: 18 · sin decidir: 14. Total histórico: 53.",
+      "procesadas": "Esta semana procesé 6 empresas nuevas. Histórico total: 59.",
+      "ultimo": "Último run: 15/10/2026. 6 nuevas · 1 alta prioridad · 0 ya clientes.",
+      "deals": "Deals creados: 27 · descartados: 23 · sin decidir: 9. Total histórico: 59.",
       "ayuda": "Puedo contarte: rondas detectadas esta semana, prioridades, estado en HubSpot, deals creados e histórico acumulado."
     }
   },
