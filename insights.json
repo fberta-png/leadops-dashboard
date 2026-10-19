@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-19T12:25:15",
+  "last_updated": "2026-10-19T10:42:00",
   "funding": {
     "summary": "62 empresas · 3 nuevas esta semana · 1 prioridad alta",
     "recent_signals": [
@@ -31,75 +31,75 @@
     }
   },
   "tender": {
-    "summary": "Run del 05/10 sobre las dos fuentes: 20.488 anuncios revisados, 29 licitaciones nuevas y 24 actualizadas (histórico acumulado 297). 35 admiten oferta ahora mismo; 9 con menos de 5 días, de las cuales 2 cierran hoy.",
+    "summary": "Run del 19/10 sobre las dos fuentes (ventana 05/10-19/10, dos semanas: la del 12/10 no se ejecuto): 29.000 anuncios revisados, 108 licitaciones nuevas y 19 actualizadas (historico acumulado 405). 35 admiten oferta ahora mismo; 15 con menos de 5 dias, de las cuales 3 cierran hoy. 7 de esas urgentes ya estaban en el historico y han entrado en plazo critico al recalcular los dias.",
     "top_organismos": [
       {
         "tipo": "Ayuntamiento",
-        "n": 106
+        "n": 137
       },
       {
         "tipo": "Otro organismo público",
-        "n": 85
-      },
-      {
-        "tipo": "Fundación",
-        "n": 19
-      },
-      {
-        "tipo": "Universidad",
-        "n": 17
-      },
-      {
-        "tipo": "Diputación",
-        "n": 16
+        "n": 106
       },
       {
         "tipo": "Empresa pública",
-        "n": 13
+        "n": 30
+      },
+      {
+        "tipo": "Fundación",
+        "n": 27
+      },
+      {
+        "tipo": "Universidad",
+        "n": 23
+      },
+      {
+        "tipo": "Diputación",
+        "n": 23
       }
     ],
     "recent_signals": [
       {
-        "organo": "Sumar, Serveis Públics d'Acció Social de Catalunya",
-        "objeto": "Subministrament d'un programari per a la gestió de la selecció i el reclutament de personal per SUMAR, inclosa la implem",
-        "importe": 42000,
+        "organo": "Comarca del Bajo Aragón",
+        "objeto": "El suministro, instalación, implantación y mantenimiento posterior de un sistema integral para la gestión del control ho",
+        "importe": 23232,
         "dias_restantes": 0,
-        "fecha_limite": "2026-10-05"
+        "fecha_limite": "2026-10-19"
       },
       {
-        "organo": "Consejería de Gobierno de Presidencia y Movilidad Sostenible del Cabildo de Gran Canaria",
-        "objeto": "Continuidad (evolución, mantenimiento y soporte) del servicio integral de control horario del personal del Cabildo de Gr",
-        "importe": 450427.2,
+        "organo": "Consorcio de Compensación de Seguros",
+        "objeto": "Suscripción y mantenimiento de licencias del sistema de gestión económico-financiera sobre SAP S/4HANA en modalidad RISE",
+        "importe": 2962080,
         "dias_restantes": 0,
-        "fecha_limite": "2026-10-05"
+        "fecha_limite": "2026-10-19"
       },
       {
-        "organo": "Ajuntament de Cassà de la Selva",
-        "objeto": "Subministrament, instal·lació, parametrització i manteniment d'un sistema d'informació per a la gestió integrada dels re",
-        "importe": 75900,
+        "organo": "Gerencia de Urbanismo de Sevilla",
+        "objeto": "Servicio de mantenimiento de la aplicación del proceso de nóminas y seguros sociales de la Gerencia de Urbanismo y Medio",
+        "importe": 50820,
+        "dias_restantes": 0,
+        "fecha_limite": "2026-10-19"
+      },
+      {
+        "organo": "Alcaldía del Ayuntamiento de Los Silos",
+        "objeto": "Servicio integral de gestión y control horario del personal del Ayuntamiento de la Villa de Los Silos.",
+        "importe": 15176.88,
         "dias_restantes": 1,
-        "fecha_limite": "2026-10-06"
+        "fecha_limite": "2026-10-20"
       },
       {
-        "organo": "Presidència de la Fundació Institut Socioeducatiu s'Estel",
-        "objeto": "Servicio de asesoramiento, de gestión laboral y de Seguridad Social de la Fundació Institut Socioeducatiu S´Estel (FISE)",
-        "importe": 44780.99,
-        "dias_restantes": 2,
-        "fecha_limite": "2026-10-07"
-      },
-      {
-        "organo": "Presidencia del Consejo de Administración de la Empresa Provincial de Aguas de Córdoba S.A.",
-        "objeto": "Suministro de Licencias de Microsoft Business Central",
-        "importe": 55424.87,
-        "dias_restantes": 2,
-        "fecha_limite": "2026-10-07"
+        "organo": "Ayuntamiento de Medina del Campo",
+        "objeto": "Suministro, implantación, mantenimiento y soporte de plataformas informáticas integradas en entorno cloud destinadas a l",
+        "importe": 674216.4,
+        "dias_restantes": 1,
+        "fecha_limite": "2026-10-20"
       }
     ],
     "answers": {
       "que_busca": "Licitaciones con CPV de software de RRHH/control horario, o cuyo objeto menciona control horario, fichaje, portal del empleado, RRHH o nominas.",
       "por_que_importa": "Abre canal de oportunidad en sector publico: ayuntamientos, diputaciones y universidades.",
-      "limitacion": "Requiere el navegador integrado; la red de ejecucion no alcanza contrataciondelestado.es directamente. El feed de perfiles del contratante publica con varios dias de retraso: esta run llega hasta el 22/09, el de plataformas agregadas hasta el 28/09.",
-      "novedades": "29 nuevas esta run. Las abiertas por plazo: Palencia (RRHH+control horario+nomina, 272K, cierra 21 Oct), Diputacion de Valladolid (RRHH+control horario+nomina, 410K, cierra 20 Oct), Concello de Nigran (contabilidad+recaudacion+nominas, 388K, cierra 23 Oct), Aoiz (gestoria laboral, cierra 12 Oct), Consell Comarcal de l'Anoia (valoracion de puestos, cierra 9 Oct), Cervera, CTTC y Fundacio s'Estel (gestion de personal y nominas, cierran 7 Oct), Cassa de la Selva (RRHH SaaS, cierra 6 Oct).",
+      "limitacion": "Requiere el navegador integrado; la red de ejecucion no alcanza contrataciondelestado.es directamente. Esta run cubre hasta el 19/10 en los dos feeds (perfiles del contratante y plataformas agregadas).",
+      "novedades": "108 nuevas esta run. Las mas urgentes por plazo: Comarca del Bajo Aragón (0 d); Consorcio de Compensación de Seguros (0 d); Gerencia de Urbanismo de Sevilla (0 d); Alcaldía del Ayuntamiento de Los Silos (1 d); Ayuntamiento de Medina del Campo (1 d).",
       "urgente": "Lo que caduca es el stock, no lo nuevo: 3 cierran hoy 28/09 (SEPIDES, Autoridad Portuaria de Marin, Reus Serveis Municipals); 3 cierran el 29/09 (Gobierno de Cantabria, Mancomunidad Alto Palancia, Ajuntament de Rubi); 3 el 30/09 (FORTA, Caldes d'Estrac, Tractament i Seleccio de Residus); 2 el 1/10 (Autoridad Portuaria de Algeciras, Fundacion Investigacion Biomedica Hospital Clinico San Carlos) y 3 el 2/10 (Daganzo de Arriba, BiscayTIK, Costa Brava Girona)."
     }
   }
