@@ -1,32 +1,32 @@
 {
-  "last_updated": "2026-10-19T10:42:00",
+  "last_updated": "2026-10-26T13:21:58",
   "funding": {
-    "summary": "62 empresas · 3 nuevas esta semana · 1 prioridad alta",
+    "summary": "65 empresas · 3 nuevas esta semana · 0 prioridad alta",
     "recent_signals": [
       {
-        "company": "Linkener",
-        "signal": "Serie A · 7.5M€",
-        "date": "2026-10-19"
+        "company": "RawData",
+        "signal": "Seed · 1M€",
+        "date": "2026-10-23"
       },
       {
-        "company": "Remolonas",
-        "signal": "Seed · 2.1M€",
-        "date": "2026-10-19"
+        "company": "Hausum",
+        "signal": "Seed · 0.5M€",
+        "date": "2026-10-21"
       },
       {
-        "company": "Constrik",
-        "signal": "Pre-Seed · 0.35M€",
-        "date": "2026-10-15"
+        "company": "FlamAid",
+        "signal": "Seed · 1M€",
+        "date": "2026-10-20"
       }
     ],
     "answers": {
       "hola": "¡Hola! Soy Agent Funding Intelligence. He detectado 3 rondas esta semana en España. ¿Qué quieres saber?",
-      "señales": "Esta semana: 3 rondas · 1 prioridad alta · 2 ya en HubSpot · 0 ya clientes ⛔",
-      "progreso": "Histórico acumulado: 62 empresas. Última ejecución: 19/10/2026.",
+      "señales": "Esta semana: 3 rondas · 0 prioridad alta · 1 ya en HubSpot · 0 ya clientes ⛔",
+      "progreso": "Histórico acumulado: 65 empresas. Última ejecución: 26/10/2026.",
       "roles": "Busco startups y pymes españolas con rondas Pre-Seed, Seed, Serie A o Serie B anunciadas en los últimos 7 días.",
-      "procesadas": "Esta semana procesé 3 empresas nuevas. Histórico total: 62.",
-      "ultimo": "Último run: 19/10/2026. 3 nuevas · 1 alta prioridad · 0 ya clientes.",
-      "deals": "Deals creados: 27 · descartados: 23 · sin decidir: 12. Total histórico: 62.",
+      "procesadas": "Esta semana procesé 3 empresas nuevas. Histórico total: 65.",
+      "ultimo": "Último run: 26/10/2026. 3 nuevas · 0 alta prioridad · 0 ya clientes.",
+      "deals": "Deals creados: 27 · descartados: 23 · sin decidir: 15. Total histórico: 65.",
       "ayuda": "Puedo contarte: rondas detectadas esta semana, prioridades, estado en HubSpot, deals creados e histórico acumulado."
     }
   },
