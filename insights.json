@@ -1,106 +1,106 @@
 {
-  "last_updated": "2026-11-09T10:15:20",
-  "funding": {
-    "summary": "73 empresas · 3 nuevas esta semana · 2 prioridad alta",
-    "recent_signals": [
-      {
-        "company": "Durcal",
-        "signal": "Serie A · 3M€",
-        "date": "2026-11-09"
-      },
-      {
-        "company": "Kabilio",
-        "signal": "Seed · 10M€",
-        "date": "2026-11-05"
-      },
-      {
-        "company": "Titan OS",
-        "signal": "Serie B · 40.9M€",
-        "date": "2026-11-04"
-      }
-    ],
-    "answers": {
-      "hola": "¡Hola! Soy Agent Funding Intelligence. He detectado 3 rondas esta semana en España. ¿Qué quieres saber?",
-      "señales": "Esta semana: 3 rondas · 2 prioridad alta · 3 ya en HubSpot · 0 ya clientes ⛔",
-      "progreso": "Histórico acumulado: 73 empresas. Última ejecución: 09/11/2026.",
-      "roles": "Busco startups y pymes españolas con rondas Pre-Seed, Seed, Serie A o Serie B anunciadas en los últimos 7 días.",
-      "procesadas": "Esta semana procesé 3 empresas nuevas. Histórico total: 73.",
-      "ultimo": "Último run: 09/11/2026. 3 nuevas · 2 alta prioridad · 0 ya clientes.",
-      "deals": "Deals creados: 33 · descartados: 29 · sin decidir: 11. Total histórico: 73.",
-      "ayuda": "Puedo contarte: rondas detectadas esta semana, prioridades, estado en HubSpot, deals creados e histórico acumulado."
-    }
-  },
-  "tender": {
-    "summary": "Run del 02/11 sobre las dos fuentes (ventana 19/10-02/11, dos semanas): 43.539 anuncios revisados, 53 licitaciones nuevas y 59 actualizadas por cambio de estado (historico acumulado 458). 26 admiten oferta ahora mismo; 10 con menos de 5 dias, de las cuales 5 cierran hoy. 5 de esas urgentes ya estaban en el historico y han entrado en plazo critico al recalcular los dias.",
-    "top_organismos": [
-      {
-        "tipo": "Ayuntamiento",
-        "n": 150
-      },
-      {
-        "tipo": "Otro organismo público",
-        "n": 124
-      },
-      {
-        "tipo": "Empresa pública",
-        "n": 44
-      },
-      {
-        "tipo": "Fundación",
-        "n": 28
-      },
-      {
-        "tipo": "Universidad",
-        "n": 25
-      },
-      {
-        "tipo": "Diputación",
-        "n": 25
-      }
-    ],
-    "recent_signals": [
-      {
-        "organo": "Conselleria de Economía, Hacienda y Administración Pública",
-        "objeto": "Servicio de soporte a los usuarios de los sistemas de información de Hacienda, Administración Pública y Recursos Humanos",
-        "importe": 885818.74,
-        "dias_restantes": 0,
-        "fecha_limite": "2026-11-02"
-      },
-      {
-        "organo": "Ajuntament de Canet de Mar",
-        "objeto": "L’objecte del contracte és la implementació i el manteniment en modalitat SaaS, del sistema informàtic de gestió dels re",
-        "importe": 191741.11,
-        "dias_restantes": 0,
-        "fecha_limite": "2026-11-02"
-      },
-      {
-        "organo": "Rectorado de la Universidad Jaume I",
-        "objeto": "Mantenimiento avanzado de los terminales de control de presencia",
-        "importe": 94015.26,
-        "dias_restantes": 0,
-        "fecha_limite": "2026-11-02"
-      },
-      {
-        "organo": "Agència per a la Qualitat del Sistema Universitari de Catalunya",
-        "objeto": "Servei assessorament i gestió laboral personal AQU Catalunya",
-        "importe": 73388.29,
-        "dias_restantes": 0,
-        "fecha_limite": "2026-11-02"
-      },
-      {
-        "organo": "Alcaldía del Ayuntamiento de Ricote",
-        "objeto": "Servicio de asesoría laboral, gestión de nóminas y otros documentos laborales y fiscales del Ayuntamiento de Ricote.",
-        "importe": 21780,
-        "dias_restantes": 0,
-        "fecha_limite": "2026-11-02"
-      }
-    ],
-    "answers": {
-      "que_busca": "Licitaciones con CPV de software de RRHH/control horario, o cuyo objeto menciona control horario, fichaje, portal del empleado, RRHH o nominas.",
-      "por_que_importa": "Abre canal de oportunidad en sector publico: ayuntamientos, diputaciones y universidades.",
-      "limitacion": "Requiere el navegador integrado; la red de ejecucion no alcanza contrataciondelestado.es directamente. Esta run cubre del 19/10 al 02/11 en los dos feeds (perfiles del contratante y plataformas agregadas).",
-      "novedades": "53 nuevas esta run. Las mas urgentes por plazo: Conselleria de Economía, Hacienda y Administr (0 d); Ajuntament de Canet de Mar (0 d); Rectorado de la Universidad Jaume I (0 d); Agència per a la Qualitat del Sistema Univers (0 d); Alcaldía del Ayuntamiento de Ricote (0 d).",
-      "urgente": "Lo que caduca es el stock, no lo nuevo: 5 cierran hoy 02/11 (Conselleria de Economía, Hacienda y Ad, Ajuntament de Canet de Mar, Rectorado de la Universidad Jaume I, Agència per a la Qualitat del Sistema , Alcaldía del Ayuntamiento de Ricote); otras 5 cierran esta semana. 5 de las 10 criticas venian del historico y solo aparecen al recalcular los dias restantes."
-    }
+ "last_updated": "2026-11-09T09:10:00",
+ "funding": {
+  "summary": "73 empresas · 3 nuevas esta semana · 2 prioridad alta",
+  "recent_signals": [
+   {
+    "company": "Durcal",
+    "signal": "Serie A · 3M€",
+    "date": "2026-11-09"
+   },
+   {
+    "company": "Kabilio",
+    "signal": "Seed · 10M€",
+    "date": "2026-11-05"
+   },
+   {
+    "company": "Titan OS",
+    "signal": "Serie B · 40.9M€",
+    "date": "2026-11-04"
+   }
+  ],
+  "answers": {
+   "hola": "¡Hola! Soy Agent Funding Intelligence. He detectado 3 rondas esta semana en España. ¿Qué quieres saber?",
+   "señales": "Esta semana: 3 rondas · 2 prioridad alta · 3 ya en HubSpot · 0 ya clientes ⛔",
+   "progreso": "Histórico acumulado: 73 empresas. Última ejecución: 09/11/2026.",
+   "roles": "Busco startups y pymes españolas con rondas Pre-Seed, Seed, Serie A o Serie B anunciadas en los últimos 7 días.",
+   "procesadas": "Esta semana procesé 3 empresas nuevas. Histórico total: 73.",
+   "ultimo": "Último run: 09/11/2026. 3 nuevas · 2 alta prioridad · 0 ya clientes.",
+   "deals": "Deals creados: 33 · descartados: 29 · sin decidir: 11. Total histórico: 73.",
+   "ayuda": "Puedo contarte: rondas detectadas esta semana, prioridades, estado en HubSpot, deals creados e histórico acumulado."
   }
+ },
+ "tender": {
+  "summary": "Run del 09/11 sobre las dos fuentes (ventana 02/11-09/11): 19.851 anuncios revisados, 25 licitaciones nuevas y 30 actualizadas por cambio de estado (historico acumulado 483). 27 admiten oferta ahora mismo; 8 con menos de 5 dias, de las cuales 2 cierran hoy. Las 8 urgentes vienen todas del historico y solo aparecen al recalcular los dias restantes: ninguna de las nuevas de esta run baja de 5 dias.",
+  "top_organismos": [
+   {
+    "tipo": "Ayuntamiento",
+    "n": 156
+   },
+   {
+    "tipo": "Otro organismo público",
+    "n": 126
+   },
+   {
+    "tipo": "Empresa pública",
+    "n": 49
+   },
+   {
+    "tipo": "Fundación",
+    "n": 31
+   },
+   {
+    "tipo": "Universidad",
+    "n": 27
+   },
+   {
+    "tipo": "Diputación",
+    "n": 26
+   }
+  ],
+  "recent_signals": [
+   {
+    "organo": "Alcaldía del Ayuntamiento de Santillana del Mar",
+    "objeto": "Servicio de telefonía fija y móvil, conexión a internet y aplicación de control horario del Ayuntamiento de Santillana d",
+    "importe": 83230.2,
+    "dias_restantes": 0,
+    "fecha_limite": "2026-11-09"
+   },
+   {
+    "organo": "Presidencia de la Diputación Provincial de Ourense",
+    "objeto": "Suministro de una licencia de uso sobre un aplicativo de licitación electrónica para la Diputación provincial de Ourense",
+    "importe": 31339,
+    "dias_restantes": 0,
+    "fecha_limite": "2026-11-09"
+   },
+   {
+    "organo": "Ajuntament de Premià de Dalt",
+    "objeto": "Prestació del servei de gestió de nòmines, tramitació de la documentació laboral, cotitzacions a la Seguretat Social i f",
+    "importe": 138761.83,
+    "dias_restantes": 2,
+    "fecha_limite": "2026-11-11"
+   },
+   {
+    "organo": "Parque Científico y Tecnológico Cartuja, S.A.",
+    "objeto": "Servicios profesionales de apoyo especializado de asesoramiento jurídico y gestión laboral de nóminas para la sociedad P",
+    "importe": 54384,
+    "dias_restantes": 2,
+    "fecha_limite": "2026-11-11"
+   },
+   {
+    "organo": "Presidencia del OAM València Sostenible",
+    "objeto": "Servicio de gestoría y asesoramiento laboral, fiscal y jurídico para el OAM València Sostenible.",
+    "importe": 14000,
+    "dias_restantes": 2,
+    "fecha_limite": "2026-11-11"
+   }
+  ],
+  "answers": {
+   "que_busca": "Licitaciones con CPV de software de RRHH/control horario, o cuyo objeto menciona control horario, fichaje, portal del empleado, RRHH o nominas.",
+   "por_que_importa": "Abre canal de oportunidad en sector publico: ayuntamientos, diputaciones y universidades.",
+   "limitacion": "Requiere el navegador integrado; la red de ejecucion no alcanza contrataciondelestado.es directamente. Esta run cubre del 02/11 al 09/11 en los dos feeds (perfiles del contratante y plataformas agregadas).",
+   "novedades": "25 nuevas esta run; ninguna con plazo inferior a 5 dias. Las abiertas con el plazo mas corto ahora mismo: Alcaldía del Ayuntamiento de Santillana de (0 d); Presidencia de la Diputación Provincial de (0 d); Ajuntament de Premià de Dalt (2 d); Parque Científico y Tecnológico Cartuja, S (2 d); Presidencia del OAM València Sostenible (2 d)",
+   "urgente": "Lo que caduca es el stock, no lo nuevo: 8 licitaciones bajan de 5 dias y las 8 vienen del historico. Cierran hoy 09/11: Alcaldía del Ayuntamiento de Santillana de, Presidencia de la Diputación Provincial de. Cierran esta semana: Ajuntament de Premià de Dalt (2 d), Parque Científico y Tecnológico Cartuja, S (2 d), Presidencia del OAM València Sostenible (2 d), Presidencia del Organismo Autónomo Servici (2 d), EJIE, S.A. - Sociedad Informática del Gobi (3 d), Concejalía Delegada de Hacienda de Adeje (4 d). Ninguna de las 25 nuevas de esta run esta por debajo de 5 dias (la mas corta, Calamocha y Camarles, cierra el 16/11)."
+  }
+ }
 }
