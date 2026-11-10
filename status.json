@@ -1,5 +1,5 @@
 {
- "last_updated": "2026-11-09T09:10:00",
+ "last_updated": "2026-11-10T09:38:43",
  "funding": {
   "name": "Agent Funding Intelligence",
   "status": "active",
@@ -12,12 +12,12 @@
   "en_hubspot": 3,
   "ya_clientes": 0,
   "no_en_hubspot": 0,
-  "deals_creados": 33,
-  "deals_pendientes": 11,
+  "deals_creados": 38,
+  "deals_pendientes": 0,
   "total_historico": 73,
   "last_run": "2026-11-09T10:15:20",
-  "deals_descartados": 29,
-  "fuente": "downloads/funding_latest.csv"
+  "deals_descartados": 35,
+  "fuente": "Excel maestro 10-11-2026 (deals revisados por Phil)"
  },
  "group": {
   "name": "Group Intelligence",

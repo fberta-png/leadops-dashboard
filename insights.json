@@ -1,7 +1,7 @@
 {
- "last_updated": "2026-11-09T09:10:00",
+ "last_updated": "2026-11-10T09:38:43",
  "funding": {
-  "summary": "73 empresas · 3 nuevas esta semana · 2 prioridad alta",
+  "summary": "73 empresas · 38 deals creados · 0 sin decidir",
   "recent_signals": [
    {
     "company": "Durcal",
@@ -22,11 +22,11 @@
   "answers": {
    "hola": "¡Hola! Soy Agent Funding Intelligence. He detectado 3 rondas esta semana en España. ¿Qué quieres saber?",
    "señales": "Esta semana: 3 rondas · 2 prioridad alta · 3 ya en HubSpot · 0 ya clientes ⛔",
-   "progreso": "Histórico acumulado: 73 empresas. Última ejecución: 09/11/2026.",
+   "progreso": "Histórico: 73 empresas. Todas revisadas: 38 con deal, 35 descartadas, 0 sin decidir.",
    "roles": "Busco startups y pymes españolas con rondas Pre-Seed, Seed, Serie A o Serie B anunciadas en los últimos 7 días.",
    "procesadas": "Esta semana procesé 3 empresas nuevas. Histórico total: 73.",
    "ultimo": "Último run: 09/11/2026. 3 nuevas · 2 alta prioridad · 0 ya clientes.",
-   "deals": "Deals creados: 33 · descartados: 29 · sin decidir: 11. Total histórico: 73.",
+   "deals": "Deals creados: 38 · descartados: 35 · sin decidir: 0.",
    "ayuda": "Puedo contarte: rondas detectadas esta semana, prioridades, estado en HubSpot, deals creados e histórico acumulado."
   }
  },
