@@ -1,106 +1,106 @@
 {
- "last_updated": "2026-11-10T09:38:43",
- "funding": {
-  "summary": "73 empresas · 38 deals creados · 0 sin decidir",
-  "recent_signals": [
-   {
-    "company": "Durcal",
-    "signal": "Serie A · 3M€",
-    "date": "2026-11-09"
-   },
-   {
-    "company": "Kabilio",
-    "signal": "Seed · 10M€",
-    "date": "2026-11-05"
-   },
-   {
-    "company": "Titan OS",
-    "signal": "Serie B · 40.9M€",
-    "date": "2026-11-04"
-   }
-  ],
-  "answers": {
-   "hola": "¡Hola! Soy Agent Funding Intelligence. He detectado 3 rondas esta semana en España. ¿Qué quieres saber?",
-   "señales": "Esta semana: 3 rondas · 2 prioridad alta · 3 ya en HubSpot · 0 ya clientes ⛔",
-   "progreso": "Histórico: 73 empresas. Todas revisadas: 38 con deal, 35 descartadas, 0 sin decidir.",
-   "roles": "Busco startups y pymes españolas con rondas Pre-Seed, Seed, Serie A o Serie B anunciadas en los últimos 7 días.",
-   "procesadas": "Esta semana procesé 3 empresas nuevas. Histórico total: 73.",
-   "ultimo": "Último run: 09/11/2026. 3 nuevas · 2 alta prioridad · 0 ya clientes.",
-   "deals": "Deals creados: 38 · descartados: 35 · sin decidir: 0.",
-   "ayuda": "Puedo contarte: rondas detectadas esta semana, prioridades, estado en HubSpot, deals creados e histórico acumulado."
+  "last_updated": "2026-11-16T15:05:19",
+  "funding": {
+    "summary": "73 empresas · 38 deals creados · 0 sin decidir",
+    "recent_signals": [
+      {
+        "company": "Durcal",
+        "signal": "Serie A · 3M€",
+        "date": "2026-11-09"
+      },
+      {
+        "company": "Kabilio",
+        "signal": "Seed · 10M€",
+        "date": "2026-11-05"
+      },
+      {
+        "company": "Titan OS",
+        "signal": "Serie B · 40.9M€",
+        "date": "2026-11-04"
+      }
+    ],
+    "answers": {
+      "hola": "¡Hola! Soy Agent Funding Intelligence. He detectado 3 rondas esta semana en España. ¿Qué quieres saber?",
+      "señales": "Esta semana: 3 rondas · 2 prioridad alta · 3 ya en HubSpot · 0 ya clientes ⛔",
+      "progreso": "Histórico: 73 empresas. Todas revisadas: 38 con deal, 35 descartadas, 0 sin decidir.",
+      "roles": "Busco startups y pymes españolas con rondas Pre-Seed, Seed, Serie A o Serie B anunciadas en los últimos 7 días.",
+      "procesadas": "Esta semana procesé 3 empresas nuevas. Histórico total: 73.",
+      "ultimo": "Último run: 09/11/2026. 3 nuevas · 2 alta prioridad · 0 ya clientes.",
+      "deals": "Deals creados: 38 · descartados: 35 · sin decidir: 0.",
+      "ayuda": "Puedo contarte: rondas detectadas esta semana, prioridades, estado en HubSpot, deals creados e histórico acumulado."
+    }
+  },
+  "tender": {
+    "summary": "Run del 16/11 sobre las dos fuentes (ventana 09/11-16/11): 20.342 anuncios revisados, 21 licitaciones nuevas y 32 actualizadas por cambio de estado (historico acumulado 504). 29 admiten oferta ahora mismo; 10 con menos de 5 dias, de las cuales 5 cierran hoy. 10 de las 10 urgentes vienen del historico y solo aparecen al recalcular los dias restantes.",
+    "top_organismos": [
+      {
+        "tipo": "Ayuntamiento",
+        "n": 163
+      },
+      {
+        "tipo": "Otro organismo público",
+        "n": 127
+      },
+      {
+        "tipo": "Empresa pública",
+        "n": 55
+      },
+      {
+        "tipo": "Fundación",
+        "n": 33
+      },
+      {
+        "tipo": "Universidad",
+        "n": 29
+      },
+      {
+        "tipo": "Diputación",
+        "n": 26
+      }
+    ],
+    "recent_signals": [
+      {
+        "organo": "Centro Tecnológico del Mar-CETMAR",
+        "objeto": "CTM-2026-0011: Suministro, implantación y puesta en funcionamiento de un sistema integrado de planificación de recursos ",
+        "importe": 78000,
+        "dias_restantes": 0,
+        "fecha_limite": "2026-11-16"
+      },
+      {
+        "organo": "Instituto de Turismo de España (TURESPAÑA)",
+        "objeto": "Servicio de soporte funcional de la infraestructura de Nómina de Turespaña basada en el sistema de gestión de Nómina NED",
+        "importe": 66550,
+        "dias_restantes": 0,
+        "fecha_limite": "2026-11-16"
+      },
+      {
+        "organo": "Presidencia del Organismo Autónomo Servicios Tributarios de Ceuta",
+        "objeto": "Contrato relativo a la Provisión, Despliegue y Mantenimiento de una Plataforma Integral de Recursos Humanos y Nóminas",
+        "importe": 98508.8,
+        "dias_restantes": 0,
+        "fecha_limite": "2026-11-16"
+      },
+      {
+        "organo": "Alcaldía del Ayuntamiento de Calamocha",
+        "objeto": "Contrato mixto de suministro y servicios para la implantación, migración, alojamiento, mantenimiento y soporte de una ap",
+        "importe": 66138.6,
+        "dias_restantes": 0,
+        "fecha_limite": "2026-11-16"
+      },
+      {
+        "organo": "Ajuntament de Camarles",
+        "objeto": "Servei de gestió de nòmines i Seguretat Social de l'Ajuntament de Camarles",
+        "importe": 37539.84,
+        "dias_restantes": 0,
+        "fecha_limite": "2026-11-16"
+      }
+    ],
+    "answers": {
+      "que_busca": "Licitaciones con CPV de software de RRHH/control horario, o cuyo objeto menciona control horario, fichaje, portal del empleado, RRHH o nominas.",
+      "por_que_importa": "Abre canal de oportunidad en sector publico: ayuntamientos, diputaciones y universidades.",
+      "limitacion": "Requiere el navegador integrado; la red de ejecucion no alcanza contrataciondelestado.es directamente. Esta run cubre del 09/11 al 16/11 en los dos feeds (perfiles del contratante y plataformas agregadas).",
+      "novedades": "21 nuevas esta run. Las abiertas con el plazo mas corto ahora mismo: Centro Tecnológico del Mar-CETMAR (0 d); Instituto de Turismo de España (TURESPAÑA) (0 d); Presidencia del Organismo Autónomo Servici (0 d); Alcaldía del Ayuntamiento de Calamocha (0 d); Ajuntament de Camarles (0 d)",
+      "urgente": "Lo que caduca es el stock, no lo nuevo: 10 licitaciones bajan de 5 dias y 10 de ellas vienen del historico. Cierran hoy 16/11: Centro Tecnológico del Mar-CETMAR, Instituto de Turismo de España (TURESPAÑA), Presidencia del Organismo Autónomo Servici, Alcaldía del Ayuntamiento de Calamocha, Ajuntament de Camarles. Cierran esta semana: Junta de Gobierno del Ayuntamiento Sant Jo (1 d), Gerencia de Mercados Centrales de Abasteci (3 d), Dirección General de la Sociedad Española  (3 d), Consejería Delegada de Hoteles Escuela de  (3 d), Dirección de la Fundació Comunitat Valenci (4 d)."
+    }
   }
- },
- "tender": {
-  "summary": "Run del 09/11 sobre las dos fuentes (ventana 02/11-09/11): 19.851 anuncios revisados, 25 licitaciones nuevas y 30 actualizadas por cambio de estado (historico acumulado 483). 27 admiten oferta ahora mismo; 8 con menos de 5 dias, de las cuales 2 cierran hoy. Las 8 urgentes vienen todas del historico y solo aparecen al recalcular los dias restantes: ninguna de las nuevas de esta run baja de 5 dias.",
-  "top_organismos": [
-   {
-    "tipo": "Ayuntamiento",
-    "n": 156
-   },
-   {
-    "tipo": "Otro organismo público",
-    "n": 126
-   },
-   {
-    "tipo": "Empresa pública",
-    "n": 49
-   },
-   {
-    "tipo": "Fundación",
-    "n": 31
-   },
-   {
-    "tipo": "Universidad",
-    "n": 27
-   },
-   {
-    "tipo": "Diputación",
-    "n": 26
-   }
-  ],
-  "recent_signals": [
-   {
-    "organo": "Alcaldía del Ayuntamiento de Santillana del Mar",
-    "objeto": "Servicio de telefonía fija y móvil, conexión a internet y aplicación de control horario del Ayuntamiento de Santillana d",
-    "importe": 83230.2,
-    "dias_restantes": 0,
-    "fecha_limite": "2026-11-09"
-   },
-   {
-    "organo": "Presidencia de la Diputación Provincial de Ourense",
-    "objeto": "Suministro de una licencia de uso sobre un aplicativo de licitación electrónica para la Diputación provincial de Ourense",
-    "importe": 31339,
-    "dias_restantes": 0,
-    "fecha_limite": "2026-11-09"
-   },
-   {
-    "organo": "Ajuntament de Premià de Dalt",
-    "objeto": "Prestació del servei de gestió de nòmines, tramitació de la documentació laboral, cotitzacions a la Seguretat Social i f",
-    "importe": 138761.83,
-    "dias_restantes": 2,
-    "fecha_limite": "2026-11-11"
-   },
-   {
-    "organo": "Parque Científico y Tecnológico Cartuja, S.A.",
-    "objeto": "Servicios profesionales de apoyo especializado de asesoramiento jurídico y gestión laboral de nóminas para la sociedad P",
-    "importe": 54384,
-    "dias_restantes": 2,
-    "fecha_limite": "2026-11-11"
-   },
-   {
-    "organo": "Presidencia del OAM València Sostenible",
-    "objeto": "Servicio de gestoría y asesoramiento laboral, fiscal y jurídico para el OAM València Sostenible.",
-    "importe": 14000,
-    "dias_restantes": 2,
-    "fecha_limite": "2026-11-11"
-   }
-  ],
-  "answers": {
-   "que_busca": "Licitaciones con CPV de software de RRHH/control horario, o cuyo objeto menciona control horario, fichaje, portal del empleado, RRHH o nominas.",
-   "por_que_importa": "Abre canal de oportunidad en sector publico: ayuntamientos, diputaciones y universidades.",
-   "limitacion": "Requiere el navegador integrado; la red de ejecucion no alcanza contrataciondelestado.es directamente. Esta run cubre del 02/11 al 09/11 en los dos feeds (perfiles del contratante y plataformas agregadas).",
-   "novedades": "25 nuevas esta run; ninguna con plazo inferior a 5 dias. Las abiertas con el plazo mas corto ahora mismo: Alcaldía del Ayuntamiento de Santillana de (0 d); Presidencia de la Diputación Provincial de (0 d); Ajuntament de Premià de Dalt (2 d); Parque Científico y Tecnológico Cartuja, S (2 d); Presidencia del OAM València Sostenible (2 d)",
-   "urgente": "Lo que caduca es el stock, no lo nuevo: 8 licitaciones bajan de 5 dias y las 8 vienen del historico. Cierran hoy 09/11: Alcaldía del Ayuntamiento de Santillana de, Presidencia de la Diputación Provincial de. Cierran esta semana: Ajuntament de Premià de Dalt (2 d), Parque Científico y Tecnológico Cartuja, S (2 d), Presidencia del OAM València Sostenible (2 d), Presidencia del Organismo Autónomo Servici (2 d), EJIE, S.A. - Sociedad Informática del Gobi (3 d), Concejalía Delegada de Hacienda de Adeje (4 d). Ninguna de las 25 nuevas de esta run esta por debajo de 5 dias (la mas corta, Calamocha y Camarles, cierra el 16/11)."
-  }
- }
 }
